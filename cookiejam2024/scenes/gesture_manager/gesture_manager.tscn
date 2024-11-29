@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cdgrqruroljoy"]
+
+[ext_resource type="Script" path="res://scenes/gesture_manager/gesture_manager.gd" id="1_yymwu"]
+
+[node name="GestureManager" type="Node2D"]
+script = ExtResource("1_yymwu")
