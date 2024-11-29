@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://bw20s60c2vger"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2chd8"]
+
+[sub_resource type="Sky" id="Sky_8vrxq"]
+sky_material = SubResource("ProceduralSkyMaterial_2chd8")
+
+[sub_resource type="Environment" id="Environment_4oiws"]
+background_mode = 2
+sky = SubResource("Sky_8vrxq")
+
+[sub_resource type="MeshLibrary" id="MeshLibrary_lvps5"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_x1wyv"]
+size = Vector2(100, 100)
+
+[node name="Main" type="Node3D"]
+
+[node name="enviro" type="Node3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="enviro"]
+environment = SubResource("Environment_4oiws")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="enviro"]
+transform = Transform3D(1, 0, 0, 0, 0.438371, 0.898794, 0, -0.898794, 0.438371, 0, 0, 0)
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = SubResource("MeshLibrary_lvps5")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.49922, 0)
+current = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_x1wyv")
