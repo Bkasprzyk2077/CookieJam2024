@@ -1,34 +1,40 @@
 extends Node3D
 
+@onready var front_ray_cast_3d = $FrontRayCast3D
+@onready var back_ray_cast_3d = $BackRayCast3D
+
 const MOVE_DISTANCE = 5
 const MOVE_TIME = .2
+var can_move:bool = true
 	
 func _process(delta):
-	if Input.is_action_just_pressed("move_forward"):
-		move_forward()
-	elif Input.is_action_just_pressed("move_backward"):
-		move_backward()
-	elif Input.is_action_just_pressed("turn_left"):
-		turn_left()
-	elif Input.is_action_just_pressed("turn_right"):
-		turn_right()
+	if can_move:
+		if Input.is_action_just_pressed("move_forward"):
+			if front_ray_cast_3d.is_colliding():
+				return
+			move(1)
+		elif Input.is_action_just_pressed("move_backward"):
+			if back_ray_cast_3d.is_colliding():
+				return
+			move(-1)
+		elif Input.is_action_just_pressed("turn_left"):
+			turn(1)
+		elif Input.is_action_just_pressed("turn_right"):
+			turn(-1)
 	
-func move_forward():
+func move(direction):
+	can_move = false
 	var forward_direction = -transform.basis.z.normalized()
-	var target_position = global_position + forward_direction * MOVE_DISTANCE
+	var target_position = global_position + forward_direction * MOVE_DISTANCE * direction
 	var tween = get_tree().create_tween()
 	tween.tween_property(self, "global_position", target_position, MOVE_TIME)
+	await tween.finished
+	can_move = true
 
-func move_backward():
-	var forward_direction = -transform.basis.z.normalized()
-	var target_position = global_position + forward_direction * -MOVE_DISTANCE
+
+func turn(direction):
+	can_move = false
 	var tween = get_tree().create_tween()
-	tween.tween_property(self, "global_position", target_position, MOVE_TIME)
-	
-func turn_left():
-	var tween = get_tree().create_tween()
-	tween.tween_property(self, "rotation_degrees:y", rotation_degrees.y+90, MOVE_TIME)
-	
-func turn_right():
-	var tween = get_tree().create_tween()
-	tween.tween_property(self, "rotation_degrees:y", rotation_degrees.y-90, MOVE_TIME)
+	tween.tween_property(self, "rotation_degrees:y", rotation_degrees.y + 90 * direction, MOVE_TIME)
+	await tween.finished
+	can_move = true

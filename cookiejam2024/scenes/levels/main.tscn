@@ -14,7 +14,7 @@ sky = SubResource("Sky_8vrxq")
 [sub_resource type="MeshLibrary" id="MeshLibrary_lvps5"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_6n4x8"]
-size = Vector2(10, 10)
+size = Vector2(50, 50)
 
 [node name="Main" type="Node3D"]
 
@@ -34,6 +34,10 @@ use_collision = true
 
 [node name="CSGMesh3D" type="CSGMesh3D" parent="Map"]
 mesh = SubResource("PlaneMesh_6n4x8")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -8)
+size = Vector3(11, 3, 1)
 
 [node name="Player" parent="." instance=ExtResource("1_8ng35")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.32001, 0)
