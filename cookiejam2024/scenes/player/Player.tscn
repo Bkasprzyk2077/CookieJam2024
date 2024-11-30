@@ -4,21 +4,21 @@
 [ext_resource type="Script" path="res://scenes/player/camera_3d.gd" id="2_xslh3"]
 [ext_resource type="Shader" path="res://shaders/vignettePixel.gdshader" id="3_w2sow"]
 
-[sub_resource type="QuadMesh" id="QuadMesh_15bu2"]
-flip_faces = true
-size = Vector2(2, 2)
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ynih2"]
 render_priority = 0
 shader = ExtResource("3_w2sow")
 shader_parameter/luminance = Color(1, 1, 1, 1)
-shader_parameter/brightness = 0.26
-shader_parameter/contrast = 1.43
+shader_parameter/brightness = 0.32
+shader_parameter/contrast = 1.48
 shader_parameter/scale = 1.0
 shader_parameter/rotation = 0.08
 shader_parameter/resolution_downsampling = 4.0
 shader_parameter/vignette_color = Color(0, 0, 0, 1)
-shader_parameter/vignette_radius = 0.4
+shader_parameter/vignette_radius = 0.55
+
+[sub_resource type="QuadMesh" id="QuadMesh_15bu2"]
+flip_faces = true
+size = Vector2(2, 2)
 
 [sub_resource type="Animation" id="Animation_uc2km"]
 resource_name = "good"
@@ -82,9 +82,9 @@ current = true
 script = ExtResource("2_xslh3")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Camera3D"]
+material_overlay = SubResource("ShaderMaterial_ynih2")
 extra_cull_margin = 16384.0
 mesh = SubResource("QuadMesh_15bu2")
-surface_material_override/0 = SubResource("ShaderMaterial_ynih2")
 
 [node name="FrontRayCast3D" type="RayCast3D" parent="."]
 target_position = Vector3(0, 0, -5)
