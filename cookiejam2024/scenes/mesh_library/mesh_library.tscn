@@ -1,7 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://b480jnwrfsebq"]
+[gd_scene load_steps=10 format=3 uid="uid://b480jnwrfsebq"]
 
 [ext_resource type="Texture2D" uid="uid://cyfdp1h2arqlk" path="res://assets/kafle-x9.png" id="1_6rup2"]
-[ext_resource type="Texture2D" uid="uid://62nnckd0sjks" path="res://assets/scianatextur.png" id="1_jd3fm"]
 [ext_resource type="Texture2D" uid="uid://dtrai6e0ako78" path="res://assets/scianatextur-x9.png" id="2_yre78"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qep5c"]
@@ -10,7 +9,7 @@ albedo_texture = ExtResource("1_6rup2")
 [sub_resource type="ImageTexture" id="ImageTexture_k8p5b"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_octf1"]
-albedo_texture = ExtResource("1_jd3fm")
+albedo_texture = ExtResource("1_6rup2")
 heightmap_texture = SubResource("ImageTexture_k8p5b")
 uv1_triplanar_sharpness = 7.46427
 
@@ -32,17 +31,6 @@ size = Vector3(5, 5, 5)
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_xxg06"]
 data = PackedVector3Array(-2.5, 2.5, 2.5, 2.5, 2.5, 2.5, -2.5, -2.5, 2.5, 2.5, 2.5, 2.5, 2.5, -2.5, 2.5, -2.5, -2.5, 2.5, 2.5, 2.5, -2.5, -2.5, 2.5, -2.5, 2.5, -2.5, -2.5, -2.5, 2.5, -2.5, -2.5, -2.5, -2.5, 2.5, -2.5, -2.5, 2.5, 2.5, 2.5, 2.5, 2.5, -2.5, 2.5, -2.5, 2.5, 2.5, 2.5, -2.5, 2.5, -2.5, -2.5, 2.5, -2.5, 2.5, -2.5, 2.5, -2.5, -2.5, 2.5, 2.5, -2.5, -2.5, -2.5, -2.5, 2.5, 2.5, -2.5, -2.5, 2.5, -2.5, -2.5, -2.5, 2.5, 2.5, 2.5, -2.5, 2.5, 2.5, 2.5, 2.5, -2.5, -2.5, 2.5, 2.5, -2.5, 2.5, -2.5, 2.5, 2.5, -2.5, -2.5, -2.5, 2.5, 2.5, -2.5, 2.5, -2.5, -2.5, -2.5, 2.5, -2.5, 2.5, 2.5, -2.5, -2.5, -2.5, -2.5, -2.5)
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_dbkai"]
-sky_top_color = Color(0.2, 0.243137, 0.529412, 1)
-sky_horizon_color = Color(0, 0, 0, 1)
-
-[sub_resource type="Sky" id="Sky_va3r6"]
-sky_material = SubResource("ProceduralSkyMaterial_dbkai")
-
-[sub_resource type="Environment" id="Environment_3y481"]
-background_mode = 2
-sky = SubResource("Sky_va3r6")
-
 [node name="MeshLibrary" type="Node3D"]
 
 [node name="FloorMesh" type="MeshInstance3D" parent="."]
@@ -50,28 +38,10 @@ material_override = SubResource("StandardMaterial3D_qep5c")
 mesh = SubResource("PlaneMesh_v7r2v")
 
 [node name="WallMesh" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.92904, 3.2257, 0.574187)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
 mesh = SubResource("BoxMesh_qis4y")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="WallMesh"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="WallMesh/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_xxg06")
-
-[node name="WallMesh2" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.070962, 3.2257, 5.57419)
-mesh = SubResource("BoxMesh_qis4y")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="WallMesh2"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="WallMesh2/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_xxg06")
-
-[node name="Enviro" type="Node3D" parent="."]
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="Enviro"]
-environment = SubResource("Environment_3y481")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Enviro"]
-transform = Transform3D(1, 0, 0, 0, 0.438371, 0.898794, 0, -0.898794, 0.438371, 0, 0, 0)
-visible = false

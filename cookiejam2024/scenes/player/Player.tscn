@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://cy8iths304j2u"]
+[gd_scene load_steps=15 format=3 uid="uid://cy8iths304j2u"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_4127a"]
 [ext_resource type="Script" path="res://scenes/player/camera_3d.gd" id="2_xslh3"]
 [ext_resource type="Shader" path="res://shaders/vignettePixel.gdshader" id="3_w2sow"]
-[ext_resource type="Texture2D" uid="uid://c35778p1a78q1" path="res://assets/icon.svg" id="4_mj6bj"]
+[ext_resource type="Script" path="res://scenes/player/plaer_light.gd" id="4_di5t4"]
+[ext_resource type="Texture2D" uid="uid://ctolnsmc2jb0n" path="res://assets/jojohands-test.png" id="4_s8q2e"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ynih2"]
 render_priority = 0
@@ -20,6 +21,14 @@ shader_parameter/vignette_radius = 0.55
 [sub_resource type="QuadMesh" id="QuadMesh_15bu2"]
 flip_faces = true
 size = Vector2(2, 2)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_h0gyd"]
+frequency = 0.0119
+
+[sub_resource type="NoiseTexture3D" id="NoiseTexture3D_ke0t5"]
+noise = SubResource("FastNoiseLite_h0gyd")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ibymt"]
 
 [sub_resource type="Animation" id="Animation_waq64"]
 length = 0.001
@@ -75,7 +84,7 @@ _data = {
 "good": SubResource("Animation_uc2km")
 }
 
-[node name="Player" type="Node3D"]
+[node name="Player" type="Node3D" groups=["player"]]
 script = ExtResource("1_4127a")
 
 [node name="Camera3D" type="Camera3D" parent="." groups=["player_camera"]]
@@ -88,10 +97,25 @@ material_overlay = SubResource("ShaderMaterial_ynih2")
 extra_cull_margin = 1.0
 mesh = SubResource("QuadMesh_15bu2")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Camera3D"]
+[node name="PlaerLight" type="OmniLight3D" parent="Camera3D"]
 light_color = Color(0.808948, 0.362783, 0.0754934, 1)
 light_energy = 16.0
-omni_range = 15.0
+omni_range = 20.0
+script = ExtResource("4_di5t4")
+noise = SubResource("NoiseTexture3D_ke0t5")
+
+[node name="Hands" type="Sprite3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.986)
+shaded = true
+no_depth_test = true
+texture = ExtResource("4_s8q2e")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("CapsuleShape3D_ibymt")
 
 [node name="FrontRayCast3D" type="RayCast3D" parent="."]
 target_position = Vector3(0, 0, -5)
@@ -104,8 +128,4 @@ libraries = {
 "": SubResource("AnimationLibrary_3monf")
 }
 
-[node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.41801)
-visible = false
-transparent = false
-texture = ExtResource("4_mj6bj")
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]

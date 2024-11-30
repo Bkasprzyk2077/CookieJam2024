@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://crjjy6nuga3yl"]
+
+[ext_resource type="Script" path="res://scenes/krople/krople.gd" id="1_rjgof"]
+[ext_resource type="Texture2D" uid="uid://cuh3ybimf11jh" path="res://assets/krople.png" id="1_tgmvm"]
+[ext_resource type="Script" path="res://scenes/player/plaer_light.gd" id="3_cnpuj"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2cwi6"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_kt5wr"]
+frequency = 0.0119
+
+[sub_resource type="NoiseTexture3D" id="NoiseTexture3D_n03s5"]
+noise = SubResource("FastNoiseLite_kt5wr")
+
+[node name="Krople" type="Node3D"]
+script = ExtResource("1_rjgof")
+
+[node name="Sprite" type="Sprite3D" parent="."]
+transform = Transform3D(0.16, 0, 0, 0, 0.16, 0, 0, 0, 0.16, 0, 1.09205, 0)
+billboard = 2
+shaded = true
+texture = ExtResource("1_tgmvm")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.16603, 0)
+shape = SubResource("CapsuleShape3D_2cwi6")
+
+[node name="PlaerLight" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.937348, 0)
+light_color = Color(0.808948, 0.362783, 0.0754934, 1)
+light_size = 0.291
+omni_range = 20.0
+omni_attenuation = 0.739
+script = ExtResource("3_cnpuj")
+noise = SubResource("NoiseTexture3D_n03s5")

@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bw20s60c2vger"]
+[gd_scene load_steps=8 format=3 uid="uid://bw20s60c2vger"]
 
 [ext_resource type="PackedScene" uid="uid://cdgrqruroljoy" path="res://scenes/gesture_manager/gesture_manager.tscn" id="1_5ko27"]
 [ext_resource type="PackedScene" uid="uid://cy8iths304j2u" path="res://scenes/player/Player.tscn" id="1_8ng35"]
 [ext_resource type="PackedScene" uid="uid://buppi1dcq3b3i" path="res://scenes/maze_generator/maze_generator.tscn" id="2_q1842"]
+[ext_resource type="PackedScene" uid="uid://ipmu4i7geohw" path="res://scenes/key/key.tscn" id="4_ypctl"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2chd8"]
 sky_top_color = Color(0.2, 0.243137, 0.529412, 1)
@@ -21,6 +22,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
 [node name="GestureManager" parent="." instance=ExtResource("1_5ko27")]
 
 [node name="Maze" parent="." instance=ExtResource("2_q1842")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -1)
 data = {
 "cells": PackedInt32Array(65534, 65533, 1310720, 65534, 65534, 1310720, 0, 0, 1310720)
 }
@@ -35,4 +37,7 @@ transform = Transform3D(1, 0, 0, 0, 0.438371, 0.898794, 0, -0.898794, 0.438371, 
 visible = false
 
 [node name="Player" parent="." instance=ExtResource("1_8ng35")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 1.32, 2.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 1.32, 1.5)
+
+[node name="Key" parent="." instance=ExtResource("4_ypctl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 1.5)
