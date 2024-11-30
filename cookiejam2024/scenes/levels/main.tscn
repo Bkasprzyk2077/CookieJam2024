@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cdgrqruroljoy" path="res://scenes/gesture_manager/gesture_manager.tscn" id="1_5ko27"]
 [ext_resource type="PackedScene" uid="uid://cy8iths304j2u" path="res://scenes/player/Player.tscn" id="1_8ng35"]
+[ext_resource type="PackedScene" uid="uid://buppi1dcq3b3i" path="res://scenes/maze_generator/maze_generator.tscn" id="2_q1842"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2chd8"]
 
@@ -12,12 +13,15 @@ sky_material = SubResource("ProceduralSkyMaterial_2chd8")
 background_mode = 2
 sky = SubResource("Sky_va3r6")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_6n4x8"]
-size = Vector2(50, 50)
-
 [node name="Main" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
 
 [node name="GestureManager" parent="." instance=ExtResource("1_5ko27")]
+
+[node name="Maze" parent="." instance=ExtResource("2_q1842")]
+data = {
+"cells": PackedInt32Array(65534, 65533, 1310720, 65534, 65534, 1310720, 0, 0, 1310720)
+}
 
 [node name="Enviro" type="Node3D" parent="."]
 
@@ -27,15 +31,5 @@ environment = SubResource("Environment_4oiws")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Enviro"]
 transform = Transform3D(1, 0, 0, 0, 0.438371, 0.898794, 0, -0.898794, 0.438371, 0, 0, 0)
 
-[node name="Map" type="CSGCombiner3D" parent="."]
-use_collision = true
-
-[node name="CSGMesh3D" type="CSGMesh3D" parent="Map"]
-mesh = SubResource("PlaneMesh_6n4x8")
-
-[node name="CSGBox3D" type="CSGBox3D" parent="Map"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -8)
-size = Vector3(11, 3, 1)
-
 [node name="Player" parent="." instance=ExtResource("1_8ng35")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.32001, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 1.32, 2.5)

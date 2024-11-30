@@ -2,8 +2,8 @@ extends GridMap
 class_name MazeGen
 
 # Rozmiary labiryntu
-@export var z_dim = 20  # Zamiast y_dim (dla osi Z w poziomie)
-@export var x_dim = 20  # Długość labiryntu w osi X
+@export var z_dim = 10  # Zamiast y_dim (dla osi Z w poziomie)
+@export var x_dim = 10  # Długość labiryntu w osi X
 @export var y_dim = 1   # Opcjonalna wysokość (dla osi Y)
 @export var starting_coords = Vector3i(0, 0, 0)
 @export var allow_loops: bool = true
@@ -23,6 +23,7 @@ var adj4 = [
 
 # Funkcja uruchamiana po dodaniu węzła do sceny
 func _ready() -> void:
+	randomize()
 	place_border()
 	dfs(starting_coords)
 
