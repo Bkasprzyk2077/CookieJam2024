@@ -21,6 +21,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
 [node name="GestureManager" parent="." instance=ExtResource("1_5ko27")]
 
 [node name="Maze" parent="." instance=ExtResource("2_q1842")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -1)
 data = {
 "cells": PackedInt32Array(65534, 65533, 1310720, 65534, 65534, 1310720, 0, 0, 1310720)
 }
@@ -35,4 +36,4 @@ transform = Transform3D(1, 0, 0, 0, 0.438371, 0.898794, 0, -0.898794, 0.438371, 
 visible = false
 
 [node name="Player" parent="." instance=ExtResource("1_8ng35")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 1.32, 2.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 1.32, 1.5)

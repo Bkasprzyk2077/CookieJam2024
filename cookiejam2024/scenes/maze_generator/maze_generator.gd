@@ -8,6 +8,7 @@ class_name MazeGen
 @export var starting_coords = Vector3i(0, 0, 0)
 @export var allow_loops: bool = true
 @export var key_scene: PackedScene
+@export var krople_scene: PackedScene
 # Definicja kafelków
 const normal_wall_mesh = "WallMesh"
 const walkable_mesh = "FloorMesh"
@@ -29,7 +30,7 @@ func _ready() -> void:
 	dfs(starting_coords)
 	count_floor_neighbors()
 	generate_items()
-	
+
 # Tworzenie granicy labiryntu
 func place_border():
 	for z in range(-1, z_dim + 1):  # Iteracja po osi Z
@@ -126,9 +127,9 @@ func count_floor_neighbors():
 				if is_within_bounds(neighbor_pos) and is_floor(neighbor_pos):
 					floor_neighbors += 1
 			# Wynik dla tego pola
-			if floor_neighbors == 1:
+			if floor_neighbors == 1 and current_pos != Vector3i.ZERO:
 				floor_tiles_with_one_neighbour.append(current_pos)
-
+			
 func is_floor(pos: Vector3i) -> bool:
 	return get_cell_item(pos) == mesh_library.find_item_by_name("FloorMesh")
 	
@@ -137,7 +138,11 @@ func is_within_bounds(pos: Vector3i) -> bool:
 		   pos.z >= 0 and pos.z < z_dim
 
 func generate_items():
+	floor_tiles_with_one_neighbour.shuffle()
+	var key = key_scene.instantiate()
+	add_child(key)
+	key.global_position = map_to_local(floor_tiles_with_one_neighbour.pick_random())
 	for tile in floor_tiles_with_one_neighbour:
-		var key = key_scene.instantiate()
-		add_child(key)
-		key.global_position = map_to_local(tile)
+		var krople = krople_scene.instantiate()
+		add_child(krople)
+		krople.global_position = map_to_local(tile)

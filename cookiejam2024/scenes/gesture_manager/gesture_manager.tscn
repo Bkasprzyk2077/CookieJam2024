@@ -10,7 +10,7 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_m7xjj"]
 shader = ExtResource("3_te17o")
 shader_parameter/alpha = 1.0
-shader_parameter/inner_radius = 0.4
+shader_parameter/inner_radius = 0.5
 shader_parameter/outer_radius = 1.5
 shader_parameter/vignette_color = Color(0, 0, 0, 1)
 
@@ -79,6 +79,22 @@ script = ExtResource("1_yymwu")
 
 [node name="Arrows" type="CanvasLayer" parent="."]
 
+[node name="Vignette" type="ColorRect" parent="Arrows"]
+material = SubResource("ShaderMaterial_m7xjj")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Dithering" type="ColorRect" parent="Arrows"]
+material = SubResource("ShaderMaterial_tbaf8")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="Control" type="Control" parent="Arrows"]
 layout_mode = 3
 anchors_preset = 8
@@ -110,22 +126,6 @@ grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(128, 32)
 texture = ExtResource("2_n4sqm")
-
-[node name="Vignette" type="ColorRect" parent="Arrows"]
-material = SubResource("ShaderMaterial_m7xjj")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Dithering" type="ColorRect" parent="Arrows"]
-material = SubResource("ShaderMaterial_tbaf8")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
 
 [node name="GestureDetector" type="Node2D" parent="."]
 script = ExtResource("1_3sui7")

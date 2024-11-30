@@ -43,12 +43,28 @@ func _on_enemy_timer_timeout():
 			animation_player.play("good_pose")
 		else:
 			print("ZLE")
+			take_damage()
 			animation_player.play("bad_pose")
 			get_tree().get_first_node_in_group("player_animation").play("bad")
 			get_tree().get_first_node_in_group("player_camera").apply_shake()
 		still_has_time = true
 	arrow_rect.visible = false
 	$EnemyTimer.start()
+	
+func take_damage():
+	var material = $Arrows/Vignette.material
+	if material.get_shader_parameter("outer_radius") < 0.6:
+		death()
+		return
+	material.set_shader_parameter("outer_radius", material.get_shader_parameter("outer_radius") - 0.2)
+	#ShaderMaterial
+	#var tween = get_tree().create_tween()
+	#tween.tween_property(material.shader, "outer_radius", material.get_shader_parameter("outer_radius")+1, .1)
+	
+func death():
+	print("DEATH")
+	var material = $Arrows/Vignette.material
+	material.set_shader_parameter("outer_radius", 1.5)
 
 func update_ui(pose):
 	arrow_rect.rotation_degrees = directions[pose]
