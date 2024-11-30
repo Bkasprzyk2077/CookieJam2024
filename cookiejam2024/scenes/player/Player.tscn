@@ -1,12 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://cy8iths304j2u"]
+[gd_scene load_steps=3 format=3 uid="uid://cy8iths304j2u"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_4127a"]
+[ext_resource type="Script" path="res://scenes/player/camera_3d.gd" id="2_xslh3"]
 
 [node name="Player" type="Node3D"]
 script = ExtResource("1_4127a")
 
-[node name="Camera3D" type="Camera3D" parent="."]
+[node name="Camera3D" type="Camera3D" parent="." groups=["player_camera"]]
 current = true
+script = ExtResource("2_xslh3")
 
 [node name="FrontRayCast3D" type="RayCast3D" parent="."]
 target_position = Vector3(0, 0, -5)
