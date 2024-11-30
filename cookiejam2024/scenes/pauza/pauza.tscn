@@ -47,6 +47,7 @@ scale = Vector2(0.330303, 0.330303)
 texture = ExtResource("6_a6df0")
 
 [node name="opcje" type="Button" parent="Control/wznow"]
+layout_mode = 0
 offset_left = -26.0
 offset_top = 211.0
 offset_right = 510.0
