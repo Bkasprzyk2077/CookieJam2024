@@ -1,17 +1,31 @@
-[gd_scene load_steps=6 format=3 uid="uid://b480jnwrfsebq"]
+[gd_scene load_steps=10 format=3 uid="uid://b480jnwrfsebq"]
 
-[ext_resource type="Texture2D" uid="uid://62nnckd0sjks" path="res://assets/scianatextur.png" id="1_jd3fm"]
+[ext_resource type="Texture2D" uid="uid://cyfdp1h2arqlk" path="res://assets/kafle-x9.png" id="1_6rup2"]
+[ext_resource type="Texture2D" uid="uid://dtrai6e0ako78" path="res://assets/scianatextur-x9.png" id="2_yre78"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qep5c"]
+albedo_texture = ExtResource("1_6rup2")
+
+[sub_resource type="ImageTexture" id="ImageTexture_k8p5b"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_octf1"]
-albedo_texture = ExtResource("1_jd3fm")
+albedo_texture = ExtResource("1_6rup2")
+heightmap_texture = SubResource("ImageTexture_k8p5b")
 uv1_triplanar_sharpness = 7.46427
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_v7r2v"]
 material = SubResource("StandardMaterial3D_octf1")
 size = Vector2(5, 5)
 
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_mo83v"]
+albedo_texture = ExtResource("2_yre78")
+emission_enabled = true
+emission = Color(0.255522, 6.46757e-08, 7.21961e-08, 1)
+emission_energy_multiplier = 0.16
+backlight_enabled = true
+
 [sub_resource type="BoxMesh" id="BoxMesh_qis4y"]
-material = SubResource("StandardMaterial3D_octf1")
+material = SubResource("ORMMaterial3D_mo83v")
 size = Vector3(5, 5, 5)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_xxg06"]
@@ -20,10 +34,11 @@ data = PackedVector3Array(-2.5, 2.5, 2.5, 2.5, 2.5, 2.5, -2.5, -2.5, 2.5, 2.5, 2
 [node name="MeshLibrary" type="Node3D"]
 
 [node name="FloorMesh" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_qep5c")
 mesh = SubResource("PlaneMesh_v7r2v")
 
 [node name="WallMesh" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
 mesh = SubResource("BoxMesh_qis4y")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="WallMesh"]

@@ -27,7 +27,6 @@ func _ready():
 	line.name = "gesture_line"
 	line.width = 50
 	line.default_color = Color(1, 1, 1)
-	#line.gradient = 
 	line.texture = load("res://assets/icon.svg")
 	line.texture_mode = Line2D.LINE_TEXTURE_STRETCH
 	add_child(line)

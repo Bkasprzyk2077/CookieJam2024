@@ -2,7 +2,7 @@ shader_type canvas_item;
 
 uniform float alpha : hint_range(0.0, 1.0) = 1.0;
 uniform float inner_radius : hint_range(0.0, 1.0) = 0.0;
-uniform float outer_radius : hint_range(0.0, 1.0) = 1.0;
+uniform float outer_radius : hint_range(0.0, 2.0) = 2.0;
 uniform vec4 vignette_color: source_color = vec4(0.0, 0.0, 0.0, 1.0);
 
 void fragment() {

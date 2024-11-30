@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://buppi1dcq3b3i"]
+[gd_scene load_steps=6 format=3 uid="uid://buppi1dcq3b3i"]
 
 [ext_resource type="MeshLibrary" uid="uid://c5yeijqau0rvx" path="res://scenes/mesh_library/MeshLibraryEx.tres" id="1_vu4cc"]
 [ext_resource type="Script" path="res://scenes/maze_generator/maze_generator.gd" id="1_yymuv"]
 [ext_resource type="PackedScene" uid="uid://ipmu4i7geohw" path="res://scenes/key/key.tscn" id="3_b8iis"]
+[ext_resource type="PackedScene" uid="uid://crjjy6nuga3yl" path="res://scenes/krople/krople.tscn" id="4_pk3sv"]
+[ext_resource type="PackedScene" uid="uid://b1iumdppxjame" path="res://scenes/doors/doors.tscn" id="5_oqg8o"]
 
 [node name="Maze" type="GridMap"]
 mesh_library = ExtResource("1_vu4cc")
@@ -10,3 +12,5 @@ cell_size = Vector3(5, 2, 5)
 cell_center_y = false
 script = ExtResource("1_yymuv")
 key_scene = ExtResource("3_b8iis")
+krople_scene = ExtResource("4_pk3sv")
+doors_scene = ExtResource("5_oqg8o")
