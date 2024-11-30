@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://bw20s60c2vger"]
+[gd_scene load_steps=8 format=3 uid="uid://bw20s60c2vger"]
 
+[ext_resource type="PackedScene" uid="uid://cdgrqruroljoy" path="res://scenes/gesture_manager/gesture_manager.tscn" id="1_5ko27"]
 [ext_resource type="PackedScene" uid="uid://cy8iths304j2u" path="res://scenes/player/Player.tscn" id="1_8ng35"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2chd8"]
@@ -17,6 +18,8 @@ sky = SubResource("Sky_8vrxq")
 size = Vector2(50, 50)
 
 [node name="Main" type="Node3D"]
+
+[node name="GestureManager" parent="." instance=ExtResource("1_5ko27")]
 
 [node name="Enviro" type="Node3D" parent="."]
 
