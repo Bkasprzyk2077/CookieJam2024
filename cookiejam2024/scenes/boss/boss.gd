@@ -41,6 +41,16 @@ func boss_talk():
 		full_text = dialog_lines2[i]
 	i += 1
 	text_timer.start()
+	
+func get_hit():
+	#reset()
+	$AnimationPlayer.play("get_hit")
+	text_label.text = ""
+	index = 0
+	current_text = ""
+	full_text = "AAAłłłAAA!"
+	i += 1
+	text_timer.start()
 
 func reset():
 	is_fighting = false
