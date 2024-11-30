@@ -11,6 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://bvo0s2ws8yq5" path="res://scenes/pauza/menuprzycsk.png" id="7_iup8x"]
 
 [node name="Pauza" type="CanvasLayer"]
+process_mode = 3
+layer = 5
+visible = false
 script = ExtResource("1_rbv2c")
 
 [node name="Control" type="Control" parent="."]
@@ -82,3 +85,5 @@ texture = ExtResource("7_iup8x")
 [node name="Pauza" type="Sprite2D" parent="Control"]
 position = Vector2(1005, 192)
 texture = ExtResource("4_sv3ms")
+
+[connection signal="pressed" from="Control/wznow" to="." method="wznow"]
