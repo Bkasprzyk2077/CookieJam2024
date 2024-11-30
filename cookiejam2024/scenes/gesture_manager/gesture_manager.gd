@@ -40,10 +40,10 @@ func _on_enemy_timer_timeout():
 		elif pose == current_pose:
 			print("DOBRZE")
 			get_tree().get_first_node_in_group("player_animation").play("good")
-			#animation_player.play("good_pose")
+			animation_player.play("good_pose")
 		else:
 			print("ZLE")
-			#animation_player.play("bad_pose")
+			animation_player.play("bad_pose")
 			get_tree().get_first_node_in_group("player_animation").play("bad")
 			get_tree().get_first_node_in_group("player_camera").apply_shake()
 		still_has_time = true
