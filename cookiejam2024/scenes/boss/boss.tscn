@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dbuff07o7u7uv"]
+[gd_scene load_steps=9 format=3 uid="uid://dbuff07o7u7uv"]
 
 [ext_resource type="Texture2D" uid="uid://c35778p1a78q1" path="res://assets/icon.svg" id="1_7wmhe"]
 [ext_resource type="Script" path="res://scenes/boss/boss.gd" id="1_e6ywe"]
@@ -28,6 +28,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector3(3, 3, 3)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite3D:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_y6hls"]
@@ -90,9 +102,25 @@ tracks/1/keys = {
 "values": [Vector3(3, 3, 3)]
 }
 
+[sub_resource type="Animation" id="Animation_7q1f0"]
+resource_name = "get_hit"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 3.14159), Vector3(0, 0, 6.28319)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0yeai"]
 _data = {
 "RESET": SubResource("Animation_d54ab"),
+"get_hit": SubResource("Animation_7q1f0"),
 "in": SubResource("Animation_y6hls"),
 "move_to_player": SubResource("Animation_oidc4"),
 "out": SubResource("Animation_pisb3")
