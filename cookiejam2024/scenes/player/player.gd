@@ -9,11 +9,15 @@ const MOVE_DISTANCE = 5
 const MOVE_TIME = .2
 var can_move:bool = true
 var has_key:bool = false
+var boss
 
 signal heal
 
+func _ready():
+	boss = get_tree().get_first_node_in_group("boss")
+
 func _process(delta):
-	if can_move:
+	if can_move and !boss.is_fighting:
 		if Input.is_action_just_pressed("move_forward"):
 			if front_ray_cast_3d.is_colliding():
 				return

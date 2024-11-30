@@ -21,7 +21,9 @@ func _process(delta):
 	#print(time_passed)
 	
 	var sampled_noise = noise.noise.get_noise_1d(time_passed * 2)
-	sampled_noise = abs(sampled_noise) * 100
+	#sampled_noise = abs(sampled_noise) * 100
+	sampled_noise = sin(time_passed)*2.5 + 15
 	
+	#print(sin(time_passed)*2.5 + 15)
 	light_energy = sampled_noise
 	pass
