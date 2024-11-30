@@ -22,11 +22,11 @@ shader_parameter/vignette_radius = 0.55
 flip_faces = true
 size = Vector2(2, 2)
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_jg1dj"]
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_h0gyd"]
 frequency = 0.0119
 
 [sub_resource type="NoiseTexture3D" id="NoiseTexture3D_ke0t5"]
-noise = SubResource("FastNoiseLite_jg1dj")
+noise = SubResource("FastNoiseLite_h0gyd")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ibymt"]
 
@@ -100,7 +100,7 @@ mesh = SubResource("QuadMesh_15bu2")
 [node name="PlaerLight" type="OmniLight3D" parent="Camera3D"]
 light_color = Color(0.808948, 0.362783, 0.0754934, 1)
 light_energy = 16.0
-omni_range = 15.0
+omni_range = 20.0
 script = ExtResource("4_di5t4")
 noise = SubResource("NoiseTexture3D_ke0t5")
 

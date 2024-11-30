@@ -1,11 +1,14 @@
 extends Node3D
 
+class_name player
+
 @onready var front_ray_cast_3d = $FrontRayCast3D
 @onready var back_ray_cast_3d = $BackRayCast3D
 
 const MOVE_DISTANCE = 5
 const MOVE_TIME = .2
 var can_move:bool = true
+var has_key:bool = false
 
 signal heal
 
@@ -44,5 +47,10 @@ func turn(direction):
 
 func _on_area_3d_area_entered(area):
 	if area.get_parent() is Krople:
-		print("TEST")
+		if get_tree().get_first_node_in_group("vintage").material.get_shader_parameter("outer_radius") > 1.5:
+			return
 		heal.emit()
+		area.get_parent().queue_free()
+	elif area.get_parent() is Key:
+		has_key = true
+		area.get_parent().queue_free()

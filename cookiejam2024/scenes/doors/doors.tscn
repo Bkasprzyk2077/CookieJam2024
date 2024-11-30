@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://b1iumdppxjame"]
+
+[ext_resource type="Texture2D" uid="uid://c35778p1a78q1" path="res://assets/icon.svg" id="1_xajuv"]
+[ext_resource type="Script" path="res://scenes/player/plaer_light.gd" id="2_s1to2"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_jg1dj"]
+frequency = 0.0119
+
+[sub_resource type="NoiseTexture3D" id="NoiseTexture3D_rxe2c"]
+noise = SubResource("FastNoiseLite_jg1dj")
+
+[node name="Doors" type="Node3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.22635, 0)
+texture = ExtResource("1_xajuv")
+
+[node name="PlaerLight" type="OmniLight3D" parent="."]
+light_color = Color(0.808948, 0.362783, 0.0754934, 1)
+light_energy = 16.0
+omni_range = 15.0
+script = ExtResource("2_s1to2")
+noise = SubResource("NoiseTexture3D_rxe2c")
