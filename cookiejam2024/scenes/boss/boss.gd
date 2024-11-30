@@ -21,20 +21,23 @@ var i = 0
 var j = 0
 var is_fighting:bool = false
 
+signal text_end
+
 func _ready():
 	text_label.text = ""
 	
-func boss_tease():
-	text_label.text = ""
-	index = 0
-	current_text = ""
-	full_text = "1, 2, 3, OTCHŁAN PATRZY!"
-	text_timer.start()
+#func boss_tease():
+	#text_label.text = ""
+	#index = 0
+	#current_text = ""
+	#full_text = "1, 2, 3, OTCHŁAN PATRZY!"
+	#text_timer.start()
 
 func boss_talk():
 	is_fighting = true
 	if i == len(dialog_lines):
 		i = 0
+		reset()
 		return
 	text_label.text = ""
 	index = 0
@@ -62,5 +65,8 @@ func _on_text_timer_timeout():
 		index += 1
 	else:
 		text_timer.stop() # Zatrzymaj timer po wyświetleniu całego tekstu
+		if i == len(dialog_lines):
+			i = 0
+			reset()
 		await get_tree().create_timer(1).timeout
 		boss_talk()

@@ -45,8 +45,8 @@ func _ready():
 func check_pose(pose):
 	current_pose = pose
 	
-func teaser():
-	boss.boss_tease()
+#func teaser():
+	#boss.boss_tease()
 
 func _on_enemy_timer_timeout():
 	var pose_player = playerr.get_node("PosePlayer")
@@ -84,6 +84,7 @@ func _on_enemy_timer_timeout():
 	arrow_rect.visible = false
 	await pose_player.animation_finished
 	playerr.get_node("PosePlayer").play("out")
+	#await boss.text_end
 	$EnemyTimer.start()
 	boss.reset()
 	
