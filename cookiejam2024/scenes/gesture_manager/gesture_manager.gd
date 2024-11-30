@@ -95,6 +95,7 @@ func _on_enemy_timer_timeout():
 			animation_player.play("bad_pose")
 			get_tree().get_first_node_in_group("player_animation").play("bad")
 			get_tree().get_first_node_in_group("player_camera").apply_shake()
+			break
 		still_has_time = true
 	arrow_rect.visible = false
 	print("KONIEC DIALOGU")
