@@ -1,0 +1,85 @@
+[gd_scene load_steps=10 format=3 uid="uid://byinelhhfpqii"]
+
+[ext_resource type="Script" path="res://scenes/ui/mainmenu.gd" id="1_0yyw8"]
+[ext_resource type="Theme" uid="uid://byxd4i56ikn0c" path="res://scenes/ui/start.tres" id="1_nx0yw"]
+[ext_resource type="Texture2D" uid="uid://bt83oqwg5x4h1" path="res://scenes/ui/startnapis.png" id="2_esdqu"]
+[ext_resource type="Texture2D" uid="uid://5u10218u457k" path="res://scenes/ui/tłooooo.png" id="2_hf3ax"]
+[ext_resource type="Texture2D" uid="uid://cp3yw387qf7r4" path="res://scenes/ui/tytuł.png" id="3_be07p"]
+[ext_resource type="Theme" uid="uid://bd71slr64sil8" path="res://scenes/ui/przycisk.tres" id="3_bjfbv"]
+[ext_resource type="Texture2D" uid="uid://dnjtx2g2pema2" path="res://scenes/ui/tloo.png" id="3_yafd2"]
+[ext_resource type="Texture2D" uid="uid://cx6lnggj4cugg" path="res://scenes/ui/exitnapis.png" id="4_5ghsv"]
+[ext_resource type="Texture2D" uid="uid://cgilvtv2a0h28" path="res://scenes/ui/tłooo.png" id="4_m64u6"]
+
+[node name="menu" type="CanvasLayer"]
+script = ExtResource("1_0yyw8")
+
+[node name="Tłooooo" type="Sprite2D" parent="."]
+position = Vector2(961, 539)
+scale = Vector2(1.01667, 1.01667)
+texture = ExtResource("2_hf3ax")
+
+[node name="Tloo" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(967, 546)
+texture = ExtResource("3_yafd2")
+
+[node name="Tłooo" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(965, 540)
+texture = ExtResource("4_m64u6")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Startbutton" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -288.0
+offset_top = -143.0
+offset_right = 288.0
+offset_bottom = 143.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_nx0yw")
+
+[node name="Startnapis2" type="Sprite2D" parent="Control/Startbutton"]
+position = Vector2(297, 117)
+scale = Vector2(0.839806, 0.839806)
+texture = ExtResource("2_esdqu")
+
+[node name="Tytuł" type="Sprite2D" parent="Control"]
+position = Vector2(33, -332)
+texture = ExtResource("3_be07p")
+
+[node name="Exit" type="Button" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -283.5
+offset_top = -422.0
+offset_right = 283.5
+offset_bottom = -135.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("3_bjfbv")
+
+[node name="Exitnapis" type="Sprite2D" parent="Exit"]
+position = Vector2(292, 118)
+scale = Vector2(0.823232, 0.823232)
+texture = ExtResource("4_5ghsv")
+
+[connection signal="pressed" from="Control/Startbutton" to="." method="_on_startbutton_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
