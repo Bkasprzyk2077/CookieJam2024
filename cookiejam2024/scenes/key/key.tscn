@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://ipmu4i7geohw"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_obrji"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dcogh"]
+albedo_color = Color(1, 1, 0, 1)
+
+[node name="Key" type="MeshInstance3D"]
+mesh = SubResource("SphereMesh_obrji")
+surface_material_override/0 = SubResource("StandardMaterial3D_dcogh")

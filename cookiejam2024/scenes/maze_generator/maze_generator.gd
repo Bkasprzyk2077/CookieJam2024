@@ -7,11 +7,12 @@ class_name MazeGen
 @export var y_dim = 1   # Opcjonalna wysokość (dla osi Y)
 @export var starting_coords = Vector3i(0, 0, 0)
 @export var allow_loops: bool = true
-
+@export var key_scene: PackedScene
 # Definicja kafelków
 const normal_wall_mesh = "WallMesh"
 const walkable_mesh = "FloorMesh"
 
+var floor_tiles_with_one_neighbour = []
 
 # Sąsiednie kafelki (dla poruszania się po X-Z)
 var adj4 = [
@@ -26,7 +27,9 @@ func _ready() -> void:
 	randomize()
 	place_border()
 	dfs(starting_coords)
-
+	count_floor_neighbors()
+	generate_items()
+	
 # Tworzenie granicy labiryntu
 func place_border():
 	for z in range(-1, z_dim + 1):  # Iteracja po osi Z
@@ -101,3 +104,40 @@ func dfs(start: Vector3i):
 		# Jeśli nie znaleziono nowych ścieżek, oznacz miejsce jako ścianę
 		if not found_new_path:
 			place_wall(current)
+
+# Sprawdzanie, z iloma podłogami sąsiaduje każde pole podłogi
+func count_floor_neighbors():
+	for x in range(x_dim):
+		for z in range(z_dim):
+			var current_pos = Vector3i(x, 0, z)  # Pozycja w płaszczyźnie X-Z
+
+			# Sprawdź, czy aktualne pole jest podłogą
+			if not is_floor(current_pos):
+				continue
+
+			# Licznik sąsiadów będących podłogą
+			var floor_neighbors = 0
+
+			# Iteruj po sąsiadach
+			for offset in adj4:
+				var neighbor_pos = current_pos + offset
+
+				# Sprawdź, czy sąsiad jest w granicach i jest podłogą
+				if is_within_bounds(neighbor_pos) and is_floor(neighbor_pos):
+					floor_neighbors += 1
+			# Wynik dla tego pola
+			if floor_neighbors == 1:
+				floor_tiles_with_one_neighbour.append(current_pos)
+
+func is_floor(pos: Vector3i) -> bool:
+	return get_cell_item(pos) == mesh_library.find_item_by_name("FloorMesh")
+	
+func is_within_bounds(pos: Vector3i) -> bool:
+	return pos.x >= 0 and pos.x < x_dim and \
+		   pos.z >= 0 and pos.z < z_dim
+
+func generate_items():
+	for tile in floor_tiles_with_one_neighbour:
+		var key = key_scene.instantiate()
+		add_child(key)
+		key.global_position = map_to_local(tile)
