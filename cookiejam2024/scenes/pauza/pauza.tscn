@@ -87,3 +87,4 @@ position = Vector2(1005, 192)
 texture = ExtResource("4_sv3ms")
 
 [connection signal="pressed" from="Control/wznow" to="." method="wznow"]
+[connection signal="button_down" from="Control/wznow/menu" to="." method="_on_menu_button_down"]

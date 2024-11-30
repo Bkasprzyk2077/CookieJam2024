@@ -1,10 +1,11 @@
-[gd_scene load_steps=21 format=3 uid="uid://cy8iths304j2u"]
+[gd_scene load_steps=23 format=3 uid="uid://cy8iths304j2u"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_4127a"]
 [ext_resource type="Script" path="res://scenes/player/camera_3d.gd" id="2_xslh3"]
 [ext_resource type="Shader" path="res://shaders/vignettePixel.gdshader" id="3_w2sow"]
 [ext_resource type="Script" path="res://scenes/player/plaer_light.gd" id="4_di5t4"]
 [ext_resource type="Texture2D" uid="uid://ctolnsmc2jb0n" path="res://assets/jojohands-test.png" id="4_s8q2e"]
+[ext_resource type="Texture2D" uid="uid://t4pr20qmah0q" path="res://assets/poses/zakrapianie.png" id="6_psxkr"]
 [ext_resource type="PackedScene" uid="uid://dbuff07o7u7uv" path="res://scenes/boss/boss.tscn" id="6_ttfy4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ynih2"]
@@ -45,6 +46,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(0, 0, 0, 1)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D/HandsWithKrople:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 10, -6.986)]
+}
 
 [sub_resource type="Animation" id="Animation_pn8to"]
 resource_name = "bad"
@@ -78,11 +91,28 @@ tracks/0/keys = {
 "values": [Color(0, 0, 0, 1), Color(0, 0.52549, 0, 1), Color(0, 0, 0, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_rghlq"]
+resource_name = "krople"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D/HandsWithKrople:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 10, -6.986), Vector3(0, 1, -6.986), Vector3(0, 2, -6.986), Vector3(0, 1, -6.986), Vector3(0, 2, -6.986), Vector3(0, 1, -6.986), Vector3(0, 2, -6.986), Vector3(0, 1, -6.986), Vector3(0, 2, -6.986), Vector3(0, 1, -6.986), Vector3(0, 10, -6.986)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3monf"]
 _data = {
 "RESET": SubResource("Animation_waq64"),
 "bad": SubResource("Animation_pn8to"),
-"good": SubResource("Animation_uc2km")
+"good": SubResource("Animation_uc2km"),
+"krople": SubResource("Animation_rghlq")
 }
 
 [sub_resource type="Animation" id="Animation_latfe"]
@@ -277,6 +307,12 @@ modulate = Color(1, 1, 1, 0)
 shaded = true
 no_depth_test = true
 texture = ExtResource("4_s8q2e")
+
+[node name="HandsWithKrople" type="Sprite3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, -6.986)
+shaded = true
+no_depth_test = true
+texture = ExtResource("6_psxkr")
 
 [node name="Boss" parent="Camera3D" instance=ExtResource("6_ttfy4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.72093)

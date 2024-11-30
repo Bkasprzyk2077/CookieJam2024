@@ -18,6 +18,7 @@ config/icon="res://assets/icon.svg"
 [autoload]
 
 Pauza="*res://scenes/pauza/pauza.tscn"
+Transition="*res://scenes/transition/transition.tscn"
 
 [display]
 

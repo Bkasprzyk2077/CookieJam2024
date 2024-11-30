@@ -14,3 +14,7 @@ func pause():
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("pause"):
 		pause()
+
+
+func _on_menu_button_down():
+	Transition.fade_out("res://scenes/ui/mainmenu.tscn")
