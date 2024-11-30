@@ -20,28 +20,12 @@ shader_parameter/vignette_radius = 0.55
 flip_faces = true
 size = Vector2(2, 2)
 
-[sub_resource type="Animation" id="Animation_uc2km"]
-resource_name = "good"
-length = 0.4
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Camera3D/MeshInstance3D:surface_material_override/0:shader_parameter/vignette_color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 1), Color(0, 0.505882, 0, 1), Color(0, 0, 0, 1)]
-}
-
 [sub_resource type="Animation" id="Animation_waq64"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Camera3D/MeshInstance3D:surface_material_override/0:shader_parameter/vignette_color")
+tracks/0/path = NodePath("Camera3D/MeshInstance3D:material_overlay:shader_parameter/vignette_color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -57,14 +41,30 @@ length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Camera3D/MeshInstance3D:surface_material_override/0:shader_parameter/vignette_color")
+tracks/0/path = NodePath("Camera3D/MeshInstance3D:material_overlay:shader_parameter/vignette_color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.2, 0.4),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Color(0, 0, 0, 1), Color(0.478431, 0, 0, 1), Color(0, 0, 0, 1)]
+"values": [Color(0, 0, 0, 1), Color(0.501961, 0, 0, 1), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_uc2km"]
+resource_name = "good"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D/MeshInstance3D:material_overlay:shader_parameter/vignette_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0.52549, 0, 1), Color(0, 0, 0, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3monf"]
