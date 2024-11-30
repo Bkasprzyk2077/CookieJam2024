@@ -1,15 +1,16 @@
-[gd_scene load_steps=10 format=3 uid="uid://cy8iths304j2u"]
+[gd_scene load_steps=11 format=3 uid="uid://cy8iths304j2u"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_4127a"]
 [ext_resource type="Script" path="res://scenes/player/camera_3d.gd" id="2_xslh3"]
 [ext_resource type="Shader" path="res://shaders/vignettePixel.gdshader" id="3_w2sow"]
+[ext_resource type="Texture2D" uid="uid://c35778p1a78q1" path="res://assets/icon.svg" id="4_mj6bj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ynih2"]
 render_priority = 0
 shader = ExtResource("3_w2sow")
 shader_parameter/luminance = Color(1, 1, 1, 1)
-shader_parameter/brightness = 0.32
-shader_parameter/contrast = 1.48
+shader_parameter/brightness = 0.07
+shader_parameter/contrast = 2.98
 shader_parameter/scale = 1.0
 shader_parameter/rotation = 0.08
 shader_parameter/resolution_downsampling = 4.0
@@ -82,9 +83,15 @@ current = true
 script = ExtResource("2_xslh3")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Camera3D"]
+visible = false
 material_overlay = SubResource("ShaderMaterial_ynih2")
-extra_cull_margin = 16384.0
+extra_cull_margin = 1.0
 mesh = SubResource("QuadMesh_15bu2")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Camera3D"]
+light_color = Color(0.808948, 0.362783, 0.0754934, 1)
+light_energy = 16.0
+omni_range = 15.0
 
 [node name="FrontRayCast3D" type="RayCast3D" parent="."]
 target_position = Vector3(0, 0, -5)
@@ -96,3 +103,9 @@ target_position = Vector3(0, 0, 5)
 libraries = {
 "": SubResource("AnimationLibrary_3monf")
 }
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.41801)
+visible = false
+transparent = false
+texture = ExtResource("4_mj6bj")

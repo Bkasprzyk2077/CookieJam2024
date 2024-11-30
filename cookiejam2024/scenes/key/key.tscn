@@ -1,4 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://ipmu4i7geohw"]
+[gd_scene load_steps=4 format=3 uid="uid://ipmu4i7geohw"]
+
+[ext_resource type="Texture2D" uid="uid://c35778p1a78q1" path="res://assets/icon.svg" id="1_fpimf"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_obrji"]
 
@@ -8,3 +10,9 @@ albedo_color = Color(1, 1, 0, 1)
 [node name="Key" type="MeshInstance3D"]
 mesh = SubResource("SphereMesh_obrji")
 surface_material_override/0 = SubResource("StandardMaterial3D_dcogh")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.74528, 0)
+billboard = 2
+shaded = true
+texture = ExtResource("1_fpimf")
