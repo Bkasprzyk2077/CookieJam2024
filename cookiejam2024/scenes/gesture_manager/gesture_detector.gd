@@ -1,5 +1,16 @@
 extends Node2D
 
+var directions = {
+	"up": Vector2(0, -1),
+	"down": Vector2(0, 1),
+	"left": Vector2(-1, 0),
+	"right": Vector2(1, 0),
+	"up_right": Vector2(1, -1).normalized(),
+	"up_left": Vector2(-1, -1).normalized(),
+	"down_right": Vector2(1, 1).normalized(),
+	"down_left": Vector2(-1, 1).normalized()
+}
+
 var is_drawing = false
 var start_position = Vector2.ZERO
 var points = []
