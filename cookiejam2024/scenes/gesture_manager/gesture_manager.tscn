@@ -1,9 +1,69 @@
-[gd_scene load_steps=5 format=3 uid="uid://cdgrqruroljoy"]
+[gd_scene load_steps=11 format=3 uid="uid://cdgrqruroljoy"]
 
 [ext_resource type="Script" path="res://scenes/gesture_manager/gesture_detector.gd" id="1_3sui7"]
 [ext_resource type="Script" path="res://scenes/gesture_manager/gesture_manager.gd" id="1_yymwu"]
 [ext_resource type="Script" path="res://scenes/gesture_manager/gesture_randomizer.gd" id="2_ipkjp"]
 [ext_resource type="Texture2D" uid="uid://dskxaejbn7slw" path="res://assets/arrow.png" id="2_n4sqm"]
+[ext_resource type="Shader" path="res://shaders/vignette.gdshader" id="3_te17o"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m7xjj"]
+shader = ExtResource("3_te17o")
+shader_parameter/alpha = 1.0
+shader_parameter/inner_radius = 0.4
+shader_parameter/outer_radius = 1.5
+shader_parameter/vignette_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_d1drj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Arrows/ColorRect:material:shader_parameter/vignette_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_67120"]
+resource_name = "good_pose"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Arrows/ColorRect:material:shader_parameter/vignette_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 1, 0, 0.498039), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_44w0h"]
+resource_name = "bad_pose"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Arrows/ColorRect:material:shader_parameter/vignette_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 0, 0, 0.498039), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hkkv1"]
+_data = {
+"RESET": SubResource("Animation_d1drj"),
+"bad_pose": SubResource("Animation_44w0h"),
+"good_pose": SubResource("Animation_67120")
+}
 
 [node name="GestureManager" type="Node"]
 script = ExtResource("1_yymwu")
@@ -42,6 +102,14 @@ grow_vertical = 2
 pivot_offset = Vector2(128, 32)
 texture = ExtResource("2_n4sqm")
 
+[node name="ColorRect" type="ColorRect" parent="Arrows"]
+material = SubResource("ShaderMaterial_m7xjj")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="GestureDetector" type="Node2D" parent="."]
 script = ExtResource("1_3sui7")
 
@@ -55,6 +123,11 @@ autostart = true
 
 [node name="PoseTimer" type="Timer" parent="."]
 wait_time = 3.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_hkkv1")
+}
 
 [connection signal="timeout" from="EnemyTimer" to="." method="_on_enemy_timer_timeout"]
 [connection signal="timeout" from="PoseTimer" to="." method="_on_pose_timer_timeout"]

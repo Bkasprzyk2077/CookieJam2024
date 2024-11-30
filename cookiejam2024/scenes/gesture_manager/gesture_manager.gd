@@ -4,6 +4,7 @@ extends Node
 @onready var gesture_randomizer = $GestureRandomizer
 @onready var pose_timer = $PoseTimer
 @onready var arrow_rect = $Arrows/Control/ArrowRect
+@onready var animation_player = $AnimationPlayer
 
 var directions = {
 	"up": -90,
@@ -31,15 +32,17 @@ func _on_enemy_timer_timeout():
 	var poses = gesture_randomizer.get_random_pose()
 	for pose in poses:
 		update_ui(pose)
-		pose_timer.start()
+		#pose_timer.start()
 		print("Zrob: ", pose)
 		await gesture_detector.current_pose
 		if still_has_time == false:
 			print("KONIEC CZASU")
 		elif pose == current_pose:
 			print("DOBRZE")
+			animation_player.play("good_pose")
 		else:
 			print("ZLE")
+			animation_player.play("bad_pose")
 		still_has_time = true
 	arrow_rect.visible = false
 	$EnemyTimer.start()
