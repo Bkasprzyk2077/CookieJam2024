@@ -20,6 +20,17 @@ var directions = {
 	"down_left": 125
 }
 
+var directions_poses = {
+	"up": "res://assets/jojohands-test.png",
+	"down": "res://assets/poses/jojohands-2.png",
+	"left": "res://assets/poses/jojohands-3.png",
+	"right": "res://assets/poses/jojohands-4.png",
+	"up_right": "res://assets/poses/jojohands-5.png",
+	"up_left": "res://assets/poses/jojohands-6.png",
+	"down_right": "res://assets/poses/jojohands-7.png",
+	"down_left": "res://assets/jojohands-test.png"
+}
+
 var current_pose = ""
 var still_has_time = true
 
@@ -38,6 +49,7 @@ func teaser():
 	boss.boss_tease()
 
 func _on_enemy_timer_timeout():
+	var pose_player = playerr.get_node("PosePlayer")
 	enemy_timer.wait_time = randf_range(8, 20)
 	boss.get_node("AnimationPlayer").play("in")
 	await boss.get_node("AnimationPlayer").animation_finished
@@ -53,22 +65,26 @@ func _on_enemy_timer_timeout():
 		if still_has_time == false:
 			print("KONIEC CZASU")
 		elif pose == current_pose:
+			playerr.get_node("Camera3D/Hands").texture = load(directions_poses[pose])
 			print("DOBRZE")
-			if playerr.get_node("PosePlayer").is_playing():
-				playerr.get_node("PosePlayer").play("out")
-			playerr.get_node("PosePlayer").play("in")
+			if pose_player.is_playing():
+				pose_player.play("out")
+				#await pose_player.animatiot_finished
+			pose_player.play("in")
 			get_tree().get_first_node_in_group("player_animation").play("good")
 			animation_player.play("good_pose")
 		else:
 			print("ZLE")
+			#pose_player.play("out")
 			take_damage()
 			animation_player.play("bad_pose")
 			get_tree().get_first_node_in_group("player_animation").play("bad")
 			get_tree().get_first_node_in_group("player_camera").apply_shake()
 		still_has_time = true
 	arrow_rect.visible = false
-	$EnemyTimer.start()
+	await pose_player.animation_finished
 	playerr.get_node("PosePlayer").play("out")
+	$EnemyTimer.start()
 	boss.reset()
 	
 func take_damage():

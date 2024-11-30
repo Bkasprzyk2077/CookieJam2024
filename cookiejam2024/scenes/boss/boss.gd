@@ -52,6 +52,8 @@ func reset():
 	text_label.text = ""
 	i = 0
 	j = 1
+	await $AnimationPlayer.animation_finished
+	get_tree().get_first_node_in_group("player").can_move = true
 
 func _on_text_timer_timeout():
 	if index < full_text.length():

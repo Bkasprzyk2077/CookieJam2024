@@ -100,6 +100,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector3(10, 10, 10), Vector3(1, 1, 1), Vector3(1, 1, 1)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D/Hands:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.41),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_latfe"]
 length = 0.001
@@ -115,6 +127,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector3(10, 10, 10)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D/Hands:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_4xsyt"]
 resource_name = "out"
@@ -126,10 +150,22 @@ tracks/0/path = NodePath("Camera3D/Hands:scale")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.39, 0.99),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.99),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(1, 1, 1), Vector3(0.8, 0.8, 0.8), Vector3(10, 10, 10)]
+"values": [Vector3(1, 1, 1), Vector3(10, 10, 10)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D/Hands:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.37),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1775w"]
@@ -161,6 +197,7 @@ noise = SubResource("NoiseTexture3D_ke0t5")
 
 [node name="Hands" type="Sprite3D" parent="Camera3D"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, -6.986)
+modulate = Color(1, 1, 1, 0)
 shaded = true
 no_depth_test = true
 texture = ExtResource("4_s8q2e")
