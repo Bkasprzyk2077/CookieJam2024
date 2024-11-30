@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cy8iths304j2u"]
+[gd_scene load_steps=21 format=3 uid="uid://cy8iths304j2u"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_4127a"]
 [ext_resource type="Script" path="res://scenes/player/camera_3d.gd" id="2_xslh3"]
@@ -97,7 +97,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(10, 10, 10)]
+"values": [Vector3(1, 1, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -110,6 +110,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera3D/Hands:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, -6.986)]
 }
 
 [sub_resource type="Animation" id="Animation_fy5if"]
@@ -168,11 +180,39 @@ tracks/1/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_uvh5d"]
+resource_name = "poke"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D/Hands:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.266667, 0.4, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -10, -6.986), Vector3(0, 0.5, -6.986), Vector3(0, 0, -6.986), Vector3(0, 0, -6.986), Vector3(0, 0, -6.986), Vector3(0, -10, -6.986)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D/Hands:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.933333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1775w"]
 _data = {
 "RESET": SubResource("Animation_latfe"),
 "in": SubResource("Animation_fy5if"),
-"out": SubResource("Animation_4xsyt")
+"out": SubResource("Animation_4xsyt"),
+"poke": SubResource("Animation_uvh5d")
 }
 
 [node name="Player" type="Node3D" groups=["player"]]
@@ -196,7 +236,7 @@ script = ExtResource("4_di5t4")
 noise = SubResource("NoiseTexture3D_ke0t5")
 
 [node name="Hands" type="Sprite3D" parent="Camera3D"]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, -6.986)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.986)
 modulate = Color(1, 1, 1, 0)
 shaded = true
 no_depth_test = true

@@ -57,14 +57,21 @@ func _on_enemy_timer_timeout():
 	boss.boss_talk()
 	arrow_rect.visible = true
 	var poses = gesture_randomizer.get_random_pose()
+	$EnemyTimer.stop()
 	for pose in poses:
-		$EnemyTimer.stop()
 		update_ui(pose)
 		#pose_timer.start()
 		await gesture_detector.current_pose
-		if still_has_time == false:
-			print("KONIEC CZASU")
-		elif pose == current_pose:
+		if pose == current_pose:
+			if pose == poses.back():
+				playerr.get_node("Camera3D/Hands").texture = load("res://assets/poses/eyepoke.png")
+				if pose_player.is_playing():
+					pose_player.play("out")
+				pose_player.play("poke")
+				get_tree().get_first_node_in_group("player_animation").play("good")
+				animation_player.play("good_pose")
+				await pose_player.animation_finished
+				break
 			playerr.get_node("Camera3D/Hands").texture = load(directions_poses[pose])
 			print("DOBRZE")
 			if pose_player.is_playing():
@@ -82,8 +89,9 @@ func _on_enemy_timer_timeout():
 			get_tree().get_first_node_in_group("player_camera").apply_shake()
 		still_has_time = true
 	arrow_rect.visible = false
-	await pose_player.animation_finished
+	print("KONIEC DIALOGU")
 	playerr.get_node("PosePlayer").play("out")
+	await pose_player.animation_finished
 	#await boss.text_end
 	$EnemyTimer.start()
 	boss.reset()
