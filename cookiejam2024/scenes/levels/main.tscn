@@ -1,18 +1,16 @@
-[gd_scene load_steps=8 format=3 uid="uid://bw20s60c2vger"]
+[gd_scene load_steps=7 format=3 uid="uid://bw20s60c2vger"]
 
 [ext_resource type="PackedScene" uid="uid://cdgrqruroljoy" path="res://scenes/gesture_manager/gesture_manager.tscn" id="1_5ko27"]
 [ext_resource type="PackedScene" uid="uid://cy8iths304j2u" path="res://scenes/player/Player.tscn" id="1_8ng35"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2chd8"]
 
-[sub_resource type="Sky" id="Sky_8vrxq"]
+[sub_resource type="Sky" id="Sky_va3r6"]
 sky_material = SubResource("ProceduralSkyMaterial_2chd8")
 
 [sub_resource type="Environment" id="Environment_4oiws"]
 background_mode = 2
-sky = SubResource("Sky_8vrxq")
-
-[sub_resource type="MeshLibrary" id="MeshLibrary_lvps5"]
+sky = SubResource("Sky_va3r6")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_6n4x8"]
 size = Vector2(50, 50)
@@ -28,9 +26,6 @@ environment = SubResource("Environment_4oiws")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Enviro"]
 transform = Transform3D(1, 0, 0, 0, 0.438371, 0.898794, 0, -0.898794, 0.438371, 0, 0, 0)
-
-[node name="GridMap" type="GridMap" parent="."]
-mesh_library = SubResource("MeshLibrary_lvps5")
 
 [node name="Map" type="CSGCombiner3D" parent="."]
 use_collision = true

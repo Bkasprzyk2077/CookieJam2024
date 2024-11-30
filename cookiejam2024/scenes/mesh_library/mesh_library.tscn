@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://b480jnwrfsebq"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_v7r2v"]
+size = Vector2(5, 5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cwi67"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_qis4y"]
+size = Vector3(5, 5, 5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j1hxa"]
+albedo_color = Color(0, 0, 0, 1)
+
+[node name="MeshLibrary" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4, 0)
+
+[node name="FloorMesh" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_v7r2v")
+surface_material_override/0 = SubResource("StandardMaterial3D_cwi67")
+
+[node name="WallMesh" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_qis4y")
+surface_material_override/0 = SubResource("StandardMaterial3D_j1hxa")
