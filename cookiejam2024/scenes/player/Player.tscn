@@ -1,10 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://cy8iths304j2u"]
+[gd_scene load_steps=20 format=3 uid="uid://cy8iths304j2u"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_4127a"]
 [ext_resource type="Script" path="res://scenes/player/camera_3d.gd" id="2_xslh3"]
 [ext_resource type="Shader" path="res://shaders/vignettePixel.gdshader" id="3_w2sow"]
 [ext_resource type="Script" path="res://scenes/player/plaer_light.gd" id="4_di5t4"]
 [ext_resource type="Texture2D" uid="uid://ctolnsmc2jb0n" path="res://assets/jojohands-test.png" id="4_s8q2e"]
+[ext_resource type="PackedScene" uid="uid://dbuff07o7u7uv" path="res://scenes/boss/boss.tscn" id="6_ttfy4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ynih2"]
 render_priority = 0
@@ -84,6 +85,60 @@ _data = {
 "good": SubResource("Animation_uc2km")
 }
 
+[sub_resource type="Animation" id="Animation_fy5if"]
+resource_name = "in"
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D/Hands:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.99),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(10, 10, 10), Vector3(1, 1, 1), Vector3(1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_latfe"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D/Hands:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(10, 10, 10)]
+}
+
+[sub_resource type="Animation" id="Animation_4xsyt"]
+resource_name = "out"
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D/Hands:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.39, 0.99),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(0.8, 0.8, 0.8), Vector3(10, 10, 10)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1775w"]
+_data = {
+"RESET": SubResource("Animation_latfe"),
+"in": SubResource("Animation_fy5if"),
+"out": SubResource("Animation_4xsyt")
+}
+
 [node name="Player" type="Node3D" groups=["player"]]
 script = ExtResource("1_4127a")
 
@@ -105,10 +160,13 @@ script = ExtResource("4_di5t4")
 noise = SubResource("NoiseTexture3D_ke0t5")
 
 [node name="Hands" type="Sprite3D" parent="Camera3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.986)
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, -6.986)
 shaded = true
 no_depth_test = true
 texture = ExtResource("4_s8q2e")
+
+[node name="Boss" parent="Camera3D" instance=ExtResource("6_ttfy4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.72093)
 
 [node name="Area3D" type="Area3D" parent="."]
 collision_layer = 2
@@ -126,6 +184,11 @@ target_position = Vector3(0, 0, 5)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." groups=["player_animation"]]
 libraries = {
 "": SubResource("AnimationLibrary_3monf")
+}
+
+[node name="PosePlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_1775w")
 }
 
 [connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
