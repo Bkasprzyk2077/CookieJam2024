@@ -7,6 +7,8 @@ const MOVE_DISTANCE = 5
 const MOVE_TIME = .2
 var can_move:bool = true
 
+signal heal
+
 func _process(delta):
 	if can_move:
 		if Input.is_action_just_pressed("move_forward"):
@@ -38,3 +40,9 @@ func turn(direction):
 	tween.tween_property(self, "rotation_degrees:y", rotation_degrees.y + 90 * direction, MOVE_TIME)
 	await tween.finished
 	can_move = true
+
+
+func _on_area_3d_area_entered(area):
+	if area.get_parent() is Krople:
+		print("TEST")
+		heal.emit()

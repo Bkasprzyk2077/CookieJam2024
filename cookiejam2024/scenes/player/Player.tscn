@@ -4,7 +4,6 @@
 [ext_resource type="Script" path="res://scenes/player/camera_3d.gd" id="2_xslh3"]
 [ext_resource type="Shader" path="res://shaders/vignettePixel.gdshader" id="3_w2sow"]
 [ext_resource type="Script" path="res://scenes/player/plaer_light.gd" id="4_di5t4"]
-[ext_resource type="Texture2D" uid="uid://c35778p1a78q1" path="res://assets/icon.svg" id="4_mj6bj"]
 [ext_resource type="Texture2D" uid="uid://ctolnsmc2jb0n" path="res://assets/jojohands-test.png" id="4_s8q2e"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ynih2"]
@@ -28,6 +27,8 @@ frequency = 0.0119
 
 [sub_resource type="NoiseTexture3D" id="NoiseTexture3D_ke0t5"]
 noise = SubResource("FastNoiseLite_jg1dj")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ibymt"]
 
 [sub_resource type="Animation" id="Animation_waq64"]
 length = 0.001
@@ -109,6 +110,13 @@ shaded = true
 no_depth_test = true
 texture = ExtResource("4_s8q2e")
 
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("CapsuleShape3D_ibymt")
+
 [node name="FrontRayCast3D" type="RayCast3D" parent="."]
 target_position = Vector3(0, 0, -5)
 
@@ -120,8 +128,4 @@ libraries = {
 "": SubResource("AnimationLibrary_3monf")
 }
 
-[node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.41801)
-visible = false
-transparent = false
-texture = ExtResource("4_mj6bj")
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]

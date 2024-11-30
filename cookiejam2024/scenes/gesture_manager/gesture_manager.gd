@@ -21,8 +21,10 @@ var current_pose = ""
 var still_has_time = true
 
 func _ready():
+	var player = get_tree().get_first_node_in_group("player")
 	arrow_rect.visible = false
 	gesture_detector.current_pose.connect(check_pose.bind())
+	player.heal.connect(heal.bind())
 
 func check_pose(pose):
 	current_pose = pose
@@ -65,6 +67,12 @@ func death():
 	print("DEATH")
 	var material = $Arrows/Vignette.material
 	material.set_shader_parameter("outer_radius", 1.5)
+
+func heal():
+	var material = $Arrows/Vignette.material
+	if material.get_shader_parameter("outer_radius") > 1.5:
+		return
+	material.set_shader_parameter("outer_radius", min(material.get_shader_parameter("outer_radius") + 0.4, 1.5))
 
 func update_ui(pose):
 	arrow_rect.rotation_degrees = directions[pose]
