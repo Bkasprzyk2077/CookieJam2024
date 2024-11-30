@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://ipmu4i7geohw"]
+[gd_scene load_steps=7 format=3 uid="uid://ipmu4i7geohw"]
 
 [ext_resource type="Script" path="res://scenes/key/key.gd" id="1_0llj0"]
 [ext_resource type="Texture2D" uid="uid://d2rgqge8v4kli" path="res://assets/key.png" id="1_ri5r3"]
@@ -9,6 +9,9 @@ frequency = 0.0119
 
 [sub_resource type="NoiseTexture3D" id="NoiseTexture3D_vbtkn"]
 noise = SubResource("FastNoiseLite_tu52l")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_fysrk"]
+radius = 1.18
 
 [node name="Key" type="Node3D"]
 script = ExtResource("1_0llj0")
@@ -27,3 +30,11 @@ omni_range = 20.0
 omni_attenuation = 4.613
 script = ExtResource("2_wa4fp")
 noise = SubResource("NoiseTexture3D_vbtkn")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.12341, 0)
+shape = SubResource("SphereShape3D_fysrk")

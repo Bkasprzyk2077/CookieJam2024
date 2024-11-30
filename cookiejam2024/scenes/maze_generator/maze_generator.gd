@@ -9,6 +9,7 @@ class_name MazeGen
 @export var allow_loops: bool = true
 @export var key_scene: PackedScene
 @export var krople_scene: PackedScene
+@export var doors_scene: PackedScene
 # Definicja kafelków
 const normal_wall_mesh = "WallMesh"
 const walkable_mesh = "FloorMesh"
@@ -141,7 +142,12 @@ func generate_items():
 	floor_tiles_with_one_neighbour.shuffle()
 	var key = key_scene.instantiate()
 	add_child(key)
-	key.global_position = map_to_local(floor_tiles_with_one_neighbour.pick_random())
+	key.global_position = map_to_local(floor_tiles_with_one_neighbour.pop_front())
+	
+	var doors = doors_scene.instantiate()
+	add_child(doors)
+	doors.global_position = map_to_local(floor_tiles_with_one_neighbour.pop_front())
+	
 	for tile in floor_tiles_with_one_neighbour:
 		var krople = krople_scene.instantiate()
 		add_child(krople)
