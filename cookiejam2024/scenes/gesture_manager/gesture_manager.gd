@@ -113,6 +113,7 @@ func take_damage():
 
 func death():
 	print("DEATH")
+	Transition.fade_out("res://scenes/end_game_menu/EndGameMenu.tscn")
 	var material = $Arrows/Vignette.material
 	material.set_shader_parameter("outer_radius", 1.5)
 
