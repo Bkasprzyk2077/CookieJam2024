@@ -15,6 +15,7 @@ class_name MazeGen
 # Definicja kafelków
 const normal_wall_mesh = "WallMesh"
 const walkable_mesh = "FloorMesh"
+const walkable_mesh2 = "FloorMesh2"
 
 var floor_tiles_with_one_neighbour = []
 var floor_tiles_with_many_neighbours = []
@@ -55,8 +56,22 @@ func place_wall(pos: Vector3i):
 	set_cell_item(pos, mesh_library.find_item_by_name(normal_wall_mesh))
 
 # Umieszczanie podłogi
+#func place_floor(pos: Vector3i):
+	#set_cell_item(pos, mesh_library.find_item_by_name(walkable_mesh))
+
 func place_floor(pos: Vector3i):
-	set_cell_item(pos, mesh_library.find_item_by_name(walkable_mesh))
+	# Wyliczamy sumę współrzędnych, aby określić typ pola
+	var is_black_square = (pos.x + pos.y + pos.z) % 2 == 0
+
+	# Wybieramy odpowiedni typ pola
+	var mesh_name: String
+	if is_black_square:
+		mesh_name = walkable_mesh
+	else:
+		mesh_name = walkable_mesh2
+
+	# Ustawiamy element siatki
+	set_cell_item(pos, mesh_library.find_item_by_name(mesh_name))
 
 # Sprawdzanie, czy kafelek jest ścianą
 func is_wall(pos: Vector3i) -> bool:
@@ -138,7 +153,7 @@ func count_floor_neighbors():
 	floor_tiles_with_many_neighbours.shuffle()
 			
 func is_floor(pos: Vector3i) -> bool:
-	return get_cell_item(pos) == mesh_library.find_item_by_name("FloorMesh")
+	return (get_cell_item(pos) == mesh_library.find_item_by_name("FloorMesh")) or (get_cell_item(pos) == mesh_library.find_item_by_name("FloorMesh2"))
 	
 func is_within_bounds(pos: Vector3i) -> bool:
 	return pos.x >= 0 and pos.x < x_dim and \
@@ -192,10 +207,10 @@ func generate_items():
 		add_child(krople)
 		krople.global_position = map_to_local(tile)
 		
-	for i in range(6):
-		var trap = trap_scene.instantiate()
-		add_child(trap)
-		trap.global_position = map_to_local(floor_tiles_with_many_neighbours.pop_front())
+	#for i in range(6):
+		#var trap = trap_scene.instantiate()
+		#add_child(trap)
+		#trap.global_position = map_to_local(floor_tiles_with_many_neighbours.pop_front())
 	
 	while len(get_tree().get_nodes_in_group("kropla")) < 5:
 		var krople = krople_scene.instantiate()

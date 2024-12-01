@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://b480jnwrfsebq"]
+[gd_scene load_steps=11 format=3 uid="uid://b480jnwrfsebq"]
 
 [ext_resource type="Texture2D" uid="uid://cyfdp1h2arqlk" path="res://assets/kafle-x9.png" id="1_6rup2"]
+[ext_resource type="Texture2D" uid="uid://cxoc6408kew75" path="res://assets/kafle-jasne.png" id="2_3xkm4"]
 [ext_resource type="Texture2D" uid="uid://dtrai6e0ako78" path="res://assets/scianatextur-x9.png" id="2_yre78"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qep5c"]
@@ -9,7 +10,7 @@ albedo_texture = ExtResource("1_6rup2")
 [sub_resource type="ImageTexture" id="ImageTexture_k8p5b"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_octf1"]
-albedo_texture = ExtResource("1_6rup2")
+albedo_texture = ExtResource("2_3xkm4")
 heightmap_texture = SubResource("ImageTexture_k8p5b")
 uv1_triplanar_sharpness = 7.46427
 
@@ -34,6 +35,10 @@ data = PackedVector3Array(-2.5, 2.5, 2.5, 2.5, 2.5, 2.5, -2.5, -2.5, 2.5, 2.5, 2
 [node name="MeshLibrary" type="Node3D"]
 
 [node name="FloorMesh" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_qep5c")
+mesh = SubResource("PlaneMesh_v7r2v")
+
+[node name="FloorMesh2" type="MeshInstance3D" parent="."]
 material_override = SubResource("StandardMaterial3D_qep5c")
 mesh = SubResource("PlaneMesh_v7r2v")
 
