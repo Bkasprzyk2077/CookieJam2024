@@ -25,6 +25,10 @@ Transition="*res://scenes/transition/transition.tscn"
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 
+[gui]
+
+theme/custom_font="res://assets/font/PixelifySans-VariableFont_wght.ttf"
+
 [input]
 
 move_forward={

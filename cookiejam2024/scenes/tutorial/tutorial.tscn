@@ -1,0 +1,616 @@
+[gd_scene load_steps=94 format=3 uid="uid://bu07ht11fukh8"]
+
+[ext_resource type="Script" path="res://scenes/tutorial/tutorial.gd" id="1_xrawa"]
+[ext_resource type="Texture2D" uid="uid://dnjtx2g2pema2" path="res://scenes/ui/tloo.png" id="2_65sse"]
+[ext_resource type="Texture2D" uid="uid://ksg4os57mpb2" path="res://assets/tutorial/asdw/Grafika_bez_nazwy-1.png" id="3_nf2vy"]
+[ext_resource type="Texture2D" uid="uid://cotvdyleiowpg" path="res://assets/tutorial/strzalka/Grafika_bez_nazwy-1.png" id="3_pfeeb"]
+[ext_resource type="Texture2D" uid="uid://cmdflr4gee35p" path="res://assets/tutorial/asdw/Grafika_bez_nazwy-2.png" id="4_8l7hg"]
+[ext_resource type="Texture2D" uid="uid://ct5clvg6447pk" path="res://assets/tutorial/strzalka/Grafika_bez_nazwy-2.png" id="4_dwrwo"]
+[ext_resource type="Texture2D" uid="uid://bavr1x4tq4rx8" path="res://assets/tutorial/asdw/Grafika_bez_nazwy-3.png" id="5_11iur"]
+[ext_resource type="Texture2D" uid="uid://dmn30cxktog6e" path="res://assets/tutorial/strzalka/Grafika_bez_nazwy-3.png" id="5_du66h"]
+[ext_resource type="Texture2D" uid="uid://byd2du5j1lu66" path="res://assets/tutorial/asdw/Grafika_bez_nazwy-4.png" id="6_i2ji4"]
+[ext_resource type="Texture2D" uid="uid://cpi52l6x31usg" path="res://assets/tutorial/strzalka/Grafika_bez_nazwy-4.png" id="6_laj1w"]
+[ext_resource type="Texture2D" uid="uid://bdka4umgn82x3" path="res://assets/tutorial/asdw/Grafika_bez_nazwy-5.png" id="7_7v854"]
+[ext_resource type="Texture2D" uid="uid://cxqn1j2gst5k" path="res://assets/tutorial/strzalka/Grafika_bez_nazwy-5.png" id="7_wg4p8"]
+[ext_resource type="Texture2D" uid="uid://d0vhgs7sakyc6" path="res://assets/tutorial/strzalka/Grafika_bez_nazwy-6.png" id="8_j711f"]
+[ext_resource type="Texture2D" uid="uid://rq0u87khjnmt" path="res://assets/tutorial/asdw/Grafika_bez_nazwy-6.png" id="8_w8et0"]
+[ext_resource type="Texture2D" uid="uid://c663f3dwf0or2" path="res://assets/tutorial/strzalka/Grafika_bez_nazwy-7.png" id="9_nlpvt"]
+[ext_resource type="Texture2D" uid="uid://dxafut3nxrf5d" path="res://assets/tutorial/asdw/Grafika_bez_nazwy-7.png" id="9_qovyh"]
+[ext_resource type="Texture2D" uid="uid://cpeuqihqq1xce" path="res://assets/tutorial/asdw/Grafika_bez_nazwy-8.png" id="10_48xd4"]
+[ext_resource type="Texture2D" uid="uid://ehpxjfajid8k" path="res://assets/tutorial/strzalka/Grafika_bez_nazwy-8.png" id="10_wm4h0"]
+[ext_resource type="Texture2D" uid="uid://bofyabskpvrkd" path="res://assets/tutorial/asdw/Grafika_bez_nazwy-9.png" id="11_3h206"]
+[ext_resource type="Texture2D" uid="uid://crsk8lif38nwj" path="res://assets/tutorial/strzalka/Grafika_bez_nazwy-9.png" id="11_kehvd"]
+[ext_resource type="Texture2D" uid="uid://02jag124xlnj" path="res://assets/tutorial/strzalka/Grafika_bez_nazwy-10.png" id="12_iy21o"]
+[ext_resource type="Texture2D" uid="uid://bxvwb37uy3ifk" path="res://assets/tutorial/asdw/Grafika_bez_nazwy-10.png" id="12_qf3l8"]
+[ext_resource type="Texture2D" uid="uid://cyjkddsbdvlyk" path="res://assets/tutorial/strzalka/Grafika_bez_nazwy-11.png" id="13_2dhl3"]
+[ext_resource type="Texture2D" uid="uid://3dc4uqgsgi8t" path="res://assets/tutorial/asdw/Grafika_bez_nazwy-11.png" id="13_eqag6"]
+[ext_resource type="Texture2D" uid="uid://do1fox2pua1wh" path="res://assets/tutorial/strzalka/Grafika_bez_nazwy-12.png" id="14_eejtw"]
+[ext_resource type="Texture2D" uid="uid://c05mjt1ipdy77" path="res://assets/tutorial/asdw/Grafika_bez_nazwy-12.png" id="14_r1oqe"]
+[ext_resource type="Texture2D" uid="uid://c5yklc5b3slg0" path="res://assets/tutorial/strzalka/Grafika_bez_nazwy-13.png" id="15_uldyw"]
+[ext_resource type="Texture2D" uid="uid://byp587wre4cgy" path="res://assets/tutorial/asdw/Grafika_bez_nazwy-13.png" id="15_y4ubo"]
+[ext_resource type="Texture2D" uid="uid://v4cikxa1d8t2" path="res://assets/tutorial/asdw/Grafika_bez_nazwy-14.png" id="16_2h8tk"]
+[ext_resource type="Texture2D" uid="uid://bc5gmt7dksicj" path="res://assets/tutorial/strzalka/Grafika_bez_nazwy-14.png" id="16_48wtb"]
+[ext_resource type="Texture2D" uid="uid://dfb5eypnxlg4j" path="res://assets/tutorial/strzalka/Grafika_bez_nazwy-15.png" id="17_875k0"]
+[ext_resource type="Texture2D" uid="uid://dmljwt4tccllv" path="res://assets/tutorial/asdw/Grafika_bez_nazwy-15.png" id="17_wpehq"]
+[ext_resource type="Texture2D" uid="uid://b2c8b4yx6aqot" path="res://assets/tutorial/strzalka/Grafika_bez_nazwy-16.png" id="18_6wtte"]
+[ext_resource type="Texture2D" uid="uid://bfwftdrceqkx3" path="res://assets/tutorial/asdw/Grafika_bez_nazwy-16.png" id="18_i5kiu"]
+[ext_resource type="Texture2D" uid="uid://daui15r3mer1s" path="res://assets/tutorial/strzalka/Grafika_bez_nazwy-17.png" id="19_6tltm"]
+[ext_resource type="Texture2D" uid="uid://dyrrp45bw5l25" path="res://assets/tutorial/asdw/Grafika_bez_nazwy-17.png" id="19_cywma"]
+[ext_resource type="Texture2D" uid="uid://cdfu52puk6wvq" path="res://assets/tutorial/asdw/Grafika_bez_nazwy-18.png" id="20_3quo8"]
+[ext_resource type="Texture2D" uid="uid://qgoyjsvoxamd" path="res://assets/tutorial/strzalka/Grafika_bez_nazwy-18.png" id="20_vhkrg"]
+[ext_resource type="Texture2D" uid="uid://835m30jjsqc5" path="res://assets/tutorial/asdw/Grafika_bez_nazwy-19.png" id="21_hvmgy"]
+[ext_resource type="Texture2D" uid="uid://fk3717vtnf64" path="res://assets/tutorial/strzalka/Grafika_bez_nazwy-19.png" id="21_lkl10"]
+[ext_resource type="Texture2D" uid="uid://iolxw8wkfjtp" path="res://assets/tutorial/strzalka/Grafika_bez_nazwy-20.png" id="22_7dxy0"]
+[ext_resource type="Texture2D" uid="uid://x0ugglffu7ah" path="res://assets/tutorial/asdw/Grafika_bez_nazwy-20.png" id="22_xry7d"]
+[ext_resource type="Texture2D" uid="uid://dyhaduqnkdgju" path="res://assets/tutorial/asdw/Grafika_bez_nazwy-21.png" id="23_flto3"]
+[ext_resource type="Texture2D" uid="uid://c1lrb43l5c5vi" path="res://assets/tutorial/strzalka/Grafika_bez_nazwy-21.png" id="23_tp302"]
+[ext_resource type="Texture2D" uid="uid://7xyquunplxe2" path="res://assets/tutorial/asdw/Grafika_bez_nazwy-22.png" id="24_1mmdy"]
+[ext_resource type="Texture2D" uid="uid://dwo7quncwgcxd" path="res://assets/tutorial/strzalka/Grafika_bez_nazwy-22.png" id="24_x5cul"]
+[ext_resource type="Texture2D" uid="uid://rimg67l84xjt" path="res://assets/tutorial/strzalka/Grafika_bez_nazwy-23.png" id="25_4ltli"]
+[ext_resource type="Texture2D" uid="uid://c4t6u2w1nu2yt" path="res://assets/tutorial/asdw/Grafika_bez_nazwy-23.png" id="25_e5qih"]
+[ext_resource type="Texture2D" uid="uid://c4u77ets457f" path="res://assets/tutorial/strzalka/Grafika_bez_nazwy-24.png" id="26_gguh6"]
+[ext_resource type="Texture2D" uid="uid://dfntd3gqcy0a6" path="res://assets/tutorial/asdw/Grafika_bez_nazwy-24.png" id="26_kcoyr"]
+[ext_resource type="Texture2D" uid="uid://fehgg0bk1558" path="res://assets/tutorial/strzalka/Grafika_bez_nazwy-25.png" id="27_0ue7q"]
+[ext_resource type="Texture2D" uid="uid://b7ekh8tj6vo5t" path="res://assets/tutorial/asdw/Grafika_bez_nazwy-25.png" id="27_41ap1"]
+[ext_resource type="Texture2D" uid="uid://bc56au5chghpc" path="res://assets/tutorial/strzalka/Grafika_bez_nazwy-26.png" id="28_8honk"]
+[ext_resource type="Texture2D" uid="uid://bp53fhp7kmf8j" path="res://assets/tutorial/asdw/Grafika_bez_nazwy-26.png" id="28_43pat"]
+[ext_resource type="Texture2D" uid="uid://crn10jo6tmphg" path="res://assets/tutorial/strzalka/Grafika_bez_nazwy-27.png" id="29_hqjpt"]
+[ext_resource type="Texture2D" uid="uid://0kuc88f2tfgn" path="res://assets/tutorial/asdw/Grafika_bez_nazwy-27.png" id="29_jn08s"]
+[ext_resource type="Texture2D" uid="uid://dqcvcqbsibnqa" path="res://assets/tutorial/strzalka/Grafika_bez_nazwy-28.png" id="30_3cbr4"]
+[ext_resource type="Texture2D" uid="uid://c41xh1u0sub8h" path="res://assets/tutorial/asdw/Grafika_bez_nazwy-28.png" id="30_h00hx"]
+[ext_resource type="Texture2D" uid="uid://dxh0pgqfqcblg" path="res://assets/tutorial/asdw/Grafika_bez_nazwy-29.png" id="31_kps6s"]
+[ext_resource type="Texture2D" uid="uid://domsgvonb143q" path="res://assets/tutorial/strzalka/Grafika_bez_nazwy-29.png" id="31_ry8mq"]
+[ext_resource type="Texture2D" uid="uid://ct86pt2irkihj" path="res://assets/tutorial/strzalka/Grafika_bez_nazwy-30.png" id="32_47cli"]
+[ext_resource type="Texture2D" uid="uid://brrxp7mkxxn8r" path="res://assets/tutorial/asdw/Grafika_bez_nazwy-30.png" id="32_bbkxt"]
+[ext_resource type="Texture2D" uid="uid://wn4tj1ypicet" path="res://assets/tutorial/asdw/Grafika_bez_nazwy-31.png" id="33_vpuuc"]
+[ext_resource type="Texture2D" uid="uid://bo27hyksn3soh" path="res://assets/tutorial/strzalka/Grafika_bez_nazwy-31.png" id="33_wm2tf"]
+[ext_resource type="Texture2D" uid="uid://c1nnsjoa20jv2" path="res://assets/tutorial/strzalka/Grafika_bez_nazwy-32.png" id="34_bmkk6"]
+[ext_resource type="Texture2D" uid="uid://ca3y3bfed3dip" path="res://assets/tutorial/asdw/Grafika_bez_nazwy-32.png" id="34_g37qn"]
+[ext_resource type="Texture2D" uid="uid://c3niludxwvblj" path="res://assets/tutorial/strzalka/Grafika_bez_nazwy-33.png" id="35_gjvik"]
+[ext_resource type="Texture2D" uid="uid://dyrk3wtagbl65" path="res://assets/tutorial/asdw/Grafika_bez_nazwy-33.png" id="35_qp15g"]
+[ext_resource type="Texture2D" uid="uid://cldlaxnfv3br2" path="res://assets/tutorial/asdw/Grafika_bez_nazwy-34.png" id="36_1t1f5"]
+[ext_resource type="Texture2D" uid="uid://bhh8lyi2563s6" path="res://assets/tutorial/strzalka/Grafika_bez_nazwy-34.png" id="36_ya507"]
+[ext_resource type="Texture2D" uid="uid://dg75awwe3ivpt" path="res://assets/tutorial/strzalka/Grafika_bez_nazwy-35.png" id="37_m0eha"]
+[ext_resource type="Texture2D" uid="uid://4ay5res5ngvr" path="res://assets/tutorial/asdw/Grafika_bez_nazwy-35.png" id="37_yal0f"]
+[ext_resource type="Texture2D" uid="uid://t4b6atd7uotg" path="res://assets/tutorial/strzalka/Grafika_bez_nazwy-36.png" id="38_aa3sw"]
+[ext_resource type="Texture2D" uid="uid://dkw5umb2ifucf" path="res://assets/tutorial/asdw/Grafika_bez_nazwy-36.png" id="38_iqbud"]
+[ext_resource type="Texture2D" uid="uid://dh08302k1fk70" path="res://assets/tutorial/asdw/Grafika_bez_nazwy-37.png" id="39_5sibw"]
+[ext_resource type="Texture2D" uid="uid://nv17u6lu3rfi" path="res://assets/tutorial/asdw/Grafika_bez_nazwy-38.png" id="40_tyl62"]
+[ext_resource type="Texture2D" uid="uid://codgpkvjat648" path="res://assets/tutorial/asdw/Grafika_bez_nazwy-39.png" id="41_nboaa"]
+[ext_resource type="Texture2D" uid="uid://cul3akelqpjc3" path="res://assets/tutorial/asdw/Grafika_bez_nazwy-40.png" id="42_acub5"]
+[ext_resource type="Texture2D" uid="uid://dhdh50w3l1lgl" path="res://assets/tutorial/asdw/Grafika_bez_nazwy-41.png" id="43_naoap"]
+[ext_resource type="Texture2D" uid="uid://d58o1u1giy8d" path="res://assets/tutorial/asdw/Grafika_bez_nazwy-42.png" id="44_2coj2"]
+[ext_resource type="Texture2D" uid="uid://b4aan0e10hceh" path="res://assets/tutorial/asdw/Grafika_bez_nazwy-43.png" id="45_0o46e"]
+[ext_resource type="Texture2D" uid="uid://dytywwwhr04eg" path="res://assets/tutorial/asdw/Grafika_bez_nazwy-44.png" id="46_xj52f"]
+[ext_resource type="Texture2D" uid="uid://jtqtcuw5hxfw" path="res://assets/tutorial/asdw/Grafika_bez_nazwy-45.png" id="47_8ar1e"]
+[ext_resource type="Texture2D" uid="uid://d2rgqge8v4kli" path="res://assets/key.png" id="84_45h75"]
+[ext_resource type="Texture2D" uid="uid://csr10fedchdsa" path="res://assets/doors.png" id="84_yaadl"]
+[ext_resource type="Texture2D" uid="uid://cpuitw8s043yw" path="res://assets/doors2.png" id="86_x27sq"]
+[ext_resource type="Texture2D" uid="uid://ymve3vxbdx8p" path="res://assets/IMG_0990.png" id="87_pcrou"]
+[ext_resource type="Texture2D" uid="uid://cuh3ybimf11jh" path="res://assets/krople.png" id="88_3o36d"]
+[ext_resource type="Texture2D" uid="uid://br7gqp8ys5r4x" path="res://scenes/ui/menu.png" id="89_xh473"]
+[ext_resource type="Texture2D" uid="uid://dywnjja417lft" path="res://scenes/ui/menuclik.png" id="90_41238"]
+[ext_resource type="Texture2D" uid="uid://bpivx0gi43m8p" path="res://scenes/ui/hover.png" id="91_saybr"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3n8qe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_nf2vy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_8l7hg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_11iur")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_i2ji4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_7v854")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_w8et0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_qovyh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_48xd4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_3h206")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_qf3l8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_eqag6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_r1oqe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_y4ubo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_2h8tk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_wpehq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_i5kiu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_cywma")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_3quo8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_hvmgy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_xry7d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_flto3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_1mmdy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_e5qih")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_kcoyr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_41ap1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_43pat")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_jn08s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_h00hx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_kps6s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_bbkxt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_vpuuc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_g37qn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_qp15g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_1t1f5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_yal0f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_iqbud")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_5sibw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_tyl62")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_nboaa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_acub5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_naoap")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_2coj2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_0o46e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_xj52f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_8ar1e")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gk46f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_pfeeb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_dwrwo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_du66h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_laj1w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_wg4p8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_j711f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_nlpvt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_wm4h0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_kehvd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_iy21o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_2dhl3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_eejtw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_uldyw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_48wtb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_875k0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_6wtte")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_6tltm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_vhkrg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_lkl10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_7dxy0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_tp302")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_x5cul")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_4ltli")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_gguh6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_0ue7q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_8honk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_hqjpt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_3cbr4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_ry8mq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_47cli")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_wm2tf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_bmkk6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_gjvik")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_ya507")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_m0eha")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_aa3sw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[node name="Tutorial" type="CanvasLayer"]
+script = ExtResource("1_xrawa")
+
+[node name="bg" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_65sse")
+
+[node name="root" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+
+[node name="Control" type="Control" parent="root"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="root/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -964.0
+offset_top = 114.0
+offset_right = -47.3599
+offset_bottom = 251.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 48
+text = "Poruszaj się przy użyciu klawiszy WASD lub strzałek"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="asdw" type="AnimatedSprite2D" parent="root/Control/Label"]
+position = Vector2(424, -157)
+scale = Vector2(0.539352, 0.539352)
+sprite_frames = SubResource("SpriteFrames_3n8qe")
+autoplay = "default"
+frame_progress = 0.428165
+
+[node name="Label2" type="Label" parent="root/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -7.0
+offset_top = 280.0
+offset_right = 909.64
+offset_bottom = 557.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 48
+text = "Podczas walki wykonuj ruchy myszka zgodne z kierunkiem strzałki. Nie zapomnij o wcisnięciu LPM, by wykonać atak."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="strzalka" type="AnimatedSprite2D" parent="root/Control/Label2"]
+position = Vector2(361, -349)
+scale = Vector2(0.683525, 0.683525)
+sprite_frames = SubResource("SpriteFrames_gk46f")
+autoplay = "default"
+frame_progress = 0.407801
+
+[node name="Control2" type="Control" parent="root"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="door" type="TextureRect" parent="root/Control2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -892.0
+offset_top = -467.0
+offset_right = 1028.0
+offset_bottom = 1842.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.293, 0.293)
+texture = ExtResource("84_yaadl")
+
+[node name="key" type="TextureRect" parent="root/Control2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -295.0
+offset_top = -341.0
+offset_right = 1625.0
+offset_bottom = 1459.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.293, 0.293)
+texture = ExtResource("84_45h75")
+
+[node name="door2" type="TextureRect" parent="root/Control2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 285.0
+offset_top = -459.0
+offset_right = 2205.0
+offset_bottom = 1850.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.293, 0.293)
+texture = ExtResource("86_x27sq")
+
+[node name="Label" type="Label" parent="root/Control2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -466.0
+offset_top = 244.0
+offset_right = 450.64
+offset_bottom = 451.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 48
+text = "By uciec z otchłani wpierw musisz znaleźć klucz, klocz ktorym otworzysz dżwi"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Control3" type="Control" parent="root"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="root/Control3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -718.0
+offset_top = -246.0
+offset_right = 1202.0
+offset_bottom = 1554.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.29955, 0.29955)
+texture = ExtResource("87_pcrou")
+
+[node name="TextureRect2" type="TextureRect" parent="root/Control3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 301.0
+offset_top = -505.0
+offset_right = 922.0
+offset_bottom = 746.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.575693, 0.575693)
+texture = ExtResource("88_3o36d")
+
+[node name="Label" type="Label" parent="root/Control3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -848.0
+offset_top = 201.0
+offset_right = -25.0
+offset_bottom = 452.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 48
+text = "Unikaj pułapek. Możesz niszczyć je gdy stoisz wystarczajaco blisko i wykonasz atak."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="root/Control3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 41.0
+offset_top = 184.0
+offset_right = 869.0
+offset_bottom = 439.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 48
+text = "Gdy twoja postać zaczyna przymykać oczy, wypatruj Kropli do oczu. Pomoga ci w nie mruganiu przez moment."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="next" type="TextureButton" parent="root"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -54.0
+offset_top = -465.0
+offset_right = -14.0
+offset_bottom = -425.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("89_xh473")
+texture_pressed = ExtResource("90_41238")
+texture_hover = ExtResource("91_saybr")
+
+[node name="Label" type="Label" parent="root/next"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -18.0
+offset_right = 1.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 48
+text = "Dalej"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="root/next" to="." method="_on_next_pressed"]
