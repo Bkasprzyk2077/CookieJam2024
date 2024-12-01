@@ -1,10 +1,26 @@
-[gd_scene load_steps=30 format=3 uid="uid://dbuff07o7u7uv"]
+[gd_scene load_steps=46 format=3 uid="uid://dbuff07o7u7uv"]
 
 [ext_resource type="Script" path="res://scenes/boss/boss.gd" id="1_e6ywe"]
-[ext_resource type="Texture2D" uid="uid://cvv51jy1by0vt" path="res://assets/oko/oko-idle/idle-kurwa-dziala_00000.png" id="2_p8ubr"]
-[ext_resource type="Texture2D" uid="uid://br3panjli4iah" path="res://assets/oko/oko-idle/idle-kurwa-dziala_00001.png" id="3_25wsn"]
-[ext_resource type="Texture2D" uid="uid://b8mefhtm62wso" path="res://assets/oko/oko-idle/idle-kurwa-dziala_00002.png" id="4_45usg"]
+[ext_resource type="Texture2D" uid="uid://dvp46k7ob5003" path="res://assets/oko/oko-cry/3-4-oka-poetyckiego_00000.png" id="2_6k1fc"]
+[ext_resource type="Texture2D" uid="uid://c7ar7akpls0w2" path="res://assets/oko/oko-cry/3-4-oka-poetyckiego_00001.png" id="3_3t0n6"]
+[ext_resource type="Texture2D" uid="uid://bm3ib5sqhxc0n" path="res://assets/oko/oko-cry/3-4-oka-poetyckiego_00002.png" id="4_hmo6w"]
+[ext_resource type="Texture2D" uid="uid://xwdmsur5sg4r" path="res://assets/oko/oko-cry/3-4-oka-poetyckiego_00003.png" id="5_5rftk"]
+[ext_resource type="Texture2D" uid="uid://di6t8jalmmudh" path="res://assets/oko/oko-cry/3-4-oka-poetyckiego_00004.png" id="6_msxif"]
+[ext_resource type="Texture2D" uid="uid://bfvts7ck8kmvc" path="res://assets/oko/oko-cry/3-4-oka-poetyckiego_00005.png" id="7_l7x5x"]
+[ext_resource type="Texture2D" uid="uid://b8uh1i1wl3r5x" path="res://assets/oko/oko-cry/3-4-oka-poetyckiego_00006.png" id="8_xn0aj"]
+[ext_resource type="Texture2D" uid="uid://bvsifnwrwb3cv" path="res://assets/oko/oko-cry/3-4-oka-poetyckiego_00007.png" id="9_lgyix"]
+[ext_resource type="Texture2D" uid="uid://ceheesre2j2hm" path="res://assets/oko/oko-cry/3-4-oka-poetyckiego_00008.png" id="10_e2ika"]
+[ext_resource type="Texture2D" uid="uid://7de2iyutpv8u" path="res://assets/oko/oko-cry/3-4-oka-poetyckiego_00009.png" id="11_wbo62"]
+[ext_resource type="Texture2D" uid="uid://ktc61y22fq3l" path="res://assets/oko/oko-cry/3-4-oka-poetyckiego_00010.png" id="12_krv6v"]
+[ext_resource type="Texture2D" uid="uid://chcgtchwpn164" path="res://assets/oko/oko-cry/3-4-oka-poetyckiego_00011.png" id="13_e5yl1"]
+[ext_resource type="Texture2D" uid="uid://drasvyiu0cw6o" path="res://assets/oko/oko-cry/3-4-oka-poetyckiego_00012.png" id="14_lvu72"]
+[ext_resource type="Texture2D" uid="uid://bbe6aoy1lq6tb" path="res://assets/oko/oko-cry/3-4-oka-poetyckiego_00013.png" id="15_4wcoi"]
+[ext_resource type="Texture2D" uid="uid://cstch1fhhq0dk" path="res://assets/oko/oko-cry/3-4-oka-poetyckiego_00014.png" id="16_7t1w5"]
+[ext_resource type="Texture2D" uid="uid://6dg5d1cjxmoq" path="res://assets/oko/oko-cry/3-4-oka-poetyckiego_00015.png" id="17_5xpyh"]
+[ext_resource type="Texture2D" uid="uid://do5icqynrl08" path="res://assets/oko/oko-cry/3-4-oka-poetyckiego_00016.png" id="18_2d1fq"]
+[ext_resource type="Texture2D" uid="uid://03cyvtq24gir" path="res://assets/oko/oko-cry/3-4-oka-poetyckiego_00017.png" id="19_vch81"]
 [ext_resource type="AudioStream" uid="uid://cjlomi3i3787v" path="res://sounds/spooky.wav" id="20_aivbx"]
+[ext_resource type="Texture2D" uid="uid://v2bpb2prn3t7" path="res://assets/oko/oko-cry/3-4-oka-poetyckiego_00018.png" id="20_ddsf6"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5nh26"]
 load_path = "res://.godot/imported/idle-kurwa-dziala_00000.png-94fc021d4a672475b7bb14d4ce6cd954.s3tc.ctex"
@@ -61,13 +77,61 @@ load_path = "res://.godot/imported/idle-kurwa-dziala_00016.png-4e6544486fc73846a
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_p8ubr")
+"texture": ExtResource("2_6k1fc")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_25wsn")
+"texture": ExtResource("3_3t0n6")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_45usg")
+"texture": ExtResource("4_hmo6w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_5rftk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_msxif")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_l7x5x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_xn0aj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_lgyix")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_e2ika")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_wbo62")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_krv6v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_e5yl1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_lvu72")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_4wcoi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_7t1w5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_5xpyh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_2d1fq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_vch81")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ddsf6")
 }],
 "loop": false,
 "name": &"cry",
@@ -263,6 +327,8 @@ render_priority = 1
 sprite_frames = SubResource("SpriteFrames_q4ewq")
 animation = &"cry"
 autoplay = "idle"
+frame = 18
+frame_progress = 1.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
