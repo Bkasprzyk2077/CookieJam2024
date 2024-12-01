@@ -13,7 +13,7 @@ func _ready():
 	control_3.visible = false
 
 func _on_next_pressed():
-	if i == len(controls):
+	if i == len(controls)-1:
 		Transition.fade_out("res://scenes/levels/main.tscn")
 	else:
 		controls[i].visible = false

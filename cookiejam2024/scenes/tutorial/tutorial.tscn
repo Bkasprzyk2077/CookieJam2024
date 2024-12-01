@@ -1,9 +1,10 @@
-[gd_scene load_steps=94 format=3 uid="uid://bu07ht11fukh8"]
+[gd_scene load_steps=99 format=3 uid="uid://bu07ht11fukh8"]
 
 [ext_resource type="Script" path="res://scenes/tutorial/tutorial.gd" id="1_xrawa"]
 [ext_resource type="Texture2D" uid="uid://dnjtx2g2pema2" path="res://scenes/ui/tloo.png" id="2_65sse"]
 [ext_resource type="Texture2D" uid="uid://ksg4os57mpb2" path="res://assets/tutorial/asdw/Grafika_bez_nazwy-1.png" id="3_nf2vy"]
 [ext_resource type="Texture2D" uid="uid://cotvdyleiowpg" path="res://assets/tutorial/strzalka/Grafika_bez_nazwy-1.png" id="3_pfeeb"]
+[ext_resource type="Shader" path="res://shaders/Dithering.gdshader" id="3_td3jj"]
 [ext_resource type="Texture2D" uid="uid://cmdflr4gee35p" path="res://assets/tutorial/asdw/Grafika_bez_nazwy-2.png" id="4_8l7hg"]
 [ext_resource type="Texture2D" uid="uid://ct5clvg6447pk" path="res://assets/tutorial/strzalka/Grafika_bez_nazwy-2.png" id="4_dwrwo"]
 [ext_resource type="Texture2D" uid="uid://bavr1x4tq4rx8" path="res://assets/tutorial/asdw/Grafika_bez_nazwy-3.png" id="5_11iur"]
@@ -351,6 +352,48 @@ animations = [{
 "speed": 12.0
 }]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w3vwg"]
+shader = ExtResource("3_td3jj")
+shader_parameter/fog_color = Color(0, 0, 0, 1)
+shader_parameter/resolution_downsampling = 8.0
+shader_parameter/bit_depth = 8.0
+
+[sub_resource type="Animation" id="Animation_ohkcx"]
+resource_name = "new_animation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("root/Control2/key:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.293, 0.293), Vector2(0.433, 0.433), Vector2(0.293, 0.293)]
+}
+
+[sub_resource type="Animation" id="Animation_u8ydk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("root/Control2/key:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.293, 0.293)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gpenb"]
+_data = {
+"RESET": SubResource("Animation_u8ydk"),
+"new_animation": SubResource("Animation_ohkcx")
+}
+
 [node name="Tutorial" type="CanvasLayer"]
 script = ExtResource("1_xrawa")
 
@@ -381,6 +424,7 @@ grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="root/Control"]
+z_index = 1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -406,6 +450,7 @@ autoplay = "default"
 frame_progress = 0.428165
 
 [node name="Label2" type="Label" parent="root/Control"]
+z_index = 1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -487,6 +532,7 @@ scale = Vector2(0.293, 0.293)
 texture = ExtResource("86_x27sq")
 
 [node name="Label" type="Label" parent="root/Control2"]
+z_index = 1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -545,6 +591,7 @@ scale = Vector2(0.575693, 0.575693)
 texture = ExtResource("88_3o36d")
 
 [node name="Label" type="Label" parent="root/Control3"]
+z_index = 1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -563,6 +610,7 @@ horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="Label2" type="Label" parent="root/Control3"]
+z_index = 1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -579,6 +627,15 @@ theme_override_font_sizes/font_size = 48
 text = "Gdy twoja postać zaczyna przymykać oczy, wypatruj Kropli do oczu. Pomoga ci w nie mruganiu przez moment."
 horizontal_alignment = 1
 autowrap_mode = 2
+
+[node name="Dithering" type="ColorRect" parent="root"]
+material = SubResource("ShaderMaterial_w3vwg")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="next" type="TextureButton" parent="root"]
 layout_mode = 1
@@ -612,5 +669,11 @@ theme_override_font_sizes/font_size = 48
 text = "Dalej"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_gpenb")
+}
+autoplay = "new_animation"
 
 [connection signal="pressed" from="root/next" to="." method="_on_next_pressed"]

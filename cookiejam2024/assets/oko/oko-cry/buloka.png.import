@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://s2gcjs46effc"
-path.s3tc="res://.godot/imported/idle-kurwa-dziala_00009.png-68e0a8b722543782ea8619a520df1a53.s3tc.ctex"
+uid="uid://x1teh0j3yv8v"
+path.s3tc="res://.godot/imported/buloka.png-518b5333147a17d1071c702fdd233f3f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/oko/oko-idle/idle-kurwa-dziala_00009.png"
-dest_files=["res://.godot/imported/idle-kurwa-dziala_00009.png-68e0a8b722543782ea8619a520df1a53.s3tc.ctex"]
+source_file="res://assets/oko/oko-cry/buloka.png"
+dest_files=["res://.godot/imported/buloka.png-518b5333147a17d1071c702fdd233f3f.s3tc.ctex"]
 
 [params]
 
