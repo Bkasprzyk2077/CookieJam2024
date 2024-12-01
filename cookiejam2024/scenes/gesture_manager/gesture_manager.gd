@@ -84,6 +84,7 @@ func _on_enemy_timer_timeout():
 				if pose_player.is_playing():
 					pose_player.play("out")
 				pose_player.play("poke")
+				$Finisher.play()
 				get_tree().get_first_node_in_group("player_animation").play("good")
 				animation_player.play("good_pose")
 				boss.get_hit()
@@ -106,6 +107,7 @@ func _on_enemy_timer_timeout():
 			#print("ZLE")
 			#pose_player.play("out")
 			take_damage()
+			GlobalAudio.play_sound("res://sounds/beartrap.wav")
 			break
 		still_has_time = true
 	arrow_rect.visible = false
@@ -139,6 +141,7 @@ func free_poke():
 	var collider = playerr.get_node("TrapRayCast3D").get_collider()
 	if collider:
 		if collider.get_parent() is Trap:
+			$poke.play()
 			collider.get_parent().kill()
 			var pose_player = playerr.get_node("PosePlayer")
 			playerr.get_node("Camera3D/Hands").texture = load("res://assets/poses/eyepoke.png")

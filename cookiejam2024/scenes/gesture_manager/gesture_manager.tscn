@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://cdgrqruroljoy"]
+[gd_scene load_steps=29 format=3 uid="uid://cdgrqruroljoy"]
 
 [ext_resource type="Script" path="res://scenes/gesture_manager/gesture_detector.gd" id="1_3sui7"]
 [ext_resource type="Script" path="res://scenes/gesture_manager/gesture_manager.gd" id="1_yymwu"]
@@ -19,6 +19,8 @@
 [ext_resource type="Texture2D" uid="uid://8ue5wj4h75j2" path="res://assets/strzalka/Grafika_bez_nazwy-12.png" id="14_raf8k"]
 [ext_resource type="Texture2D" uid="uid://cutrutsrclln6" path="res://assets/strzalka/Grafika_bez_nazwy-13.png" id="15_xwhpg"]
 [ext_resource type="Texture2D" uid="uid://c2u1lqbuvmg64" path="res://assets/strzalka/Grafika_bez_nazwy-14.png" id="16_awcr6"]
+[ext_resource type="AudioStream" uid="uid://7dmwr7u5k6gt" path="res://sounds/pose.wav" id="20_xffpm"]
+[ext_resource type="AudioStream" uid="uid://dqmay3pthjpio" path="res://sounds/eyepluck.wav" id="21_t1vef"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_m7xjj"]
 shader = ExtResource("3_te17o")
@@ -195,6 +197,12 @@ wait_time = 3.0
 libraries = {
 "": SubResource("AnimationLibrary_hkkv1")
 }
+
+[node name="Finisher" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_xffpm")
+
+[node name="poke" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("21_t1vef")
 
 [connection signal="timeout" from="EnemyTimer" to="." method="_on_enemy_timer_timeout"]
 [connection signal="timeout" from="PoseTimer" to="." method="_on_pose_timer_timeout"]
