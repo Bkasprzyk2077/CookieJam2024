@@ -7,6 +7,7 @@ extends Node
 @onready var animation_player = $AnimationPlayer
 @onready var enemy_timer = $EnemyTimer
 
+var can_boss_attack = true
 var boss
 var playerr
 var directions = {
@@ -56,6 +57,10 @@ func check_pose(pose):
 		free_poke()
 
 func _on_enemy_timer_timeout():
+	if !can_boss_attack:
+		enemy_timer.wait_time = randf_range(3, 6)
+		enemy_timer.start()
+		return
 	var pose_player = playerr.get_node("PosePlayer")
 	enemy_timer.wait_time = randf_range(8, 20)
 	boss.get_node("AnimationPlayer").play("in")
@@ -64,7 +69,7 @@ func _on_enemy_timer_timeout():
 	boss.boss_talk()
 	arrow_rect.visible = true
 	var poses = gesture_randomizer.get_random_pose()
-	$EnemyTimer.stop()
+	enemy_timer.stop()
 	for pose in poses:
 		update_ui(pose)
 		#pose_timer.start()
@@ -83,7 +88,7 @@ func _on_enemy_timer_timeout():
 
 				arrow_rect.visible = false
 				print("KONIEC DIALOGU")
-				$EnemyTimer.start()
+				enemy_timer.start()
 				boss.reset()
 				return
 				
@@ -129,15 +134,15 @@ func heal():
 	material.set_shader_parameter("outer_radius", 1.6)
 
 func free_poke():
-	var pose_player = playerr.get_node("PosePlayer")
-	playerr.get_node("Camera3D/Hands").texture = load("res://assets/poses/eyepoke.png")
-	if pose_player.is_playing():
-		pose_player.play("out")
-	pose_player.play("poke")
 	var collider = playerr.get_node("TrapRayCast3D").get_collider()
 	if collider:
 		if collider.get_parent() is Trap:
-			collider.get_parent().queue_free()
+			collider.get_parent().kill()
+			var pose_player = playerr.get_node("PosePlayer")
+			playerr.get_node("Camera3D/Hands").texture = load("res://assets/poses/eyepoke.png")
+			if pose_player.is_playing():
+				pose_player.play("out")
+			pose_player.play("poke")
 
 func update_ui(pose):
 	arrow_rect.rotation_degrees = directions[pose]
