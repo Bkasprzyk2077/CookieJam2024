@@ -38,6 +38,7 @@ func _process(delta):
 	
 func move(direction):
 	can_move = false
+	#$AudioStreamPlayer3D.play()
 	var forward_direction = -transform.basis.z.normalized()
 	var target_position = global_position + forward_direction * MOVE_DISTANCE * direction
 	var tween = get_tree().create_tween()
@@ -64,6 +65,7 @@ func _on_area_3d_area_entered(area):
 		area.get_parent().queue_free()
 	elif area.get_parent() is Trap:
 		hit.emit()
+		$hit_sound.play()
 		area.get_parent().kill()
 	elif area.get_parent() is Key:
 		print(area.get_parent())

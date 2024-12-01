@@ -1,160 +1,137 @@
 [gd_scene load_steps=46 format=3 uid="uid://dbuff07o7u7uv"]
 
 [ext_resource type="Script" path="res://scenes/boss/boss.gd" id="1_e6ywe"]
-[ext_resource type="Texture2D" uid="uid://x1teh0j3yv8v" path="res://assets/oko/oko-cry/buloka.png" id="2_nimw7"]
-[ext_resource type="Texture2D" uid="uid://cvv51jy1by0vt" path="res://assets/oko/oko-idle/idle-kurwa-dziala_00000.png" id="2_p8ubr"]
-[ext_resource type="Texture2D" uid="uid://br3panjli4iah" path="res://assets/oko/oko-idle/idle-kurwa-dziala_00001.png" id="3_25wsn"]
-[ext_resource type="Texture2D" uid="uid://b8mefhtm62wso" path="res://assets/oko/oko-idle/idle-kurwa-dziala_00002.png" id="4_45usg"]
-[ext_resource type="Texture2D" uid="uid://cwxhyyl71fu4b" path="res://assets/oko/oko-idle/idle-kurwa-dziala_00003.png" id="5_jxc2a"]
-[ext_resource type="Texture2D" uid="uid://g52ql6ceyjko" path="res://assets/oko/oko-idle/idle-kurwa-dziala_00004.png" id="6_q6bsq"]
-[ext_resource type="Texture2D" uid="uid://col3o8mk4v1u4" path="res://assets/oko/oko-idle/idle-kurwa-dziala_00005.png" id="7_3ivbx"]
-[ext_resource type="Texture2D" uid="uid://boeo6yl3on5ui" path="res://assets/oko/oko-idle/idle-kurwa-dziala_00006.png" id="8_igrf2"]
-[ext_resource type="Texture2D" uid="uid://bd2rh27v3pnmr" path="res://assets/oko/oko-idle/idle-kurwa-dziala_00007.png" id="9_r4c12"]
-[ext_resource type="Texture2D" uid="uid://do2rce1tgsmtm" path="res://assets/oko/oko-idle/idle-kurwa-dziala_00008.png" id="10_kaxrv"]
-[ext_resource type="Texture2D" uid="uid://s2gcjs46effc" path="res://assets/oko/oko-idle/idle-kurwa-dziala_00009.png" id="11_q3jdb"]
-[ext_resource type="Texture2D" uid="uid://qof18v8iehgq" path="res://assets/oko/oko-idle/idle-kurwa-dziala_00010.png" id="12_i7bfs"]
-[ext_resource type="Texture2D" uid="uid://cq7h1s3xq1a1d" path="res://assets/oko/oko-idle/idle-kurwa-dziala_00011.png" id="13_qpoqm"]
-[ext_resource type="Texture2D" uid="uid://c0ymvbvx1iscp" path="res://assets/oko/oko-idle/idle-kurwa-dziala_00012.png" id="14_qprna"]
-[ext_resource type="Texture2D" uid="uid://dfettfb74fcgp" path="res://assets/oko/oko-idle/idle-kurwa-dziala_00013.png" id="15_xwxxh"]
-[ext_resource type="Texture2D" uid="uid://rn2d2iyi4vjj" path="res://assets/oko/oko-idle/idle-kurwa-dziala_00014.png" id="16_taf87"]
-[ext_resource type="Texture2D" uid="uid://cmpwwg5s7n4cm" path="res://assets/oko/oko-idle/idle-kurwa-dziala_00015.png" id="17_ng6u7"]
-[ext_resource type="Texture2D" uid="uid://divjm25ygv055" path="res://assets/oko/oko-idle/idle-kurwa-dziala_00016.png" id="18_x6yfs"]
+[ext_resource type="Texture2D" uid="uid://dvp46k7ob5003" path="res://assets/oko/oko-cry/3-4-oka-poetyckiego_00000.png" id="2_6k1fc"]
+[ext_resource type="Texture2D" uid="uid://c7ar7akpls0w2" path="res://assets/oko/oko-cry/3-4-oka-poetyckiego_00001.png" id="3_3t0n6"]
+[ext_resource type="Texture2D" uid="uid://bm3ib5sqhxc0n" path="res://assets/oko/oko-cry/3-4-oka-poetyckiego_00002.png" id="4_hmo6w"]
+[ext_resource type="Texture2D" uid="uid://xwdmsur5sg4r" path="res://assets/oko/oko-cry/3-4-oka-poetyckiego_00003.png" id="5_5rftk"]
+[ext_resource type="Texture2D" uid="uid://di6t8jalmmudh" path="res://assets/oko/oko-cry/3-4-oka-poetyckiego_00004.png" id="6_msxif"]
+[ext_resource type="Texture2D" uid="uid://bfvts7ck8kmvc" path="res://assets/oko/oko-cry/3-4-oka-poetyckiego_00005.png" id="7_l7x5x"]
+[ext_resource type="Texture2D" uid="uid://b8uh1i1wl3r5x" path="res://assets/oko/oko-cry/3-4-oka-poetyckiego_00006.png" id="8_xn0aj"]
+[ext_resource type="Texture2D" uid="uid://bvsifnwrwb3cv" path="res://assets/oko/oko-cry/3-4-oka-poetyckiego_00007.png" id="9_lgyix"]
+[ext_resource type="Texture2D" uid="uid://ceheesre2j2hm" path="res://assets/oko/oko-cry/3-4-oka-poetyckiego_00008.png" id="10_e2ika"]
+[ext_resource type="Texture2D" uid="uid://7de2iyutpv8u" path="res://assets/oko/oko-cry/3-4-oka-poetyckiego_00009.png" id="11_wbo62"]
+[ext_resource type="Texture2D" uid="uid://ktc61y22fq3l" path="res://assets/oko/oko-cry/3-4-oka-poetyckiego_00010.png" id="12_krv6v"]
+[ext_resource type="Texture2D" uid="uid://chcgtchwpn164" path="res://assets/oko/oko-cry/3-4-oka-poetyckiego_00011.png" id="13_e5yl1"]
+[ext_resource type="Texture2D" uid="uid://drasvyiu0cw6o" path="res://assets/oko/oko-cry/3-4-oka-poetyckiego_00012.png" id="14_lvu72"]
+[ext_resource type="Texture2D" uid="uid://bbe6aoy1lq6tb" path="res://assets/oko/oko-cry/3-4-oka-poetyckiego_00013.png" id="15_4wcoi"]
+[ext_resource type="Texture2D" uid="uid://cstch1fhhq0dk" path="res://assets/oko/oko-cry/3-4-oka-poetyckiego_00014.png" id="16_7t1w5"]
+[ext_resource type="Texture2D" uid="uid://6dg5d1cjxmoq" path="res://assets/oko/oko-cry/3-4-oka-poetyckiego_00015.png" id="17_5xpyh"]
+[ext_resource type="Texture2D" uid="uid://do5icqynrl08" path="res://assets/oko/oko-cry/3-4-oka-poetyckiego_00016.png" id="18_2d1fq"]
+[ext_resource type="Texture2D" uid="uid://03cyvtq24gir" path="res://assets/oko/oko-cry/3-4-oka-poetyckiego_00017.png" id="19_vch81"]
+[ext_resource type="AudioStream" uid="uid://cjlomi3i3787v" path="res://sounds/spooky.wav" id="20_aivbx"]
+[ext_resource type="Texture2D" uid="uid://v2bpb2prn3t7" path="res://assets/oko/oko-cry/3-4-oka-poetyckiego_00018.png" id="20_ddsf6"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hi30k"]
-atlas = ExtResource("2_nimw7")
-region = Rect2(0, 0, 369, 259)
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5nh26"]
+load_path = "res://.godot/imported/idle-kurwa-dziala_00000.png-94fc021d4a672475b7bb14d4ce6cd954.s3tc.ctex"
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ww5vk"]
-atlas = ExtResource("2_nimw7")
-region = Rect2(369, 0, 369, 259)
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_knd1q"]
+load_path = "res://.godot/imported/idle-kurwa-dziala_00001.png-6c7aed0a123b564ac7699891fff50200.s3tc.ctex"
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_w18r0"]
-atlas = ExtResource("2_nimw7")
-region = Rect2(738, 0, 369, 259)
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1b1rb"]
+load_path = "res://.godot/imported/idle-kurwa-dziala_00002.png-0c5813aca9c03ff46ce34095bd0c6cc3.s3tc.ctex"
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_crb1f"]
-atlas = ExtResource("2_nimw7")
-region = Rect2(1107, 0, 369, 259)
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ryogq"]
+load_path = "res://.godot/imported/idle-kurwa-dziala_00003.png-13f2dde13b66845b8c521496a85afeac.s3tc.ctex"
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_sgmpw"]
-atlas = ExtResource("2_nimw7")
-region = Rect2(1476, 0, 369, 259)
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tcwsk"]
+load_path = "res://.godot/imported/idle-kurwa-dziala_00004.png-d3b8fa2e0eea7877b79154a78fef5bb9.s3tc.ctex"
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_122oq"]
-atlas = ExtResource("2_nimw7")
-region = Rect2(0, 259, 369, 259)
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1ljks"]
+load_path = "res://.godot/imported/idle-kurwa-dziala_00005.png-e32ddf96564157dc2ede5d901978c616.s3tc.ctex"
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_tcn2c"]
-atlas = ExtResource("2_nimw7")
-region = Rect2(369, 259, 369, 259)
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vwi1y"]
+load_path = "res://.godot/imported/idle-kurwa-dziala_00006.png-56f8ac4e803909728b0e9f0683e21249.s3tc.ctex"
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_q2482"]
-atlas = ExtResource("2_nimw7")
-region = Rect2(738, 259, 369, 259)
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7bx5j"]
+load_path = "res://.godot/imported/idle-kurwa-dziala_00007.png-c461875c270ac589fd18a59e22a3585d.s3tc.ctex"
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hcscu"]
-atlas = ExtResource("2_nimw7")
-region = Rect2(1107, 259, 369, 259)
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_aoc8s"]
+load_path = "res://.godot/imported/idle-kurwa-dziala_00008.png-b588685a568bc22ecf68a5331fbf96ab.s3tc.ctex"
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_e6nkk"]
-atlas = ExtResource("2_nimw7")
-region = Rect2(1476, 259, 369, 259)
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_uryjl"]
+load_path = "res://.godot/imported/idle-kurwa-dziala_00009.png-68e0a8b722543782ea8619a520df1a53.s3tc.ctex"
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_36kxw"]
-atlas = ExtResource("2_nimw7")
-region = Rect2(0, 518, 369, 259)
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1vj3l"]
+load_path = "res://.godot/imported/idle-kurwa-dziala_00010.png-04942bfda83a69185bef68cd0fa28f5a.s3tc.ctex"
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_lsyjh"]
-atlas = ExtResource("2_nimw7")
-region = Rect2(369, 518, 369, 259)
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_otope"]
+load_path = "res://.godot/imported/idle-kurwa-dziala_00011.png-b0cf510210158f14a56e9a57a9442ac0.s3tc.ctex"
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_afk0v"]
-atlas = ExtResource("2_nimw7")
-region = Rect2(738, 518, 369, 259)
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_532dr"]
+load_path = "res://.godot/imported/idle-kurwa-dziala_00012.png-85b8a0faa41125a1513434970c4a2862.s3tc.ctex"
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_cxelq"]
-atlas = ExtResource("2_nimw7")
-region = Rect2(1107, 518, 369, 259)
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fm7jx"]
+load_path = "res://.godot/imported/idle-kurwa-dziala_00013.png-8aca0465e78df47708a58cea6f1325ca.s3tc.ctex"
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3v2dg"]
-atlas = ExtResource("2_nimw7")
-region = Rect2(1476, 518, 369, 259)
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3ww31"]
+load_path = "res://.godot/imported/idle-kurwa-dziala_00014.png-e7c08263ed1954fb8cd7149dd9af5a7f.s3tc.ctex"
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ucgtj"]
-atlas = ExtResource("2_nimw7")
-region = Rect2(0, 777, 369, 259)
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tyedl"]
+load_path = "res://.godot/imported/idle-kurwa-dziala_00015.png-a4e9d42207a1d09e7567f26c015ce892.s3tc.ctex"
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_01krr"]
-atlas = ExtResource("2_nimw7")
-region = Rect2(369, 777, 369, 259)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0q4h4"]
-atlas = ExtResource("2_nimw7")
-region = Rect2(738, 777, 369, 259)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_okq21"]
-atlas = ExtResource("2_nimw7")
-region = Rect2(1107, 777, 369, 259)
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_a71mp"]
+load_path = "res://.godot/imported/idle-kurwa-dziala_00016.png-4e6544486fc73846aae186298eebc967.s3tc.ctex"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_q4ewq"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hi30k")
+"texture": ExtResource("2_6k1fc")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ww5vk")
+"texture": ExtResource("3_3t0n6")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_w18r0")
+"texture": ExtResource("4_hmo6w")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_crb1f")
+"texture": ExtResource("5_5rftk")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_sgmpw")
+"texture": ExtResource("6_msxif")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_122oq")
+"texture": ExtResource("7_l7x5x")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_tcn2c")
+"texture": ExtResource("8_xn0aj")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_q2482")
+"texture": ExtResource("9_lgyix")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hcscu")
+"texture": ExtResource("10_e2ika")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_e6nkk")
+"texture": ExtResource("11_wbo62")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_36kxw")
+"texture": ExtResource("12_krv6v")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_lsyjh")
+"texture": ExtResource("13_e5yl1")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_afk0v")
+"texture": ExtResource("14_lvu72")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_cxelq")
+"texture": ExtResource("15_4wcoi")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3v2dg")
+"texture": ExtResource("16_7t1w5")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ucgtj")
+"texture": ExtResource("17_5xpyh")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_01krr")
+"texture": ExtResource("18_2d1fq")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_0q4h4")
+"texture": ExtResource("19_vch81")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_okq21")
+"texture": ExtResource("20_ddsf6")
 }],
 "loop": false,
 "name": &"cry",
@@ -162,59 +139,59 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_p8ubr")
+"texture": SubResource("CompressedTexture2D_5nh26")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_25wsn")
+"texture": SubResource("CompressedTexture2D_knd1q")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_45usg")
+"texture": SubResource("CompressedTexture2D_1b1rb")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_jxc2a")
+"texture": SubResource("CompressedTexture2D_ryogq")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_q6bsq")
+"texture": SubResource("CompressedTexture2D_tcwsk")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_3ivbx")
+"texture": SubResource("CompressedTexture2D_1ljks")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_igrf2")
+"texture": SubResource("CompressedTexture2D_vwi1y")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_r4c12")
+"texture": SubResource("CompressedTexture2D_7bx5j")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_kaxrv")
+"texture": SubResource("CompressedTexture2D_aoc8s")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_q3jdb")
+"texture": SubResource("CompressedTexture2D_uryjl")
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_i7bfs")
+"texture": SubResource("CompressedTexture2D_1vj3l")
 }, {
 "duration": 1.0,
-"texture": ExtResource("13_qpoqm")
+"texture": SubResource("CompressedTexture2D_otope")
 }, {
 "duration": 1.0,
-"texture": ExtResource("14_qprna")
+"texture": SubResource("CompressedTexture2D_532dr")
 }, {
 "duration": 1.0,
-"texture": ExtResource("15_xwxxh")
+"texture": SubResource("CompressedTexture2D_fm7jx")
 }, {
 "duration": 1.0,
-"texture": ExtResource("16_taf87")
+"texture": SubResource("CompressedTexture2D_3ww31")
 }, {
 "duration": 1.0,
-"texture": ExtResource("17_ng6u7")
+"texture": SubResource("CompressedTexture2D_tyedl")
 }, {
 "duration": 1.0,
-"texture": ExtResource("18_x6yfs")
+"texture": SubResource("CompressedTexture2D_a71mp")
 }],
 "loop": true,
 "name": &"idle",
-"speed": 5.0
+"speed": 6.0
 }]
 
 [sub_resource type="Animation" id="Animation_d54ab"]
@@ -385,5 +362,9 @@ wait_time = 0.05
 libraries = {
 "": SubResource("AnimationLibrary_0yeai")
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_aivbx")
+volume_db = -4.749
 
 [connection signal="timeout" from="TextTimer" to="." method="_on_text_timer_timeout"]

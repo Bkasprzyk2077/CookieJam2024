@@ -19,6 +19,8 @@ config/icon="res://assets/icon.svg"
 
 Pauza="*res://scenes/pauza/pauza.tscn"
 Transition="*res://scenes/transition/transition.tscn"
+GlobalAudio="*res://sounds/GlobalAudio.tscn"
+Ambient="*res://sounds/ambient.tscn"
 
 [display]
 

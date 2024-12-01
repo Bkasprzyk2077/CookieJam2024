@@ -24,6 +24,7 @@ func _ready():
 	text_label.text = ""
 	
 func boss_talk():
+	$AudioStreamPlayer.play()
 	is_fighting = true
 	if i == len(dialog_lines):
 		i = 0
@@ -43,6 +44,7 @@ func get_hit():
 	#var tween = get_tree().create_tween()
 	#tween.tween_property($Sprite3D, "scale", Vector3.ONE, 1)
 	is_fighting = false
+	$AnimationPlayer.stop()
 	#$AnimationPlayer.play("get_hit")
 	sprite_3d.play("cry")
 	await sprite_3d.animation_finished
@@ -61,6 +63,8 @@ func get_hit():
 
 func reset():
 	$AnimationPlayer.play("out")
+	$AudioStreamPlayer.stop()
+	text_timer.stop()
 	text_label.text = ""
 	i = 0
 	j = 1
@@ -75,8 +79,3 @@ func _on_text_timer_timeout():
 		index += 1
 	else:
 		text_timer.stop() # Zatrzymaj timer po wyświetleniu całego tekstu
-		#if i == len(dialog_lines):
-			#i = 0
-			#reset()
-		#await get_tree().create_timer(1).timeout
-		#boss_talk()

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://deho0sbys2e0k"]
+
+[ext_resource type="AudioStream" uid="uid://bf5snugfui6ho" path="res://sounds/JAPIERDOLE.wav" id="1_glkjp"]
+
+[node name="Ambient" type="AudioStreamPlayer"]
+stream = ExtResource("1_glkjp")
+autoplay = true

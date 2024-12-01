@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://cy8iths304j2u"]
+[gd_scene load_steps=25 format=3 uid="uid://cy8iths304j2u"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_4127a"]
 [ext_resource type="Script" path="res://scenes/player/camera_3d.gd" id="2_xslh3"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://ctolnsmc2jb0n" path="res://assets/jojohands-test.png" id="4_s8q2e"]
 [ext_resource type="Texture2D" uid="uid://t4pr20qmah0q" path="res://assets/poses/zakrapianie.png" id="6_psxkr"]
 [ext_resource type="PackedScene" uid="uid://dbuff07o7u7uv" path="res://scenes/boss/boss.tscn" id="6_ttfy4"]
+[ext_resource type="AudioStream" uid="uid://ov1n8prxrfyq" path="res://sounds/walking-tup.wav" id="8_ed4x6"]
+[ext_resource type="AudioStream" uid="uid://c5o2t5bwiabty" path="res://sounds/beartrap.wav" id="9_xv322"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ynih2"]
 render_priority = 0
@@ -360,5 +362,13 @@ libraries = {
 libraries = {
 "": SubResource("AnimationLibrary_1775w")
 }
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("8_ed4x6")
+volume_db = 13.659
+max_db = 6.0
+
+[node name="hit_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_xv322")
 
 [connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
