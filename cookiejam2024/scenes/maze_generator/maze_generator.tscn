@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://buppi1dcq3b3i"]
+[gd_scene load_steps=8 format=3 uid="uid://buppi1dcq3b3i"]
 
 [ext_resource type="MeshLibrary" uid="uid://c5yeijqau0rvx" path="res://scenes/mesh_library/MeshLibraryEx.tres" id="1_vu4cc"]
 [ext_resource type="Script" path="res://scenes/maze_generator/maze_generator.gd" id="1_yymuv"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://crjjy6nuga3yl" path="res://scenes/krople/krople.tscn" id="4_pk3sv"]
 [ext_resource type="PackedScene" uid="uid://b1iumdppxjame" path="res://scenes/doors/doors.tscn" id="5_oqg8o"]
 [ext_resource type="PackedScene" uid="uid://ckxs7ts1qlj6b" path="res://scenes/flying_eye/flying_eye.tscn" id="6_5kp4d"]
+[ext_resource type="PackedScene" uid="uid://bhlj66vwnx7wm" path="res://scenes/trap/trap.tscn" id="7_bvkao"]
 
 [node name="Maze" type="GridMap"]
 mesh_library = ExtResource("1_vu4cc")
@@ -16,9 +17,10 @@ key_scene = ExtResource("3_b8iis")
 krople_scene = ExtResource("4_pk3sv")
 doors_scene = ExtResource("5_oqg8o")
 eye_scene = ExtResource("6_5kp4d")
+trap_scene = ExtResource("7_bvkao")
 
 [node name="EyeTimer" type="Timer" parent="."]
-wait_time = 1.5
+wait_time = 0.5
 autostart = true
 
 [connection signal="timeout" from="EyeTimer" to="." method="_on_eye_timer_timeout"]

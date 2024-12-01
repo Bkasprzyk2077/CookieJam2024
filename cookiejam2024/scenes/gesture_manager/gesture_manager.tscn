@@ -137,7 +137,7 @@ _data = {
 "good_pose": SubResource("Animation_67120")
 }
 
-[node name="GestureManager" type="Node"]
+[node name="GestureManager" type="Node" groups=["gm"]]
 script = ExtResource("1_yymwu")
 
 [node name="Arrows" type="CanvasLayer" parent="."]

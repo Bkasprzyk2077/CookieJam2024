@@ -11,11 +11,13 @@ class_name MazeGen
 @export var krople_scene: PackedScene
 @export var doors_scene: PackedScene
 @export var eye_scene: PackedScene
+@export var trap_scene: PackedScene
 # Definicja kafelków
 const normal_wall_mesh = "WallMesh"
 const walkable_mesh = "FloorMesh"
 
 var floor_tiles_with_one_neighbour = []
+var floor_tiles_with_many_neighbours = []
 
 # Sąsiednie kafelki (dla poruszania się po X-Z)
 var adj4 = [
@@ -131,6 +133,9 @@ func count_floor_neighbors():
 			# Wynik dla tego pola
 			if floor_neighbors == 1 and current_pos != Vector3i.ZERO:
 				floor_tiles_with_one_neighbour.append(current_pos)
+			elif floor_neighbors > 1 and current_pos != Vector3i.ZERO:
+				floor_tiles_with_many_neighbours.append(current_pos)
+	floor_tiles_with_many_neighbours.shuffle()
 			
 func is_floor(pos: Vector3i) -> bool:
 	return get_cell_item(pos) == mesh_library.find_item_by_name("FloorMesh")
@@ -186,7 +191,19 @@ func generate_items():
 		var krople = krople_scene.instantiate()
 		add_child(krople)
 		krople.global_position = map_to_local(tile)
-
+		
+	for i in range(6):
+		var trap = trap_scene.instantiate()
+		add_child(trap)
+		trap.global_position = map_to_local(floor_tiles_with_many_neighbours.pop_front())
+	
+	while len(get_tree().get_nodes_in_group("kropla")) < 5:
+		var krople = krople_scene.instantiate()
+		add_child(krople)
+		krople.global_position = map_to_local(floor_tiles_with_many_neighbours.pop_front())
+	print(len(get_tree().get_nodes_in_group("kropla")))
+	
+	
 func random_point_between(vec_a: Vector3, vec_b: Vector3) -> Vector3:
 	var t = randf() # Losowy współczynnik w zakresie [0, 1]
 	return vec_a + (vec_b - vec_a) * t

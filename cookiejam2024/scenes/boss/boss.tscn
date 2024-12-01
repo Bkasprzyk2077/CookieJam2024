@@ -207,6 +207,7 @@ script = ExtResource("1_e6ywe")
 [node name="Sprite3D" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 0)
 no_depth_test = true
+render_priority = 1
 sprite_frames = SubResource("SpriteFrames_q4ewq")
 animation = &"new_animation"
 autoplay = "new_animation"

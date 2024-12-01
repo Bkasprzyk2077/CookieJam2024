@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://biv52kg2gccf3"
-path.s3tc="res://.godot/imported/IMG_0984.png-e81cf6024691c7195f7faa9ca14dbd77.s3tc.ctex"
+uid="uid://ymve3vxbdx8p"
+path.s3tc="res://.godot/imported/IMG_0990.png-aa75f30b9ce9126d5138cd76ebe88e7d.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/IMG_0984.png"
-dest_files=["res://.godot/imported/IMG_0984.png-e81cf6024691c7195f7faa9ca14dbd77.s3tc.ctex"]
+source_file="res://assets/IMG_0990.png"
+dest_files=["res://.godot/imported/IMG_0990.png-aa75f30b9ce9126d5138cd76ebe88e7d.s3tc.ctex"]
 
 [params]
 
