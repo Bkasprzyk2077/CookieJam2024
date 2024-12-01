@@ -60,6 +60,7 @@ func _on_area_3d_area_entered(area):
 		if get_tree().get_first_node_in_group("vintage").material.get_shader_parameter("outer_radius") > 1.5:
 			return
 		heal.emit()
+		$krople_sound.play()
 		get_tree().get_first_node_in_group("gm").can_boss_attack = false
 		$AnimationPlayer.play("krople")
 		area.get_parent().queue_free()

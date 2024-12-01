@@ -4,11 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://d2rgqge8v4kli" path="res://assets/key.png" id="1_ri5r3"]
 [ext_resource type="Script" path="res://scenes/player/plaer_light.gd" id="2_wa4fp"]
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_tu52l"]
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_8n5si"]
 frequency = 0.0119
 
 [sub_resource type="NoiseTexture3D" id="NoiseTexture3D_vbtkn"]
-noise = SubResource("FastNoiseLite_tu52l")
+noise = SubResource("FastNoiseLite_8n5si")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_fysrk"]
 radius = 1.18

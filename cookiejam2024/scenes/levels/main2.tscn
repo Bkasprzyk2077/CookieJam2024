@@ -1,0 +1,58 @@
+[gd_scene load_steps=13 format=3 uid="uid://b1lbcl7slvoue"]
+
+[ext_resource type="PackedScene" uid="uid://cdgrqruroljoy" path="res://scenes/gesture_manager/gesture_manager.tscn" id="1_nsimf"]
+[ext_resource type="PackedScene" uid="uid://buppi1dcq3b3i" path="res://scenes/maze_generator/maze_generator.tscn" id="2_jsuyg"]
+[ext_resource type="Texture2D" uid="uid://bwtf6ga04mxyy" path="res://assets/sjyboxes/skyboxnieb.png" id="3_sbykj"]
+[ext_resource type="Script" path="res://scenes/maze_generator/maze_generator2.gd" id="3_xqr0s"]
+[ext_resource type="PackedScene" uid="uid://j7r1n8ldyxfg" path="res://scenes/torch/Torch.tscn" id="4_kirtd"]
+[ext_resource type="Script" path="res://scenes/levels/world_environment.gd" id="4_vrd2p"]
+[ext_resource type="PackedScene" uid="uid://cy8iths304j2u" path="res://scenes/player/Player.tscn" id="5_ux12b"]
+[ext_resource type="PackedScene" uid="uid://ckxs7ts1qlj6b" path="res://scenes/flying_eye/flying_eye.tscn" id="6_q220m"]
+[ext_resource type="Texture2D" uid="uid://fnkh255255rq" path="res://assets/oko/goatoko.png" id="7_mwcrn"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_pvadt"]
+panorama = ExtResource("3_sbykj")
+filter = false
+
+[sub_resource type="Sky" id="Sky_nckj3"]
+sky_material = SubResource("PanoramaSkyMaterial_pvadt")
+
+[sub_resource type="Environment" id="Environment_4oiws"]
+background_mode = 2
+sky = SubResource("Sky_nckj3")
+
+[node name="Main2" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
+
+[node name="GestureManager" parent="." instance=ExtResource("1_nsimf")]
+
+[node name="Maze2" parent="." instance=ExtResource("2_jsuyg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -1)
+data = {
+"cells": PackedInt32Array(65534, 65533, 1310720, 65534, 65534, 1310720, 0, 0, 1310720)
+}
+script = ExtResource("3_xqr0s")
+torch_scene = ExtResource("4_kirtd")
+
+[node name="Enviro" type="Node3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Enviro"]
+environment = SubResource("Environment_4oiws")
+script = ExtResource("4_vrd2p")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Enviro"]
+transform = Transform3D(1, 0, 0, 0, 0.438371, 0.898794, 0, -0.898794, 0.438371, 0, 0, 0)
+visible = false
+
+[node name="Player" parent="." instance=ExtResource("5_ux12b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 1.5, 1.5)
+
+[node name="FlyingEye" parent="." instance=ExtResource("6_q220m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 4, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.5, 0.224144, -0.836516, 1.13133e-08, 0.965926, 0.258819, 0.866025, 0.12941, -0.482963, -14, 13, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(74.05, 0, 0, 0, 74.05, 0, 0, 0, 74.05, 0, 167, -407)
+texture = ExtResource("7_mwcrn")
