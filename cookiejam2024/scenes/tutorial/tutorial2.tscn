@@ -1,0 +1,202 @@
+[gd_scene load_steps=14 format=3 uid="uid://dxc8vimurk5ou"]
+
+[ext_resource type="Script" path="res://scenes/tutorial/tutorial2.gd" id="1_h1scn"]
+[ext_resource type="Texture2D" uid="uid://dnjtx2g2pema2" path="res://scenes/ui/tloo.png" id="2_mpslo"]
+[ext_resource type="Texture2D" uid="uid://d0p8sylkapa0h" path="res://assets/torch/grzes-pochodnia.png" id="3_v4gr7"]
+[ext_resource type="Texture2D" uid="uid://n4fj6131563s" path="res://assets/torch/grzes-sadge.png" id="4_wqybu"]
+[ext_resource type="Texture2D" uid="uid://ymve3vxbdx8p" path="res://assets/IMG_0990.png" id="87_5ga42"]
+[ext_resource type="Shader" path="res://shaders/Dithering.gdshader" id="89_raa88"]
+[ext_resource type="Texture2D" uid="uid://br7gqp8ys5r4x" path="res://scenes/ui/menu.png" id="90_gp2lq"]
+[ext_resource type="Texture2D" uid="uid://dywnjja417lft" path="res://scenes/ui/menuclik.png" id="91_k876f"]
+[ext_resource type="Texture2D" uid="uid://bpivx0gi43m8p" path="res://scenes/ui/hover.png" id="92_tpr1i"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w3vwg"]
+shader = ExtResource("89_raa88")
+shader_parameter/fog_color = Color(0, 0, 0, 1)
+shader_parameter/resolution_downsampling = 8.0
+shader_parameter/bit_depth = 8.0
+
+[sub_resource type="Animation" id="Animation_u8ydk"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_ohkcx"]
+resource_name = "new_animation"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gpenb"]
+_data = {
+"RESET": SubResource("Animation_u8ydk"),
+"new_animation": SubResource("Animation_ohkcx")
+}
+
+[node name="Tutorial2" type="CanvasLayer"]
+script = ExtResource("1_h1scn")
+
+[node name="bg" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_mpslo")
+
+[node name="root" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+
+[node name="Control1" type="Control" parent="root"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="door" type="TextureRect" parent="root/Control1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -169.0
+offset_top = -532.0
+offset_right = 4882.0
+offset_bottom = 3229.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.293, 0.293)
+texture = ExtResource("3_v4gr7")
+
+[node name="door2" type="TextureRect" parent="root/Control1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1426.0
+offset_top = -707.0
+offset_right = 4301.0
+offset_bottom = 3812.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.293, 0.293)
+texture = ExtResource("4_wqybu")
+
+[node name="Label" type="Label" parent="root/Control1"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -466.0
+offset_top = 244.0
+offset_right = 450.64
+offset_bottom = 451.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 48
+text = "Aby otworzyć drzwi zapal wszystkie 3 pochodnie"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Control2" type="Control" parent="root"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="root/Control2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -246.0
+offset_top = -261.0
+offset_right = 1674.0
+offset_bottom = 1539.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.29955, 0.29955)
+texture = ExtResource("87_5ga42")
+
+[node name="Label" type="Label" parent="root/Control2"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -376.0
+offset_top = 186.0
+offset_right = 447.0
+offset_bottom = 437.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 48
+text = "Unikaj pułapek. Możesz niszczyć je gdy stoisz wystarczajaco blisko i wykonasz atak."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Dithering" type="ColorRect" parent="root"]
+material = SubResource("ShaderMaterial_w3vwg")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="next" type="TextureButton" parent="root"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -54.0
+offset_top = -465.0
+offset_right = -14.0
+offset_bottom = -425.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("90_gp2lq")
+texture_pressed = ExtResource("91_k876f")
+texture_hover = ExtResource("92_tpr1i")
+
+[node name="Label" type="Label" parent="root/next"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -18.0
+offset_right = 1.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 48
+text = "Dalej"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_gpenb")
+}
+autoplay = "new_animation"
+
+[connection signal="pressed" from="root/next" to="." method="_on_next_pressed"]

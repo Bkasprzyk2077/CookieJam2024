@@ -1,4 +1,4 @@
-[gd_scene load_steps=99 format=3 uid="uid://bu07ht11fukh8"]
+[gd_scene load_steps=98 format=3 uid="uid://bu07ht11fukh8"]
 
 [ext_resource type="Script" path="res://scenes/tutorial/tutorial.gd" id="1_xrawa"]
 [ext_resource type="Texture2D" uid="uid://dnjtx2g2pema2" path="res://scenes/ui/tloo.png" id="2_65sse"]
@@ -87,7 +87,6 @@
 [ext_resource type="Texture2D" uid="uid://d2rgqge8v4kli" path="res://assets/key.png" id="84_45h75"]
 [ext_resource type="Texture2D" uid="uid://csr10fedchdsa" path="res://assets/doors.png" id="84_yaadl"]
 [ext_resource type="Texture2D" uid="uid://cpuitw8s043yw" path="res://assets/doors2.png" id="86_x27sq"]
-[ext_resource type="Texture2D" uid="uid://ymve3vxbdx8p" path="res://assets/IMG_0990.png" id="87_pcrou"]
 [ext_resource type="Texture2D" uid="uid://cuh3ybimf11jh" path="res://assets/krople.png" id="88_3o36d"]
 [ext_resource type="Texture2D" uid="uid://br7gqp8ys5r4x" path="res://scenes/ui/menu.png" id="89_xh473"]
 [ext_resource type="Texture2D" uid="uid://dywnjja417lft" path="res://scenes/ui/menuclik.png" id="90_41238"]
@@ -358,21 +357,6 @@ shader_parameter/fog_color = Color(0, 0, 0, 1)
 shader_parameter/resolution_downsampling = 8.0
 shader_parameter/bit_depth = 8.0
 
-[sub_resource type="Animation" id="Animation_ohkcx"]
-resource_name = "new_animation"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("root/Control2/key:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(0.293, 0.293), Vector2(0.433, 0.433), Vector2(0.293, 0.293)]
-}
-
 [sub_resource type="Animation" id="Animation_u8ydk"]
 length = 0.001
 tracks/0/type = "value"
@@ -386,6 +370,21 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(0.293, 0.293)]
+}
+
+[sub_resource type="Animation" id="Animation_ohkcx"]
+resource_name = "new_animation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("root/Control2/key:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.293, 0.293), Vector2(0.433, 0.433), Vector2(0.293, 0.293)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gpenb"]
@@ -415,6 +414,7 @@ grow_vertical = 2
 size_flags_vertical = 4
 
 [node name="Control" type="Control" parent="root"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -476,6 +476,7 @@ autoplay = "default"
 frame_progress = 0.407801
 
 [node name="Control2" type="Control" parent="root"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -558,22 +559,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="root/Control3"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -718.0
-offset_top = -246.0
-offset_right = 1202.0
-offset_bottom = 1554.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.29955, 0.29955)
-texture = ExtResource("87_pcrou")
-
 [node name="TextureRect2" type="TextureRect" parent="root/Control3"]
 layout_mode = 1
 anchors_preset = 8
@@ -581,33 +566,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 301.0
-offset_top = -505.0
-offset_right = 922.0
-offset_bottom = 746.0
+offset_left = -191.0
+offset_top = -440.0
+offset_right = 430.0
+offset_bottom = 811.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.575693, 0.575693)
 texture = ExtResource("88_3o36d")
-
-[node name="Label" type="Label" parent="root/Control3"]
-z_index = 1
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -848.0
-offset_top = 201.0
-offset_right = -25.0
-offset_bottom = 452.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 48
-text = "Unikaj pułapek. Możesz niszczyć je gdy stoisz wystarczajaco blisko i wykonasz atak."
-horizontal_alignment = 1
-autowrap_mode = 2
 
 [node name="Label2" type="Label" parent="root/Control3"]
 z_index = 1
@@ -617,10 +583,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 41.0
-offset_top = 184.0
-offset_right = 869.0
-offset_bottom = 439.0
+offset_left = -451.0
+offset_top = 249.0
+offset_right = 377.0
+offset_bottom = 504.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 48

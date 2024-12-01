@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/torch/torch.gd" id="1_m5teq"]
 [ext_resource type="Script" path="res://scenes/player/plaer_light.gd" id="2_k1lk7"]
-[ext_resource type="Texture2D" uid="uid://d0p8sylkapa0h" path="res://assets/torch/grzes-pochodnia.png" id="2_sxodf"]
+[ext_resource type="Texture2D" uid="uid://n4fj6131563s" path="res://assets/torch/grzes-sadge.png" id="2_q1xk0"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_tu52l"]
 frequency = 0.0119
@@ -20,7 +20,7 @@ script = ExtResource("1_m5teq")
 transform = Transform3D(0.58, 0, 0, 0, 0.58, 0, 0, 0, 0.58, 0, 1.74528, 0)
 billboard = 2
 shaded = true
-texture = ExtResource("2_sxodf")
+texture = ExtResource("2_q1xk0")
 
 [node name="PlaerLight" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.16181, 0)
@@ -39,3 +39,10 @@ collision_mask = 6
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.38514, 0)
 shape = SubResource("CylinderShape3D_tm3d3")
+
+[node name="Area3D2" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.38514, 0)
+shape = SubResource("CylinderShape3D_tm3d3")
+disabled = true

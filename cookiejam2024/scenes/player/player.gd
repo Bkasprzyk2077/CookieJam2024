@@ -80,7 +80,7 @@ func _on_area_3d_area_entered(area):
 		area.get_parent().queue_free()
 	elif area.get_parent() is doors and has_key:
 		print("WYGRAŁEŚ")
-		Transition.fade_out("res://scenes/levels/main2.tscn")
+		Transition.fade_out("res://scenes/tutorial/tutorial2.tscn")
 	elif area.get_parent() is Doors2:
 		print("WYGRAŁEŚ")
 		Transition.fade_out("res://scenes/end_game_menu/EndGameMenu.tscn")

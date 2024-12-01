@@ -202,12 +202,12 @@ func generate_items():
 		add_child(krople)
 		krople.global_position = map_to_local(tile)
 		
-	for i in range(6):
+	for i in range(5):
 		var trap = trap_scene.instantiate()
 		add_child(trap)
 		trap.global_position = map_to_local(floor_tiles_with_many_neighbours.pop_front())
 	
-	while len(get_tree().get_nodes_in_group("kropla")) < 5:
+	while len(get_tree().get_nodes_in_group("kropla")) < 6:
 		var krople = krople_scene.instantiate()
 		add_child(krople)
 		krople.global_position = map_to_local(floor_tiles_with_many_neighbours.pop_front())
