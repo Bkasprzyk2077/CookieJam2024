@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bhlj66vwnx7wm"]
 
 [ext_resource type="Script" path="res://scenes/trap/trap.gd" id="1_n4d0t"]
-[ext_resource type="Texture2D" uid="uid://biv52kg2gccf3" path="res://assets/IMG_0984.png" id="1_pj43w"]
+[ext_resource type="Texture2D" uid="uid://ymve3vxbdx8p" path="res://assets/IMG_0990.png" id="2_hduua"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_uf33x"]
 height = 6.774
@@ -15,7 +15,7 @@ script = ExtResource("1_n4d0t")
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 billboard = 2
 shaded = true
-texture = ExtResource("1_pj43w")
+texture = ExtResource("2_hduua")
 
 [node name="Area3D" type="Area3D" parent="."]
 collision_layer = 6

@@ -49,6 +49,10 @@ func _ready():
 func _process(delta):
 	if material.get_shader_parameter("outer_radius") < .1:
 		death()
+	elif material.get_shader_parameter("outer_radius") < .5:
+		can_boss_attack = false
+	else:
+		can_boss_attack = true
 	material.set_shader_parameter("outer_radius", material.get_shader_parameter("outer_radius") - delta/20)
 
 func check_pose(pose):
@@ -87,7 +91,7 @@ func _on_enemy_timer_timeout():
 				#playerr.get_node("PosePlayer").play("reset")
 
 				arrow_rect.visible = false
-				print("KONIEC DIALOGU")
+				#print("KONIEC DIALOGU")
 				enemy_timer.start()
 				boss.reset()
 				return
@@ -124,7 +128,7 @@ func take_damage():
 
 func death():
 	playerr.can_move = false
-	print("DEATH")
+	#print("DEATH")
 	Transition.fade_out("res://scenes/end_game_menu/EndGameMenu.tscn")
 	material.set_shader_parameter("outer_radius", 1.6)
 

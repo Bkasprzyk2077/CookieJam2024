@@ -21,7 +21,7 @@ func _ready():
 	$Area3D/CollisionShape3D.disabled = false
 
 func _process(delta):
-	#print(has_key)
+	#print("Can move: ", can_move)
 	if can_move and !boss.is_fighting:
 		if Input.is_action_just_pressed("move_forward"):
 			if front_ray_cast_3d.is_colliding():
@@ -59,6 +59,7 @@ func _on_area_3d_area_entered(area):
 		if get_tree().get_first_node_in_group("vintage").material.get_shader_parameter("outer_radius") > 1.5:
 			return
 		heal.emit()
+		get_tree().get_first_node_in_group("gm").can_boss_attack = false
 		$AnimationPlayer.play("krople")
 		area.get_parent().queue_free()
 	elif area.get_parent() is Trap:
@@ -73,3 +74,6 @@ func _on_area_3d_area_entered(area):
 	elif area.get_parent() is doors and has_key:
 		print("WYGRAŁEŚ")
 		Transition.fade_out("res://scenes/end_game_menu/EndGameMenu.tscn")
+
+func reset_boss_attack():
+		get_tree().get_first_node_in_group("gm").can_boss_attack = true

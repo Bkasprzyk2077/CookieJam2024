@@ -41,7 +41,7 @@ transform = Transform3D(1, 0, 0, 0, 0.438371, 0.898794, 0, -0.898794, 0.438371, 
 visible = false
 
 [node name="Player" parent="." instance=ExtResource("1_8ng35")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 1.32, 1.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 1.5, 1.5)
 
 [node name="FlyingEye" parent="." instance=ExtResource("7_hwysd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 4, 0)

@@ -4,13 +4,9 @@ extends Node3D
 @onready var text_label = $CanvasLayer/Control/TextLabel
 @onready var text_timer = $TextTimer
 @export var dialog_lines = [
-	"Wyzywam cię na pojedynek w gapieniu się!",
-	"Jesli mrugniesz - umierasz",
-]
-@export var dialog_lines2 = [
 	"1,2,3 OTCHŁAN PATRZY!",
 	"Twoje oczy sa co raz bardziej zmęczone",
-	#"Po czyjej jesteś stronie, co?",
+	"Jesli mrugniesz zginiesz",
 ]
 @export var full_text: String
 @export var char_delay: float = 0.1 # Opóźnienie między literami
@@ -25,7 +21,7 @@ signal text_end
 
 func _ready():
 	text_label.text = ""
-
+	
 func boss_talk():
 	is_fighting = true
 	if i == len(dialog_lines):
@@ -36,30 +32,33 @@ func boss_talk():
 	index = 0
 	current_text = ""
 	if j == 0:
-		full_text = dialog_lines[i]
+		full_text = "Wyzywam cię na pojedynek w gapieniu się!"
 	elif j == 1:
-		full_text = dialog_lines2[i]
+		full_text = dialog_lines.pick_random()
 	i += 1
 	text_timer.start()
 	
 func get_hit():
-	#reset()
+	var tween = get_tree().create_tween()
+	tween.tween_property($Sprite3D, "scale", Vector3.ONE, 1)
+	is_fighting = false
 	$AnimationPlayer.play("get_hit")
 	text_label.text = ""
 	index = 0
 	current_text = ""
 	full_text = "AAAłłłAAA!"
 	i += 1
+	#is_fighting = false
 	text_timer.start()
 
 func reset():
-	is_fighting = false
 	$AnimationPlayer.play("out")
 	text_label.text = ""
 	i = 0
 	j = 1
 	await $AnimationPlayer.animation_finished
 	get_tree().get_first_node_in_group("player").can_move = true
+	is_fighting = false
 
 func _on_text_timer_timeout():
 	if index < full_text.length():
