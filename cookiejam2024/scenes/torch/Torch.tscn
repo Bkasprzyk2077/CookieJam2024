@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://j7r1n8ldyxfg"]
 
-[ext_resource type="Texture2D" uid="uid://d2rgqge8v4kli" path="res://assets/key.png" id="1_8h1j1"]
 [ext_resource type="Script" path="res://scenes/torch/torch.gd" id="1_m5teq"]
 [ext_resource type="Script" path="res://scenes/player/plaer_light.gd" id="2_k1lk7"]
+[ext_resource type="Texture2D" uid="uid://d0p8sylkapa0h" path="res://assets/torch/grzes-pochodnia.png" id="2_sxodf"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_tu52l"]
 frequency = 0.0119
@@ -17,15 +17,15 @@ radius = 1.18
 script = ExtResource("1_m5teq")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(0.13, 0, 0, 0, 0.13, 0, 0, 0, 0.13, 0, 0.74528, 0)
+transform = Transform3D(0.58, 0, 0, 0, 0.58, 0, 0, 0, 0.58, 0, 1.74528, 0)
 billboard = 2
 shaded = true
-texture = ExtResource("1_8h1j1")
+texture = ExtResource("2_sxodf")
 
 [node name="PlaerLight" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.761813, 0)
-light_color = Color(0.547174, 0.357796, 0.98882, 1)
-light_size = 0.291
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.16181, 0)
+light_color = Color(0.113043, 0.593647, 0.515027, 1)
+light_size = 1.0
 omni_range = 20.0
 omni_attenuation = 4.613
 script = ExtResource("2_k1lk7")

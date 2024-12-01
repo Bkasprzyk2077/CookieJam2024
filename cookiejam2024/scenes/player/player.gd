@@ -4,12 +4,15 @@ class_name player
 
 @onready var front_ray_cast_3d = $FrontRayCast3D
 @onready var back_ray_cast_3d = $BackRayCast3D
+@onready var knife = $Camera3D/Knife
 
 const MOVE_DISTANCE = 5
 const MOVE_TIME = .2
 var can_move:bool = true
 var has_key:bool = false
 var boss
+
+var torch_count = 0
 
 signal heal
 signal hit
@@ -74,9 +77,21 @@ func _on_area_3d_area_entered(area):
 		get_tree().get_first_node_in_group("doors").open()
 		get_tree().get_first_node_in_group("doors").get_node("PlaerLight").visible = true
 		area.get_parent().queue_free()
+	elif area.get_parent() is Torch:
+		area.get_parent().fire()
+		torch_count += 1
 	elif area.get_parent() is doors and has_key:
 		print("WYGRAŁEŚ")
+		Transition.fade_out("res://scenes/levels/main2.tscn")
+	elif area.get_parent() is Doors2 and torch_count == 4:
+		print("WYGRAŁEŚ")
 		Transition.fade_out("res://scenes/end_game_menu/EndGameMenu.tscn")
-
+	
 func reset_boss_attack():
 		get_tree().get_first_node_in_group("gm").can_boss_attack = true
+
+func use_knife():
+	knife.visible = true
+	knife.play()
+	await knife.animation_finished
+	knife.visible = false

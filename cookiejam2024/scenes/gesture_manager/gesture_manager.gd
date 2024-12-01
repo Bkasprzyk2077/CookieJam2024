@@ -116,10 +116,10 @@ func _on_enemy_timer_timeout():
 			get_tree().get_first_node_in_group("player_animation").play("good")
 			animation_player.play("good_pose")
 		else:
-			#print("ZLE")
-			#pose_player.play("out")
+			playerr.use_knife()
 			take_damage()
 			GlobalAudio.play_sound("res://sounds/beartrap.wav")
+			await playerr.knife.animation_finished
 			break
 		still_has_time = true
 	arrow_rect.visible = false

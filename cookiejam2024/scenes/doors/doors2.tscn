@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://dnbptq8gr33d"]
+
+[ext_resource type="Script" path="res://scenes/doors/doors2.gd" id="1_ohe4x"]
+[ext_resource type="Texture2D" uid="uid://csr10fedchdsa" path="res://assets/doors.png" id="2_tprle"]
+[ext_resource type="Script" path="res://scenes/player/plaer_light.gd" id="3_ivxef"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_jg1dj"]
+frequency = 0.0119
+
+[sub_resource type="NoiseTexture3D" id="NoiseTexture3D_rxe2c"]
+noise = SubResource("FastNoiseLite_jg1dj")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_1smqq"]
+radius = 2.51
+
+[node name="Doors2" type="Node3D" groups=["doors"]]
+script = ExtResource("1_ohe4x")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.37, 0, 0, 0, 0.37, 0, 0, 0, 0.37, 0, 3.96475, 0)
+texture = ExtResource("2_tprle")
+
+[node name="PlaerLight" type="OmniLight3D" parent="."]
+light_color = Color(0.547174, 0.357796, 0.98882, 1)
+light_energy = 20.0
+omni_range = 15.0
+script = ExtResource("3_ivxef")
+noise = SubResource("NoiseTexture3D_rxe2c")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.12566, 0)
+shape = SubResource("SphereShape3D_1smqq")
+
+[node name="Area3D2" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.11386, 0)
+shape = SubResource("SphereShape3D_1smqq")

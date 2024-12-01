@@ -325,10 +325,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 0)
 no_depth_test = true
 render_priority = 1
 sprite_frames = SubResource("SpriteFrames_q4ewq")
-animation = &"cry"
+animation = &"idle"
 autoplay = "idle"
-frame = 18
-frame_progress = 1.0
+frame_progress = 0.765878
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

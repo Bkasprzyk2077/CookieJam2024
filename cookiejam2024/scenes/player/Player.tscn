@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://cy8iths304j2u"]
+[gd_scene load_steps=44 format=3 uid="uid://cy8iths304j2u"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_4127a"]
 [ext_resource type="Script" path="res://scenes/player/camera_3d.gd" id="2_xslh3"]
@@ -8,8 +8,25 @@
 [ext_resource type="Texture2D" uid="uid://t4pr20qmah0q" path="res://assets/poses/zakrapianie.png" id="6_psxkr"]
 [ext_resource type="PackedScene" uid="uid://dbuff07o7u7uv" path="res://scenes/boss/boss.tscn" id="6_ttfy4"]
 [ext_resource type="AudioStream" uid="uid://ov1n8prxrfyq" path="res://sounds/walking-tup.wav" id="8_ed4x6"]
+[ext_resource type="Texture2D" uid="uid://bb61fl8rld40" path="res://assets/oko/oko-knife/wziolnusz_00000.png" id="8_pmn25"]
+[ext_resource type="Texture2D" uid="uid://hso3mncfd34n" path="res://assets/oko/oko-knife/wziolnusz_00001.png" id="9_h843h"]
 [ext_resource type="AudioStream" uid="uid://c5o2t5bwiabty" path="res://sounds/beartrap.wav" id="9_xv322"]
 [ext_resource type="AudioStream" uid="uid://d3hv2i3vnb5v2" path="res://sounds/kropelki.wav" id="10_ke4q6"]
+[ext_resource type="Texture2D" uid="uid://f8lh5u5gdrjq" path="res://assets/oko/oko-knife/wziolnusz_00002.png" id="10_lbt1t"]
+[ext_resource type="Texture2D" uid="uid://bcwesqx82bagp" path="res://assets/oko/oko-knife/wziolnusz_00003.png" id="11_ph0nn"]
+[ext_resource type="Texture2D" uid="uid://b71n00fno3b4h" path="res://assets/oko/oko-knife/wziolnusz_00004.png" id="12_e1y3h"]
+[ext_resource type="Texture2D" uid="uid://7g8dk4jh8i1c" path="res://assets/oko/oko-knife/wziolnusz_00005.png" id="13_evaij"]
+[ext_resource type="Texture2D" uid="uid://d80gec0ba2bp" path="res://assets/oko/oko-knife/wziolnusz_00006.png" id="14_kxbgq"]
+[ext_resource type="Texture2D" uid="uid://dmbnkkmpvbdc7" path="res://assets/oko/oko-knife/wziolnusz_00007.png" id="15_xw7qi"]
+[ext_resource type="Texture2D" uid="uid://22u71hdmcc1g" path="res://assets/oko/oko-knife/wziolnusz_00008.png" id="16_bhjwt"]
+[ext_resource type="Texture2D" uid="uid://b06oqss1ocklf" path="res://assets/oko/oko-knife/wziolnusz_00009.png" id="17_wnobx"]
+[ext_resource type="Texture2D" uid="uid://dir5smwf1cxal" path="res://assets/oko/oko-knife/wziolnusz_00010.png" id="18_fl1ce"]
+[ext_resource type="Texture2D" uid="uid://bwybw36ripm5h" path="res://assets/oko/oko-knife/wziolnusz_00011.png" id="19_4h4um"]
+[ext_resource type="Texture2D" uid="uid://ccth5wvwg8ip0" path="res://assets/oko/oko-knife/wziolnusz_00012.png" id="20_y113v"]
+[ext_resource type="Texture2D" uid="uid://d0ofqm0f2qhhn" path="res://assets/oko/oko-knife/wziolnusz_00013.png" id="21_kte73"]
+[ext_resource type="Texture2D" uid="uid://w70bfjp0wp1g" path="res://assets/oko/oko-knife/wziolnusz_00014.png" id="22_2gvb6"]
+[ext_resource type="Texture2D" uid="uid://3cm8ian63fb5" path="res://assets/oko/oko-knife/wziolnusz_00015.png" id="23_41c1m"]
+[ext_resource type="Texture2D" uid="uid://dp3lypv8ywk4n" path="res://assets/oko/oko-knife/wziolnusz_00016.png" id="24_72vcm"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ynih2"]
 render_priority = 0
@@ -32,6 +49,65 @@ frequency = 0.0119
 
 [sub_resource type="NoiseTexture3D" id="NoiseTexture3D_ke0t5"]
 noise = SubResource("FastNoiseLite_h0gyd")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ltb37"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_pmn25")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_h843h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_lbt1t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ph0nn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_e1y3h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_evaij")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_kxbgq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_xw7qi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_bhjwt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_wnobx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_fl1ce")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_4h4um")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_y113v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_kte73")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_2gvb6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_41c1m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_72vcm")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 12.0
+}]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ibymt"]
 
@@ -334,6 +410,16 @@ texture = ExtResource("6_psxkr")
 
 [node name="Boss" parent="Camera3D" instance=ExtResource("6_ttfy4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.72093)
+
+[node name="Knife" type="AnimatedSprite3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.72, 0, -4.525)
+visible = false
+no_depth_test = true
+render_priority = 1
+sprite_frames = SubResource("SpriteFrames_ltb37")
+animation = &"attack"
+frame = 16
+frame_progress = 1.0
 
 [node name="Area3D" type="Area3D" parent="."]
 collision_layer = 2

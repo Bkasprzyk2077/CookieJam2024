@@ -174,9 +174,11 @@ func get_single_floor_neighbor(pos: Vector3i) -> Vector3i:
 
 func generate_items():
 	floor_tiles_with_one_neighbour.shuffle()
-	#var key = key_scene.instantiate()
-	#key.global_position = map_to_local(floor_tiles_with_one_neighbour.pop_front())
-	#add_child(key)
+
+	var dooors = doors_scene.instantiate()
+	var dor_loc = floor_tiles_with_one_neighbour.pop_front()
+	add_child(dooors)
+
 	var j = 0
 	while floor_tiles_with_one_neighbour and j < 4:
 		var torch = torch_scene.instantiate()
@@ -188,9 +190,6 @@ func generate_items():
 		add_child(torch)
 		torch.global_position = map_to_local(floor_tiles_with_many_neighbours.pick_random())
 		
-	var dooors = doors_scene.instantiate()
-	var dor_loc = floor_tiles_with_one_neighbour.pop_front()
-	add_child(dooors)
 	dooors.global_position = map_to_local(dor_loc)
 	var somsiad = get_single_floor_neighbor(dor_loc)
 	print(somsiad)

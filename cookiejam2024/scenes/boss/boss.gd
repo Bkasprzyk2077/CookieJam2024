@@ -71,7 +71,7 @@ func reset():
 	await $AnimationPlayer.animation_finished
 	get_tree().get_first_node_in_group("player").can_move = true
 	is_fighting = false
-
+	
 func _on_text_timer_timeout():
 	if index < full_text.length():
 		current_text += full_text[index] # Dodaj kolejną literę
