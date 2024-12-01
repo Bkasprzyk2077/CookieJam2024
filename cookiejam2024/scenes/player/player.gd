@@ -17,6 +17,7 @@ func _ready():
 	boss = get_tree().get_first_node_in_group("boss")
 
 func _process(delta):
+	#print(has_key)
 	if can_move and !boss.is_fighting:
 		if Input.is_action_just_pressed("move_forward"):
 			if front_ray_cast_3d.is_colliding():
@@ -58,6 +59,7 @@ func _on_area_3d_area_entered(area):
 		area.get_parent().queue_free()
 	elif area.get_parent() is Key:
 		has_key = true
+		get_tree().get_first_node_in_group("doors").open()
 		get_tree().get_first_node_in_group("doors").get_node("PlaerLight").visible = true
 		area.get_parent().queue_free()
 	elif area.get_parent() is doors and has_key:

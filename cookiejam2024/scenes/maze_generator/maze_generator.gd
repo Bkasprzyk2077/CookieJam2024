@@ -138,15 +138,46 @@ func is_within_bounds(pos: Vector3i) -> bool:
 	return pos.x >= 0 and pos.x < x_dim and \
 		   pos.z >= 0 and pos.z < z_dim
 
+func get_single_floor_neighbor_direction(pos: Vector3i) -> Vector3i:
+	# Lista możliwych przesunięć (kierunków sąsiadów)
+	var directions = [
+		Vector3i(-1, 0, 0),  # Lewo
+		Vector3i(1, 0, 0),   # Prawo
+		Vector3i(0, 0, -1),  # Dół
+		Vector3i(0, 0, 1)    # Góra
+	]
+	
+	var floor_neighbor: Vector3i = Vector3i.ZERO
+	var neighbor_count = 0
+	
+	# Sprawdzamy każdego sąsiada
+	for direction in directions:
+		var neighbor_pos = pos + direction
+		if is_within_bounds(neighbor_pos) and is_floor(neighbor_pos):
+			floor_neighbor = direction
+			neighbor_count += 1
+			
+			# Jeśli jest więcej niż jeden sąsiad, przerywamy
+			if neighbor_count > 1:
+				return Vector3i.ZERO
+	
+	# Jeśli znaleźliśmy dokładnie jednego sąsiada, zwracamy jego kierunek
+	return floor_neighbor if neighbor_count == 1 else Vector3i.ZERO
+
+
 func generate_items():
 	floor_tiles_with_one_neighbour.shuffle()
 	var key = key_scene.instantiate()
 	add_child(key)
 	key.global_position = map_to_local(floor_tiles_with_one_neighbour.pop_front())
 	
-	var doors = doors_scene.instantiate()
-	add_child(doors)
-	doors.global_position = map_to_local(floor_tiles_with_one_neighbour.pop_front())
+	var dooors = doors_scene.instantiate()
+	var dor_loc = floor_tiles_with_one_neighbour.pop_front()
+	add_child(dooors)
+	dooors.global_position = map_to_local(dor_loc)
+	var somsiad = get_single_floor_neighbor_direction(dor_loc)
+	print(somsiad)
+	dooors.look_at(map_to_local(somsiad))
 	
 	for tile in floor_tiles_with_one_neighbour:
 		var krople = krople_scene.instantiate()
