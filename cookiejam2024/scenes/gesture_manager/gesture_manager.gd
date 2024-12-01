@@ -21,6 +21,17 @@ var directions = {
 	"down_left": 125
 }
 
+var directions_sounds = {
+	"up": "res://sounds/pose4.wav",
+	"down": "res://sounds/pose2.wav",
+	"left": "res://sounds/pose3.wav",
+	"right": "res://sounds/pose4.wav",
+	"up_right": "res://sounds/pose5chyba.wav",
+	"up_left": "res://sounds/pose2.wav",
+	"down_right": "res://sounds/pose3.wav",
+	"down_left": "res://sounds/pose4.wav"
+}
+
 var directions_poses = {
 	"up": "res://assets/jojohands-test.png",
 	"down": "res://assets/poses/jojohands-2.png",
@@ -29,7 +40,7 @@ var directions_poses = {
 	"up_right": "res://assets/poses/jojohands-5.png",
 	"up_left": "res://assets/poses/jojohands-6.png",
 	"down_right": "res://assets/poses/jojohands-7.png",
-	"down_left": "res://assets/jojohands-test.png"
+	"down_left": "res://assets/poses/jojohands-8.png"
 }
 
 var current_pose = ""
@@ -101,6 +112,7 @@ func _on_enemy_timer_timeout():
 				pose_player.play("out")
 				#await pose_player.animatiot_finished
 			pose_player.play("in")
+			GlobalAudio.play_sound(directions_sounds[pose])
 			get_tree().get_first_node_in_group("player_animation").play("good")
 			animation_player.play("good_pose")
 		else:

@@ -44,6 +44,7 @@ func get_hit():
 	#var tween = get_tree().create_tween()
 	#tween.tween_property($Sprite3D, "scale", Vector3.ONE, 1)
 	is_fighting = false
+	$AnimationPlayer.stop()
 	#$AnimationPlayer.play("get_hit")
 	sprite_3d.play("cry")
 	await sprite_3d.animation_finished
