@@ -33,14 +33,19 @@ var directions_poses = {
 
 var current_pose = ""
 var still_has_time = true
+var material
 
 func _ready():
+	material = $Arrows/Vignette.material
 	enemy_timer.wait_time = randf_range(8, 20)
 	playerr = get_tree().get_first_node_in_group("player")
 	boss = get_tree().get_first_node_in_group("boss")
 	arrow_rect.visible = false
 	gesture_detector.current_pose.connect(check_pose.bind())
 	playerr.heal.connect(heal.bind())
+
+func _process(delta):
+	material.set_shader_parameter("outer_radius", material.get_shader_parameter("outer_radius") - delta/20)
 
 func check_pose(pose):
 	current_pose = pose
@@ -105,7 +110,6 @@ func _on_enemy_timer_timeout():
 	boss.reset()
 	
 func take_damage():
-	var material = $Arrows/Vignette.material
 	if material.get_shader_parameter("outer_radius") < 0.6:
 		death()
 		return
@@ -114,14 +118,12 @@ func take_damage():
 func death():
 	print("DEATH")
 	Transition.fade_out("res://scenes/end_game_menu/EndGameMenu.tscn")
-	var material = $Arrows/Vignette.material
-	material.set_shader_parameter("outer_radius", 1.5)
+	material.set_shader_parameter("outer_radius", 1.6)
 
 func heal():
-	var material = $Arrows/Vignette.material
-	if material.get_shader_parameter("outer_radius") > 1.5:
+	if material.get_shader_parameter("outer_radius") > 1.6:
 		return
-	material.set_shader_parameter("outer_radius", min(material.get_shader_parameter("outer_radius") + 0.4, 1.5))
+	material.set_shader_parameter("outer_radius", 1.6)
 
 func update_ui(pose):
 	arrow_rect.rotation_degrees = directions[pose]

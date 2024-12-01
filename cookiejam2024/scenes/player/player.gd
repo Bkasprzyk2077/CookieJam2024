@@ -14,7 +14,10 @@ var boss
 signal heal
 
 func _ready():
+	$Area3D/CollisionShape3D.disabled = true
 	boss = get_tree().get_first_node_in_group("boss")
+	await get_tree().create_timer(1).timeout
+	$Area3D/CollisionShape3D.disabled = false
 
 func _process(delta):
 	#print(has_key)
@@ -58,9 +61,11 @@ func _on_area_3d_area_entered(area):
 		$AnimationPlayer.play("krople")
 		area.get_parent().queue_free()
 	elif area.get_parent() is Key:
+		print(area.get_parent())
 		has_key = true
 		get_tree().get_first_node_in_group("doors").open()
 		get_tree().get_first_node_in_group("doors").get_node("PlaerLight").visible = true
 		area.get_parent().queue_free()
 	elif area.get_parent() is doors and has_key:
 		print("WYGRAŁEŚ")
+		Transition.fade_out("res://scenes/end_game_menu/EndGameMenu.tscn")

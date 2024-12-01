@@ -1,116 +1,80 @@
-[gd_scene load_steps=35 format=3 uid="uid://dbuff07o7u7uv"]
+[gd_scene load_steps=26 format=3 uid="uid://dbuff07o7u7uv"]
 
 [ext_resource type="Script" path="res://scenes/boss/boss.gd" id="1_e6ywe"]
-[ext_resource type="Texture2D" uid="uid://bakhbj26yyef6" path="res://assets/oko/oko-idle/3-4-oka-poetyckiego_00000.png" id="2_44g8e"]
-[ext_resource type="Texture2D" uid="uid://b8y757i86oeef" path="res://assets/oko/oko-idle/3-4-oka-poetyckiego_00002.png" id="3_wss6a"]
-[ext_resource type="Texture2D" uid="uid://0os6url7gstr" path="res://assets/oko/oko-idle/3-4-oka-poetyckiego_00004.png" id="4_5fj5b"]
-[ext_resource type="Texture2D" uid="uid://d385xrn4100hk" path="res://assets/oko/oko-idle/3-4-oka-poetyckiego_00006.png" id="5_y658h"]
-[ext_resource type="Texture2D" uid="uid://cstjdkhudc2e6" path="res://assets/oko/oko-idle/3-4-oka-poetyckiego_00008.png" id="6_opgwp"]
-[ext_resource type="Texture2D" uid="uid://bij3v643k46lc" path="res://assets/oko/oko-idle/3-4-oka-poetyckiego_00010.png" id="7_t0nin"]
-[ext_resource type="Texture2D" uid="uid://nmv0t4rs5iu" path="res://assets/oko/oko-idle/3-4-oka-poetyckiego_00012.png" id="8_lruvc"]
-[ext_resource type="Texture2D" uid="uid://ca62tra3j7nwj" path="res://assets/oko/oko-idle/3-4-oka-poetyckiego_00014.png" id="9_31qfa"]
-[ext_resource type="Texture2D" uid="uid://uqh1oesnho2p" path="res://assets/oko/oko-idle/3-4-oka-poetyckiego_00016.png" id="10_h7e5y"]
-[ext_resource type="Texture2D" uid="uid://dd3xmt34osu0j" path="res://assets/oko/oko-idle/3-4-oka-poetyckiego_00018.png" id="11_o8twm"]
-[ext_resource type="Texture2D" uid="uid://dn1ln6llbltd3" path="res://assets/oko/oko-idle/3-4-oka-poetyckiego_00020.png" id="12_kssb4"]
-[ext_resource type="Texture2D" uid="uid://cn1i4itoeujkn" path="res://assets/oko/oko-idle/3-4-oka-poetyckiego_00022.png" id="13_nmrsa"]
-[ext_resource type="Texture2D" uid="uid://1l872vkvrt3j" path="res://assets/oko/oko-idle/3-4-oka-poetyckiego_00024.png" id="14_0c80w"]
-[ext_resource type="Texture2D" uid="uid://cpia8c4558sg6" path="res://assets/oko/oko-idle/3-4-oka-poetyckiego_00026.png" id="15_xwf0p"]
-[ext_resource type="Texture2D" uid="uid://6povidrlps47" path="res://assets/oko/oko-idle/3-4-oka-poetyckiego_00028.png" id="16_fvapo"]
-[ext_resource type="Texture2D" uid="uid://326gw5ijjvtl" path="res://assets/oko/oko-idle/3-4-oka-poetyckiego_00030.png" id="17_8i763"]
-[ext_resource type="Texture2D" uid="uid://b2lms8du64quf" path="res://assets/oko/oko-idle/3-4-oka-poetyckiego_00032.png" id="18_04x46"]
-[ext_resource type="Texture2D" uid="uid://dqilrmkdvadgq" path="res://assets/oko/oko-idle/3-4-oka-poetyckiego_00034.png" id="19_r5gnh"]
-[ext_resource type="Texture2D" uid="uid://dexhtxwuwd6p" path="res://assets/oko/oko-idle/3-4-oka-poetyckiego_00036.png" id="20_6vgbn"]
-[ext_resource type="Texture2D" uid="uid://cuivl5qb2u30s" path="res://assets/oko/oko-idle/3-4-oka-poetyckiego_00038.png" id="21_fv2l6"]
-[ext_resource type="Texture2D" uid="uid://chhcuwhhv4b5g" path="res://assets/oko/oko-idle/3-4-oka-poetyckiego_00040.png" id="22_gdv3h"]
-[ext_resource type="Texture2D" uid="uid://dnqqjkvhd8ibo" path="res://assets/oko/oko-idle/3-4-oka-poetyckiego_00042.png" id="23_vwr1i"]
-[ext_resource type="Texture2D" uid="uid://bok4gbugvd6t5" path="res://assets/oko/oko-idle/3-4-oka-poetyckiego_00044.png" id="24_skkec"]
-[ext_resource type="Texture2D" uid="uid://c7e4mrdbeacbo" path="res://assets/oko/oko-idle/3-4-oka-poetyckiego_00046.png" id="25_t3k50"]
-[ext_resource type="Texture2D" uid="uid://bwaf6ukoe5y53" path="res://assets/oko/oko-idle/3-4-oka-poetyckiego_00048.png" id="26_p3iyo"]
-[ext_resource type="Texture2D" uid="uid://cbu2spemhfsot" path="res://assets/oko/oko-idle/3-4-oka-poetyckiego_00050.png" id="27_mex4o"]
+[ext_resource type="Texture2D" uid="uid://cvv51jy1by0vt" path="res://assets/oko/oko-idle/idle-kurwa-dziala_00000.png" id="2_p8ubr"]
+[ext_resource type="Texture2D" uid="uid://br3panjli4iah" path="res://assets/oko/oko-idle/idle-kurwa-dziala_00001.png" id="3_25wsn"]
+[ext_resource type="Texture2D" uid="uid://b8mefhtm62wso" path="res://assets/oko/oko-idle/idle-kurwa-dziala_00002.png" id="4_45usg"]
+[ext_resource type="Texture2D" uid="uid://cwxhyyl71fu4b" path="res://assets/oko/oko-idle/idle-kurwa-dziala_00003.png" id="5_jxc2a"]
+[ext_resource type="Texture2D" uid="uid://g52ql6ceyjko" path="res://assets/oko/oko-idle/idle-kurwa-dziala_00004.png" id="6_q6bsq"]
+[ext_resource type="Texture2D" uid="uid://col3o8mk4v1u4" path="res://assets/oko/oko-idle/idle-kurwa-dziala_00005.png" id="7_3ivbx"]
+[ext_resource type="Texture2D" uid="uid://boeo6yl3on5ui" path="res://assets/oko/oko-idle/idle-kurwa-dziala_00006.png" id="8_igrf2"]
+[ext_resource type="Texture2D" uid="uid://bd2rh27v3pnmr" path="res://assets/oko/oko-idle/idle-kurwa-dziala_00007.png" id="9_r4c12"]
+[ext_resource type="Texture2D" uid="uid://do2rce1tgsmtm" path="res://assets/oko/oko-idle/idle-kurwa-dziala_00008.png" id="10_kaxrv"]
+[ext_resource type="Texture2D" uid="uid://s2gcjs46effc" path="res://assets/oko/oko-idle/idle-kurwa-dziala_00009.png" id="11_q3jdb"]
+[ext_resource type="Texture2D" uid="uid://qof18v8iehgq" path="res://assets/oko/oko-idle/idle-kurwa-dziala_00010.png" id="12_i7bfs"]
+[ext_resource type="Texture2D" uid="uid://cq7h1s3xq1a1d" path="res://assets/oko/oko-idle/idle-kurwa-dziala_00011.png" id="13_qpoqm"]
+[ext_resource type="Texture2D" uid="uid://c0ymvbvx1iscp" path="res://assets/oko/oko-idle/idle-kurwa-dziala_00012.png" id="14_qprna"]
+[ext_resource type="Texture2D" uid="uid://dfettfb74fcgp" path="res://assets/oko/oko-idle/idle-kurwa-dziala_00013.png" id="15_xwxxh"]
+[ext_resource type="Texture2D" uid="uid://rn2d2iyi4vjj" path="res://assets/oko/oko-idle/idle-kurwa-dziala_00014.png" id="16_taf87"]
+[ext_resource type="Texture2D" uid="uid://cmpwwg5s7n4cm" path="res://assets/oko/oko-idle/idle-kurwa-dziala_00015.png" id="17_ng6u7"]
+[ext_resource type="Texture2D" uid="uid://divjm25ygv055" path="res://assets/oko/oko-idle/idle-kurwa-dziala_00016.png" id="18_x6yfs"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_q4ewq"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_44g8e")
+"texture": ExtResource("2_p8ubr")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_wss6a")
+"texture": ExtResource("3_25wsn")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_5fj5b")
+"texture": ExtResource("4_45usg")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_y658h")
+"texture": ExtResource("5_jxc2a")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_opgwp")
+"texture": ExtResource("6_q6bsq")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_t0nin")
+"texture": ExtResource("7_3ivbx")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_lruvc")
+"texture": ExtResource("8_igrf2")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_31qfa")
+"texture": ExtResource("9_r4c12")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_h7e5y")
+"texture": ExtResource("10_kaxrv")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_o8twm")
+"texture": ExtResource("11_q3jdb")
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_kssb4")
+"texture": ExtResource("12_i7bfs")
 }, {
 "duration": 1.0,
-"texture": ExtResource("13_nmrsa")
+"texture": ExtResource("13_qpoqm")
 }, {
 "duration": 1.0,
-"texture": ExtResource("14_0c80w")
+"texture": ExtResource("14_qprna")
 }, {
 "duration": 1.0,
-"texture": ExtResource("15_xwf0p")
+"texture": ExtResource("15_xwxxh")
 }, {
 "duration": 1.0,
-"texture": ExtResource("16_fvapo")
+"texture": ExtResource("16_taf87")
 }, {
 "duration": 1.0,
-"texture": ExtResource("17_8i763")
+"texture": ExtResource("17_ng6u7")
 }, {
 "duration": 1.0,
-"texture": ExtResource("18_04x46")
-}, {
-"duration": 1.0,
-"texture": ExtResource("19_r5gnh")
-}, {
-"duration": 1.0,
-"texture": ExtResource("20_6vgbn")
-}, {
-"duration": 1.0,
-"texture": ExtResource("21_fv2l6")
-}, {
-"duration": 1.0,
-"texture": ExtResource("22_gdv3h")
-}, {
-"duration": 1.0,
-"texture": ExtResource("23_vwr1i")
-}, {
-"duration": 1.0,
-"texture": ExtResource("24_skkec")
-}, {
-"duration": 1.0,
-"texture": ExtResource("25_t3k50")
-}, {
-"duration": 1.0,
-"texture": ExtResource("26_p3iyo")
-}, {
-"duration": 1.0,
-"texture": ExtResource("27_mex4o")
+"texture": ExtResource("18_x6yfs")
 }],
 "loop": true,
-"name": &"default",
+"name": &"new_animation",
 "speed": 5.0
 }]
 
@@ -244,8 +208,8 @@ script = ExtResource("1_e6ywe")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 0)
 no_depth_test = true
 sprite_frames = SubResource("SpriteFrames_q4ewq")
-autoplay = "default"
-frame_progress = 0.0731481
+animation = &"new_animation"
+autoplay = "new_animation"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

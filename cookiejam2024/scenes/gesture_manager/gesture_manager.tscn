@@ -1,18 +1,81 @@
-[gd_scene load_steps=13 format=3 uid="uid://cdgrqruroljoy"]
+[gd_scene load_steps=27 format=3 uid="uid://cdgrqruroljoy"]
 
 [ext_resource type="Script" path="res://scenes/gesture_manager/gesture_detector.gd" id="1_3sui7"]
 [ext_resource type="Script" path="res://scenes/gesture_manager/gesture_manager.gd" id="1_yymwu"]
 [ext_resource type="Script" path="res://scenes/gesture_manager/gesture_randomizer.gd" id="2_ipkjp"]
-[ext_resource type="Texture2D" uid="uid://dskxaejbn7slw" path="res://assets/arrow.png" id="2_n4sqm"]
+[ext_resource type="Texture2D" uid="uid://gsjqjur3sjo6" path="res://assets/strzalka/Grafika_bez_nazwy-1.png" id="3_q7r1d"]
 [ext_resource type="Shader" path="res://shaders/vignette.gdshader" id="3_te17o"]
+[ext_resource type="Texture2D" uid="uid://7tqg407sd0dy" path="res://assets/strzalka/Grafika_bez_nazwy-2.png" id="4_dp2s6"]
 [ext_resource type="Shader" path="res://shaders/Dithering.gdshader" id="4_yryec"]
+[ext_resource type="Texture2D" uid="uid://cr4eowbcaeiea" path="res://assets/strzalka/Grafika_bez_nazwy-3.png" id="5_siaun"]
+[ext_resource type="Texture2D" uid="uid://chwucsh450hch" path="res://assets/strzalka/Grafika_bez_nazwy-4.png" id="6_i4855"]
+[ext_resource type="Texture2D" uid="uid://dhbcsbpshmhl1" path="res://assets/strzalka/Grafika_bez_nazwy-5.png" id="7_dls2q"]
+[ext_resource type="Texture2D" uid="uid://c8um1t0lwndpw" path="res://assets/strzalka/Grafika_bez_nazwy-6.png" id="8_6c38h"]
+[ext_resource type="Texture2D" uid="uid://bcwtpb6pghgcu" path="res://assets/strzalka/Grafika_bez_nazwy-7.png" id="9_apg1o"]
+[ext_resource type="Texture2D" uid="uid://b03j17yu5q8pr" path="res://assets/strzalka/Grafika_bez_nazwy-8.png" id="10_yhxej"]
+[ext_resource type="Texture2D" uid="uid://b7bqb4yaqrv6y" path="res://assets/strzalka/Grafika_bez_nazwy-9.png" id="11_4ap0t"]
+[ext_resource type="Texture2D" uid="uid://dbj1b0x74hv26" path="res://assets/strzalka/Grafika_bez_nazwy-10.png" id="12_t8it8"]
+[ext_resource type="Texture2D" uid="uid://ci00ahkuvu5m3" path="res://assets/strzalka/Grafika_bez_nazwy-11.png" id="13_41f34"]
+[ext_resource type="Texture2D" uid="uid://8ue5wj4h75j2" path="res://assets/strzalka/Grafika_bez_nazwy-12.png" id="14_raf8k"]
+[ext_resource type="Texture2D" uid="uid://cutrutsrclln6" path="res://assets/strzalka/Grafika_bez_nazwy-13.png" id="15_xwhpg"]
+[ext_resource type="Texture2D" uid="uid://c2u1lqbuvmg64" path="res://assets/strzalka/Grafika_bez_nazwy-14.png" id="16_awcr6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_m7xjj"]
 shader = ExtResource("3_te17o")
 shader_parameter/alpha = 1.0
 shader_parameter/inner_radius = 0.5
-shader_parameter/outer_radius = 1.5
+shader_parameter/outer_radius = 1.6
 shader_parameter/vignette_color = Color(0, 0, 0, 1)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ginop"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_q7r1d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_dp2s6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_siaun")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_i4855")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_dls2q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_6c38h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_apg1o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_yhxej")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_4ap0t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_t8it8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_41f34")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_raf8k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_xwhpg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_awcr6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tbaf8"]
 shader = ExtResource("4_yryec")
@@ -100,22 +163,11 @@ grow_horizontal = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="ArrowRect" type="TextureRect" parent="Arrows/Control"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -128.0
-offset_top = -32.0
-offset_right = 128.0
-offset_bottom = 32.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="ArrowRect" type="AnimatedSprite2D" parent="Arrows/Control"]
+position = Vector2(-1, 106.72)
 scale = Vector2(0.31, 0.31)
-pivot_offset = Vector2(960, 403)
-texture = ExtResource("2_n4sqm")
+sprite_frames = SubResource("SpriteFrames_ginop")
+autoplay = "default"
 
 [node name="Dithering" type="ColorRect" parent="Arrows"]
 material = SubResource("ShaderMaterial_tbaf8")

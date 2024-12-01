@@ -11,7 +11,7 @@ frequency = 0.0119
 noise = SubResource("FastNoiseLite_jg1dj")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_1smqq"]
-radius = 1.254
+radius = 2.51
 
 [node name="Doors" type="Node3D" groups=["doors"]]
 script = ExtResource("1_iun7v")
@@ -21,9 +21,8 @@ transform = Transform3D(0.37, 0, 0, 0, 0.37, 0, 0, 0, 0.37, 0, 3.96475, 0)
 texture = ExtResource("2_71d8r")
 
 [node name="PlaerLight" type="OmniLight3D" parent="."]
-visible = false
 light_color = Color(0.547174, 0.357796, 0.98882, 1)
-light_energy = 16.0
+light_energy = 20.0
 omni_range = 15.0
 script = ExtResource("2_s1to2")
 noise = SubResource("NoiseTexture3D_rxe2c")
@@ -34,4 +33,10 @@ collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.12566, 0)
+shape = SubResource("SphereShape3D_1smqq")
+
+[node name="Area3D2" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.11386, 0)
 shape = SubResource("SphereShape3D_1smqq")
