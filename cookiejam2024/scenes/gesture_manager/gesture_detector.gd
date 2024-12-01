@@ -17,7 +17,7 @@ var points = []
 
 # Konfiguracja
 var min_distance = 100 # Minimalna długość gestu
-var max_angle_deviation = 30 # Maksymalny kąt odchylenia od osi
+var max_angle_deviation = 45 # Maksymalny kąt odchylenia od osi
 
 signal current_pose(pose)
 

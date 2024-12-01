@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://crg5euyebteld"]
+
+[ext_resource type="Script" path="res://scenes/intro/intro.gd" id="1_0d2q1"]
+[ext_resource type="VideoStream" path="res://sounds/intro.ogv" id="1_jh8qd"]
+
+[node name="Intro" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_0d2q1")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+process_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("1_jh8qd")
+autoplay = true
+expand = true
+
+[connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]

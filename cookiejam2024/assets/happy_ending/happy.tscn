@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://cfi7ogap2gu3h"]
+
+[ext_resource type="Texture2D" uid="uid://bmqxgc6r2spau" path="res://assets/happy_ending/hapi-andrzej (1).png" id="1_cjf4a"]
+[ext_resource type="Texture2D" uid="uid://kitsplueahe" path="res://assets/happy_ending/hapi-andrzej (2).png" id="2_s3jj1"]
+[ext_resource type="Texture2D" uid="uid://dncb75xaitpe5" path="res://assets/happy_ending/hapi-andrzej (3).png" id="3_e2u75"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_1ptb3"]
+frames = 20
+one_shot = true
+frame_0/texture = ExtResource("1_cjf4a")
+frame_0/duration = 0.1
+frame_1/texture = ExtResource("2_s3jj1")
+frame_1/duration = 0.1
+frame_2/texture = ExtResource("3_e2u75")
+frame_2/duration = 0.1
+frame_3/duration = 1.0
+frame_4/duration = 1.0
+frame_5/duration = 1.0
+frame_6/duration = 1.0
+frame_7/duration = 1.0
+frame_8/duration = 1.0
+frame_9/duration = 1.0
+frame_10/duration = 1.0
+frame_11/duration = 1.0
+frame_12/duration = 1.0
+frame_13/duration = 1.0
+frame_14/duration = 1.0
+frame_15/duration = 1.0
+frame_16/duration = 1.0
+frame_17/duration = 1.0
+frame_18/duration = 1.0
+frame_19/duration = 1.0
+
+[node name="Happy" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AnimatedTexture_1ptb3")

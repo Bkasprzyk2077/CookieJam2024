@@ -547,7 +547,7 @@ offset_bottom = 451.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 48
-text = "By uciec z otchłani wpierw musisz znaleźć klucz, klocz ktorym otworzysz dżwi"
+text = "By uciec z otchłani wpierw musisz znaleźć klucz, klocz ktorym otworzysz drzwi"
 horizontal_alignment = 1
 autowrap_mode = 2
 

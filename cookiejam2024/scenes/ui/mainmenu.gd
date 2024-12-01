@@ -7,3 +7,7 @@ func _on_startbutton_pressed() -> void:
 
 func _on_exit_pressed() -> void:
 	get_tree().quit()
+
+
+func _on_intro_pressed():
+	Transition.fade_out("res://scenes/intro/intro.tscn")

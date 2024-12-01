@@ -76,9 +76,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -283.5
-offset_top = 138.48
+offset_top = 286.0
 offset_right = 283.5
-offset_bottom = 425.48
+offset_bottom = 573.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_bjfbv")
@@ -92,5 +92,37 @@ offset_bottom = 179.0
 scale = Vector2(0.823232, 0.823232)
 texture = ExtResource("4_5ghsv")
 
+[node name="intro" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -283.5
+offset_top = 74.0
+offset_right = 283.5
+offset_bottom = 361.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_bjfbv")
+
+[node name="Label" type="Label" parent="Control/intro"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -126.0
+offset_top = -83.5
+offset_right = 126.0
+offset_bottom = 27.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 92
+text = "Intro"
+
 [connection signal="pressed" from="Control/Startbutton" to="." method="_on_startbutton_pressed"]
 [connection signal="pressed" from="Control/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Control/intro" to="." method="_on_intro_pressed"]
