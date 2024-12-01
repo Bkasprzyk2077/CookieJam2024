@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b1lbcl7slvoue"]
+[gd_scene load_steps=14 format=3 uid="uid://b1lbcl7slvoue"]
 
 [ext_resource type="PackedScene" uid="uid://cdgrqruroljoy" path="res://scenes/gesture_manager/gesture_manager.tscn" id="1_nsimf"]
 [ext_resource type="PackedScene" uid="uid://buppi1dcq3b3i" path="res://scenes/maze_generator/maze_generator.tscn" id="2_jsuyg"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://scenes/maze_generator/maze_generator2.gd" id="3_xqr0s"]
 [ext_resource type="PackedScene" uid="uid://j7r1n8ldyxfg" path="res://scenes/torch/Torch.tscn" id="4_kirtd"]
 [ext_resource type="Script" path="res://scenes/levels/world_environment.gd" id="4_vrd2p"]
+[ext_resource type="PackedScene" uid="uid://dnbptq8gr33d" path="res://scenes/doors/doors2.tscn" id="4_ypm1a"]
 [ext_resource type="PackedScene" uid="uid://cy8iths304j2u" path="res://scenes/player/Player.tscn" id="5_ux12b"]
 [ext_resource type="PackedScene" uid="uid://ckxs7ts1qlj6b" path="res://scenes/flying_eye/flying_eye.tscn" id="6_q220m"]
 [ext_resource type="Texture2D" uid="uid://fnkh255255rq" path="res://assets/oko/goatoko.png" id="7_mwcrn"]
@@ -32,6 +33,7 @@ data = {
 "cells": PackedInt32Array(65534, 65533, 1310720, 65534, 65534, 1310720, 0, 0, 1310720)
 }
 script = ExtResource("3_xqr0s")
+doors_scene = ExtResource("4_ypm1a")
 torch_scene = ExtResource("4_kirtd")
 
 [node name="Enviro" type="Node3D" parent="."]

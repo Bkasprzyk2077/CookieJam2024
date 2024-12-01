@@ -10,8 +10,8 @@ frequency = 0.0119
 [sub_resource type="NoiseTexture3D" id="NoiseTexture3D_yqwml"]
 noise = SubResource("FastNoiseLite_tu52l")
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_lb223"]
-radius = 1.18
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_tm3d3"]
+radius = 1.6
 
 [node name="Torch" type="Node3D" groups=["torch"]]
 script = ExtResource("1_m5teq")
@@ -24,6 +24,7 @@ texture = ExtResource("2_sxodf")
 
 [node name="PlaerLight" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.16181, 0)
+visible = false
 light_color = Color(0.113043, 0.593647, 0.515027, 1)
 light_size = 1.0
 omni_range = 20.0
@@ -32,10 +33,9 @@ script = ExtResource("2_k1lk7")
 noise = SubResource("NoiseTexture3D_yqwml")
 
 [node name="Area3D" type="Area3D" parent="."]
-collision_layer = 2
-collision_mask = 2
+collision_layer = 6
+collision_mask = 6
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.12341, 0)
-shape = SubResource("SphereShape3D_lb223")
-disabled = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.38514, 0)
+shape = SubResource("CylinderShape3D_tm3d3")

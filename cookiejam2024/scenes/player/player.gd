@@ -18,6 +18,7 @@ signal heal
 signal hit
 
 func _ready():
+	heal.emit()
 	$Area3D/CollisionShape3D.disabled = true
 	boss = get_tree().get_first_node_in_group("boss")
 	await get_tree().create_timer(1).timeout
@@ -77,13 +78,10 @@ func _on_area_3d_area_entered(area):
 		get_tree().get_first_node_in_group("doors").open()
 		get_tree().get_first_node_in_group("doors").get_node("PlaerLight").visible = true
 		area.get_parent().queue_free()
-	elif area.get_parent() is Torch:
-		area.get_parent().fire()
-		torch_count += 1
 	elif area.get_parent() is doors and has_key:
 		print("WYGRAŁEŚ")
 		Transition.fade_out("res://scenes/levels/main2.tscn")
-	elif area.get_parent() is Doors2 and torch_count == 4:
+	elif area.get_parent() is Doors2:
 		print("WYGRAŁEŚ")
 		Transition.fade_out("res://scenes/end_game_menu/EndGameMenu.tscn")
 	

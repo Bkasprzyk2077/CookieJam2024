@@ -180,12 +180,12 @@ func generate_items():
 	add_child(dooors)
 
 	var j = 0
-	while floor_tiles_with_one_neighbour and j < 4:
+	while floor_tiles_with_one_neighbour and j < 3:
 		var torch = torch_scene.instantiate()
 		add_child(torch)
 		torch.global_position = map_to_local(floor_tiles_with_one_neighbour.pop_front())
 		j+=1
-	while len(get_tree().get_nodes_in_group("torch")) < 4:
+	while len(get_tree().get_nodes_in_group("torch")) < 3:
 		var torch = torch_scene.instantiate()
 		add_child(torch)
 		torch.global_position = map_to_local(floor_tiles_with_many_neighbours.pick_random())

@@ -13,7 +13,7 @@ noise = SubResource("FastNoiseLite_jg1dj")
 [sub_resource type="SphereShape3D" id="SphereShape3D_1smqq"]
 radius = 2.51
 
-[node name="Doors2" type="Node3D" groups=["doors"]]
+[node name="Doors2" type="Node3D" groups=["doors", "doors2"]]
 script = ExtResource("1_ohe4x")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]

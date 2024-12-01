@@ -160,7 +160,23 @@ func free_poke():
 			if pose_player.is_playing():
 				pose_player.play("out")
 			pose_player.play("poke")
-
+		elif collider.get_parent() is Torch:
+			playerr.torch_count += 1
+			print("TORCHES: ", playerr.torch_count)
+			if playerr.torch_count >= 3:
+				var dor = get_tree().get_first_node_in_group("doors2")
+				print(dor)
+				if dor:
+					dor.open()
+				
+			$poke.play()
+			collider.get_parent().fire()
+			var pose_player = playerr.get_node("PosePlayer")
+			playerr.get_node("Camera3D/Hands").texture = load("res://assets/poses/eyepoke.png")
+			if pose_player.is_playing():
+				pose_player.play("out")
+			pose_player.play("poke")
+			
 func update_ui(pose):
 	arrow_rect.rotation_degrees = directions[pose]
 
