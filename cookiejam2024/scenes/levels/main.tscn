@@ -1,13 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://bw20s60c2vger"]
+[gd_scene load_steps=10 format=3 uid="uid://bw20s60c2vger"]
 
 [ext_resource type="PackedScene" uid="uid://cdgrqruroljoy" path="res://scenes/gesture_manager/gesture_manager.tscn" id="1_5ko27"]
 [ext_resource type="PackedScene" uid="uid://cy8iths304j2u" path="res://scenes/player/Player.tscn" id="1_8ng35"]
 [ext_resource type="PackedScene" uid="uid://buppi1dcq3b3i" path="res://scenes/maze_generator/maze_generator.tscn" id="2_q1842"]
-[ext_resource type="Texture2D" uid="uid://u08qi73yjb86" path="res://assets/skybox2.png" id="3_2nu24"]
+[ext_resource type="Texture2D" uid="uid://fgvujcdlae2r" path="res://assets/sjyboxes/skybox3.png" id="3_2pxcx"]
+[ext_resource type="Script" path="res://scenes/levels/world_environment.gd" id="4_vstjc"]
 [ext_resource type="PackedScene" uid="uid://ipmu4i7geohw" path="res://scenes/key/key.tscn" id="4_ypctl"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_pvadt"]
-panorama = ExtResource("3_2nu24")
+panorama = ExtResource("3_2pxcx")
 filter = false
 
 [sub_resource type="Sky" id="Sky_nckj3"]
@@ -32,6 +33,7 @@ data = {
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Enviro"]
 environment = SubResource("Environment_4oiws")
+script = ExtResource("4_vstjc")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Enviro"]
 transform = Transform3D(1, 0, 0, 0, 0.438371, 0.898794, 0, -0.898794, 0.438371, 0, 0, 0)

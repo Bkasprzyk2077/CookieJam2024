@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://b1iumdppxjame"]
 
 [ext_resource type="Script" path="res://scenes/doors/doors.gd" id="1_iun7v"]
-[ext_resource type="Texture2D" uid="uid://c35778p1a78q1" path="res://assets/icon.svg" id="1_xajuv"]
+[ext_resource type="Texture2D" uid="uid://csr10fedchdsa" path="res://assets/doors.png" id="2_71d8r"]
 [ext_resource type="Script" path="res://scenes/player/plaer_light.gd" id="2_s1to2"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_jg1dj"]
@@ -17,8 +17,8 @@ radius = 1.254
 script = ExtResource("1_iun7v")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.22635, 0)
-texture = ExtResource("1_xajuv")
+transform = Transform3D(0.37, 0, 0, 0, 0.37, 0, 0, 0, 0.37, 0, 3.96475, 0)
+texture = ExtResource("2_71d8r")
 
 [node name="PlaerLight" type="OmniLight3D" parent="."]
 visible = false
