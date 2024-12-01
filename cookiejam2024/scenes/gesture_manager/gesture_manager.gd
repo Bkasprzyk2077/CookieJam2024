@@ -43,15 +43,17 @@ func _ready():
 	arrow_rect.visible = false
 	gesture_detector.current_pose.connect(check_pose.bind())
 	playerr.heal.connect(heal.bind())
+	playerr.hit.connect(take_damage.bind())
 
 func _process(delta):
+	if material.get_shader_parameter("outer_radius") < .1:
+		death()
 	material.set_shader_parameter("outer_radius", material.get_shader_parameter("outer_radius") - delta/20)
 
 func check_pose(pose):
 	current_pose = pose
-	
-#func teaser():
-	#boss.boss_tease()
+	if !boss.is_fighting:
+		free_poke()
 
 func _on_enemy_timer_timeout():
 	var pose_player = playerr.get_node("PosePlayer")
@@ -86,7 +88,7 @@ func _on_enemy_timer_timeout():
 				return
 				
 			playerr.get_node("Camera3D/Hands").texture = load(directions_poses[pose])
-			print("DOBRZE")
+			#print("DOBRZE")
 			if pose_player.is_playing():
 				pose_player.play("out")
 				#await pose_player.animatiot_finished
@@ -94,28 +96,29 @@ func _on_enemy_timer_timeout():
 			get_tree().get_first_node_in_group("player_animation").play("good")
 			animation_player.play("good_pose")
 		else:
-			print("ZLE")
+			#print("ZLE")
 			#pose_player.play("out")
 			take_damage()
-			animation_player.play("bad_pose")
-			get_tree().get_first_node_in_group("player_animation").play("bad")
-			get_tree().get_first_node_in_group("player_camera").apply_shake()
 			break
 		still_has_time = true
 	arrow_rect.visible = false
-	print("KONIEC DIALOGU")
+	#print("KONIEC DIALOGU")
 	playerr.get_node("PosePlayer").play("out")
 	await pose_player.animation_finished
 	$EnemyTimer.start()
 	boss.reset()
 	
 func take_damage():
+	animation_player.play("bad_pose")
+	get_tree().get_first_node_in_group("player_animation").play("bad")
+	get_tree().get_first_node_in_group("player_camera").apply_shake()
 	if material.get_shader_parameter("outer_radius") < 0.6:
 		death()
 		return
 	material.set_shader_parameter("outer_radius", material.get_shader_parameter("outer_radius") - 0.2)
 
 func death():
+	playerr.can_move = false
 	print("DEATH")
 	Transition.fade_out("res://scenes/end_game_menu/EndGameMenu.tscn")
 	material.set_shader_parameter("outer_radius", 1.6)
@@ -124,6 +127,17 @@ func heal():
 	if material.get_shader_parameter("outer_radius") > 1.6:
 		return
 	material.set_shader_parameter("outer_radius", 1.6)
+
+func free_poke():
+	var pose_player = playerr.get_node("PosePlayer")
+	playerr.get_node("Camera3D/Hands").texture = load("res://assets/poses/eyepoke.png")
+	if pose_player.is_playing():
+		pose_player.play("out")
+	pose_player.play("poke")
+	var collider = playerr.get_node("TrapRayCast3D").get_collider()
+	if collider:
+		if collider.get_parent() is Trap:
+			collider.get_parent().queue_free()
 
 func update_ui(pose):
 	arrow_rect.rotation_degrees = directions[pose]

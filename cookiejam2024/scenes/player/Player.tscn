@@ -306,6 +306,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.986)
 modulate = Color(1, 1, 1, 0)
 shaded = true
 no_depth_test = true
+render_priority = 2
 texture = ExtResource("4_s8q2e")
 
 [node name="HandsWithKrople" type="Sprite3D" parent="Camera3D"]
@@ -324,6 +325,11 @@ collision_mask = 2
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("CapsuleShape3D_ibymt")
 disabled = true
+
+[node name="TrapRayCast3D" type="RayCast3D" parent="."]
+target_position = Vector3(0, 0, -5)
+collision_mask = 4
+collide_with_areas = true
 
 [node name="FrontRayCast3D" type="RayCast3D" parent="."]
 target_position = Vector3(0, 0, -5)

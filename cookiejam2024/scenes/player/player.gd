@@ -12,6 +12,7 @@ var has_key:bool = false
 var boss
 
 signal heal
+signal hit
 
 func _ready():
 	$Area3D/CollisionShape3D.disabled = true
@@ -59,6 +60,9 @@ func _on_area_3d_area_entered(area):
 			return
 		heal.emit()
 		$AnimationPlayer.play("krople")
+		area.get_parent().queue_free()
+	elif area.get_parent() is Trap:
+		hit.emit()
 		area.get_parent().queue_free()
 	elif area.get_parent() is Key:
 		print(area.get_parent())
