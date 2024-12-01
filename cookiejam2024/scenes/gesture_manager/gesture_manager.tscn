@@ -24,7 +24,7 @@
 shader = ExtResource("3_te17o")
 shader_parameter/alpha = 1.0
 shader_parameter/inner_radius = 0.5
-shader_parameter/outer_radius = 1.5
+shader_parameter/outer_radius = 1.6
 shader_parameter/vignette_color = Color(0, 0, 0, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ginop"]
