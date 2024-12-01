@@ -87,10 +87,8 @@ func _on_enemy_timer_timeout():
 				get_tree().get_first_node_in_group("player_animation").play("good")
 				animation_player.play("good_pose")
 				boss.get_hit()
-				await pose_player.animation_finished
-				#playerr.get_node("PosePlayer").play("reset")
-
 				arrow_rect.visible = false
+				await boss.ready_to_hide
 				#print("KONIEC DIALOGU")
 				enemy_timer.start()
 				boss.reset()

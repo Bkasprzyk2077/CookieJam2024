@@ -18,6 +18,7 @@ var j = 0
 var is_fighting:bool = false
 
 signal text_end
+signal ready_to_hide
 
 func _ready():
 	text_label.text = ""
@@ -39,10 +40,16 @@ func boss_talk():
 	text_timer.start()
 	
 func get_hit():
+	#var tween = get_tree().create_tween()
+	#tween.tween_property($Sprite3D, "scale", Vector3.ONE, 1)
+	is_fighting = false
+	#$AnimationPlayer.play("get_hit")
+	sprite_3d.play("cry")
+	await sprite_3d.animation_finished
+	sprite_3d.play("idle")
 	var tween = get_tree().create_tween()
 	tween.tween_property($Sprite3D, "scale", Vector3.ONE, 1)
-	is_fighting = false
-	$AnimationPlayer.play("get_hit")
+	await tween.finished
 	text_label.text = ""
 	index = 0
 	current_text = ""
@@ -50,6 +57,7 @@ func get_hit():
 	i += 1
 	#is_fighting = false
 	text_timer.start()
+	ready_to_hide.emit()
 
 func reset():
 	$AnimationPlayer.play("out")
