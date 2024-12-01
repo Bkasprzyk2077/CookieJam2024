@@ -11,7 +11,7 @@ frequency = 0.0119
 noise = SubResource("FastNoiseLite_jg1dj")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_1smqq"]
-radius = 1.254
+radius = 2.51
 
 [node name="Doors" type="Node3D" groups=["doors"]]
 script = ExtResource("1_iun7v")
@@ -34,4 +34,10 @@ collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.12566, 0)
+shape = SubResource("SphereShape3D_1smqq")
+
+[node name="Area3D2" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.11386, 0)
 shape = SubResource("SphereShape3D_1smqq")

@@ -10,6 +10,7 @@ class_name MazeGen
 @export var key_scene: PackedScene
 @export var krople_scene: PackedScene
 @export var doors_scene: PackedScene
+@export var eye_scene: PackedScene
 # Definicja kafelków
 const normal_wall_mesh = "WallMesh"
 const walkable_mesh = "FloorMesh"
@@ -138,7 +139,7 @@ func is_within_bounds(pos: Vector3i) -> bool:
 	return pos.x >= 0 and pos.x < x_dim and \
 		   pos.z >= 0 and pos.z < z_dim
 
-func get_single_floor_neighbor_direction(pos: Vector3i) -> Vector3i:
+func get_single_floor_neighbor(pos: Vector3i) -> Vector3i:
 	# Lista możliwych przesunięć (kierunków sąsiadów)
 	var directions = [
 		Vector3i(-1, 0, 0),  # Lewo
@@ -154,32 +155,51 @@ func get_single_floor_neighbor_direction(pos: Vector3i) -> Vector3i:
 	for direction in directions:
 		var neighbor_pos = pos + direction
 		if is_within_bounds(neighbor_pos) and is_floor(neighbor_pos):
-			floor_neighbor = direction
+			floor_neighbor = neighbor_pos  # Przypisujemy współrzędne sąsiada
 			neighbor_count += 1
 			
 			# Jeśli jest więcej niż jeden sąsiad, przerywamy
 			if neighbor_count > 1:
 				return Vector3i.ZERO
 	
-	# Jeśli znaleźliśmy dokładnie jednego sąsiada, zwracamy jego kierunek
+	# Jeśli znaleźliśmy dokładnie jednego sąsiada, zwracamy jego współrzędne
 	return floor_neighbor if neighbor_count == 1 else Vector3i.ZERO
 
 
 func generate_items():
 	floor_tiles_with_one_neighbour.shuffle()
 	var key = key_scene.instantiate()
-	add_child(key)
 	key.global_position = map_to_local(floor_tiles_with_one_neighbour.pop_front())
+	add_child(key)
 	
 	var dooors = doors_scene.instantiate()
 	var dor_loc = floor_tiles_with_one_neighbour.pop_front()
 	add_child(dooors)
 	dooors.global_position = map_to_local(dor_loc)
-	var somsiad = get_single_floor_neighbor_direction(dor_loc)
+	var somsiad = get_single_floor_neighbor(dor_loc)
 	print(somsiad)
 	dooors.look_at(map_to_local(somsiad))
+	print("pole drzwi: ", dooors.global_position)
+	print("pole somsiada: ", map_to_local(somsiad))
 	
 	for tile in floor_tiles_with_one_neighbour:
 		var krople = krople_scene.instantiate()
 		add_child(krople)
 		krople.global_position = map_to_local(tile)
+
+func random_point_between(vec_a: Vector3, vec_b: Vector3) -> Vector3:
+	var t = randf() # Losowy współczynnik w zakresie [0, 1]
+	return vec_a + (vec_b - vec_a) * t
+
+
+func spawn_eye(scene: PackedScene):
+	var start = map_to_local(Vector3i(-1, 0, z_dim))
+	var end =  map_to_local(Vector3i(-1, 0, -1))
+	var point = random_point_between(start, end)
+	var eye = eye_scene.instantiate()
+	add_child(eye)
+	eye.global_position = point + Vector3(0,5,0)
+
+
+func _on_eye_timer_timeout():
+	spawn_eye(eye_scene)

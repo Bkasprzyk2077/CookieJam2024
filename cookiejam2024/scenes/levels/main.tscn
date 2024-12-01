@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://buppi1dcq3b3i" path="res://scenes/maze_generator/maze_generator.tscn" id="2_q1842"]
 [ext_resource type="Texture2D" uid="uid://fgvujcdlae2r" path="res://assets/sjyboxes/skybox3.png" id="3_2pxcx"]
 [ext_resource type="Script" path="res://scenes/levels/world_environment.gd" id="4_vstjc"]
-[ext_resource type="PackedScene" uid="uid://ipmu4i7geohw" path="res://scenes/key/key.tscn" id="4_ypctl"]
+[ext_resource type="PackedScene" uid="uid://ckxs7ts1qlj6b" path="res://scenes/flying_eye/flying_eye.tscn" id="7_hwysd"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_pvadt"]
 panorama = ExtResource("3_2pxcx")
@@ -42,5 +42,8 @@ visible = false
 [node name="Player" parent="." instance=ExtResource("1_8ng35")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 1.32, 1.5)
 
-[node name="Key" parent="." instance=ExtResource("4_ypctl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 1.5)
+[node name="FlyingEye" parent="." instance=ExtResource("7_hwysd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 4, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.5, 0.224144, -0.836516, 1.13133e-08, 0.965926, 0.258819, 0.866025, 0.12941, -0.482963, -14, 13, 0)

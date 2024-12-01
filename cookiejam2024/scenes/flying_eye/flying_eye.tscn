@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckxs7ts1qlj6b"]
+
+[ext_resource type="Script" path="res://scenes/flying_eye/flying_eye.gd" id="1_78hnj"]
+[ext_resource type="Texture2D" uid="uid://fnkh255255rq" path="res://assets/oko/goatoko.png" id="1_ndhkc"]
+
+[node name="FlyingEye" type="Node3D"]
+script = ExtResource("1_78hnj")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
+billboard = 1
+shaded = true
+texture = ExtResource("1_ndhkc")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
