@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bhlj66vwnx7wm"]
+
+[ext_resource type="Texture2D" uid="uid://biv52kg2gccf3" path="res://assets/IMG_0984.png" id="1_pj43w"]
+
+[node name="Trap" type="Node3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+billboard = 2
+shaded = true
+texture = ExtResource("1_pj43w")
